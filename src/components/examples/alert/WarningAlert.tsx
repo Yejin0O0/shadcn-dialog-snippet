@@ -33,6 +33,9 @@ export function WarningAlert() {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Dismiss</AlertDialogCancel>
+            <AlertDialogAction className="w-fit bg-amber-500 text-white hover:bg-amber-700 hover:text-white focus:ring-2 focus:ring-amber-500">
+              Action
+            </AlertDialogAction>
           </AlertDialogFooter>
         </div>
       </AlertDialogContent>

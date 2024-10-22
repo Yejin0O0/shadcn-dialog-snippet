@@ -33,6 +33,9 @@ export function SuccessAlert() {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Dismiss</AlertDialogCancel>
+            <AlertDialogAction className="w-fit bg-green-500 text-white hover:bg-green-700 hover:text-white focus:ring-2 focus:ring-green-500">
+              Action
+            </AlertDialogAction>
           </AlertDialogFooter>
         </div>
       </AlertDialogContent>

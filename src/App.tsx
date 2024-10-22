@@ -2,15 +2,10 @@ import Editor from "@monaco-editor/react";
 import { useState } from "react";
 import { Button } from "./components/ui/button";
 import "@/App.css";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "./components/ui/dialog";
-
+import ErrorAlert from "@/components/examples/alert/ErrorAlert";
+import InfoAlert from "./components/examples/alert/InfoAlert";
+import SuccessAlert from "./components/examples/alert/SuccessAlert";
+import WarningAlert from "./components/examples/alert/WarningAlert";
 const buttonData = [
   {
     id: 1,
@@ -91,36 +86,10 @@ function App() {
         <section>
           <div className="gap-6 md:flex md:flex-row-reverse md:items-start">
             <div className="p-4 space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-4">
-              {buttonData.map((button) => (
-                <Dialog
-                  key={button.id}
-                  open={openDialogs[button.id]}
-                  onOpenChange={(isOpen) => handleOpenChange(button.id, isOpen)}
-                >
-                  <DialogTrigger asChild>
-                    <Button variant="outline" className="w-full">
-                      {button.label}
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent>
-                    <DialogHeader>
-                      <DialogTitle>{button.dialogTitle}</DialogTitle>
-                      <DialogDescription>
-                        {button.dialogDescription}
-                      </DialogDescription>
-                    </DialogHeader>
-                    <div className="mt-4">
-                      <p>
-                        This is the content area for the {button.label} dialog.
-                      </p>
-                      <p>
-                        You can add more components or information here as
-                        needed.
-                      </p>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              ))}
+              <ErrorAlert />
+              <WarningAlert />
+              <InfoAlert />
+              <SuccessAlert />
             </div>
             <Editor
               height="90vh"

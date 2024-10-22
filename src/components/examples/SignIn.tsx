@@ -140,11 +140,9 @@ function SignIn() {
             </div>
 
             <div className="relative flex py-4 items-center">
-              {/* biome-ignore lint/style/useSelfClosingElements: <explanation> */}
-              <div className="flex-grow border-t border-gray-300"></div>
+              <div className="flex-grow border-t border-gray-300" />
               <span className="flex-shrink mx-4 text-gray-400 text-sm">OR</span>
-              {/* biome-ignore lint/style/useSelfClosingElements: <explanation> */}
-              <div className="flex-grow border-t border-gray-300"></div>
+              <div className="flex-grow border-t border-gray-300" />
             </div>
 
             <div className="grid gap-2">

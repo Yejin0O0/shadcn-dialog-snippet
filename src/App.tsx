@@ -123,8 +123,6 @@ function App() {
                   </DialogContent>
                 </Dialog>
               ))}
-              <RadioBoxColumnForm />
-              <RadioBoxRowForm />
             </div>
             <Editor
               height="90vh"

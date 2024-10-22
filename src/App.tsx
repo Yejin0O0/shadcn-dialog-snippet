@@ -2,15 +2,7 @@ import Editor from "@monaco-editor/react";
 import { useState } from "react";
 import { Button } from "./components/ui/button";
 import "@/App.css";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "./components/ui/dialog";
-
+import ErrorAlert from "@/components/examples/alert/ErrorAlert";
 const buttonData = [
   {
     id: 1,
@@ -91,7 +83,7 @@ function App() {
         <section>
           <div className="gap-6 md:flex md:flex-row-reverse md:items-start">
             <div className="p-4 space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-4">
-              {buttonData.map((button) => (
+              {/* {buttonData.map((button) => (
                 <Dialog
                   key={button.id}
                   open={openDialogs[button.id]}
@@ -120,7 +112,8 @@ function App() {
                     </div>
                   </DialogContent>
                 </Dialog>
-              ))}
+              ))} */}
+              <ErrorAlert />
             </div>
             <Editor
               height="90vh"

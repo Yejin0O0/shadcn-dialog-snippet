@@ -41,7 +41,7 @@ const FormSchema = z.object({
   }),
 });
 
-export function CheckBoxForm() {
+export function CheckBoxRowForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -74,7 +74,7 @@ export function CheckBoxForm() {
                     <FormLabel className="text-base">Items Title</FormLabel>
                     <FormDescription>Write your description</FormDescription>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex flex-col space-y-3">
                     {items.map((item) => (
                       <FormField
                         key={item.id}

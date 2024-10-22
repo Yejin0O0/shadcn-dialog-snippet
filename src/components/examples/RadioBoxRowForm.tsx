@@ -49,7 +49,7 @@ export function RadioBoxRowForm() {
               control={form.control}
               name="type"
               render={({ field }) => (
-                <FormItem className="space-y-2">
+                <FormItem className="space-y-3">
                   <FormLabel>Items Title</FormLabel>
                   <FormControl>
                     <RadioGroup

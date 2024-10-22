@@ -1,10 +1,10 @@
 import "./App.css";
-import { InnerScroll } from "./components/examples/InnerScroll";
+import { CheckBoxForm } from "./components/examples/CheckBoxForm";
 
 function App() {
   return (
     <>
-      <InnerScroll />
+      <CheckBoxForm />
     </>
   );
 }

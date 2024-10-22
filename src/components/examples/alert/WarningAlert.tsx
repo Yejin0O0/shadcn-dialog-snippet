@@ -25,10 +25,10 @@ export function WarningAlert() {
       <AlertDialogContent className="ltr">
         <div className="border-s-4 border-amber-500 pl-6">
           <AlertDialogHeader>
-            <AlertDialogTitle>Permission Denied</AlertDialogTitle>
+            <AlertDialogTitle>Warning Message</AlertDialogTitle>
             <AlertDialogDescription>
-              You do not have permission to view this content. Please contact
-              your administrator if you believe this is a mistake.
+              This is a warning message. Please take caution before proceeding
+              further.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

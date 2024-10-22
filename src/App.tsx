@@ -123,8 +123,6 @@ function App() {
                   </DialogContent>
                 </Dialog>
               ))}
-              <CheckBoxColumnForm />
-              <CheckBoxRowForm />
             </div>
             <Editor
               height="90vh"

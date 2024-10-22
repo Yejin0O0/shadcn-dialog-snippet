@@ -57,7 +57,7 @@ export function CheckBoxForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
+        <Button variant="outline">CheckBoxForm</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -116,7 +116,11 @@ export function CheckBoxForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit">submit</Button>
+            <div className="flex justify-end">
+              <Button type="submit" className="ml-auto">
+                Submit
+              </Button>
+            </div>
           </form>
         </Form>
       </DialogContent>

@@ -2,6 +2,7 @@ import Editor from "@monaco-editor/react";
 import { useState } from "react";
 import { Button } from "./components/ui/button";
 import "@/App.css";
+import { CheckBoxForm } from "./components/examples/CheckBoxForm";
 import {
   Dialog,
   DialogContent,
@@ -121,6 +122,7 @@ function App() {
                   </DialogContent>
                 </Dialog>
               ))}
+              <CheckBoxForm />
             </div>
             <Editor
               height="90vh"

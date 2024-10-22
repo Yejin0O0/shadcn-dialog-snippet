@@ -47,6 +47,7 @@ export function CheckBoxForm() {
     defaultValues: {
       items: ["item1"],
     },
+    mode: "onChange",
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Button } from "./components/ui/button";
 import "@/App.css";
 import ErrorAlert from "@/components/examples/alert/ErrorAlert";
+import InfoAlert from "./components/examples/alert/InfoAlert";
+import SuccessAlert from "./components/examples/alert/SuccessAlert";
 import WarningAlert from "./components/examples/alert/WarningAlert";
 const buttonData = [
   {
@@ -86,6 +88,8 @@ function App() {
             <div className="p-4 space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-4">
               <ErrorAlert />
               <WarningAlert />
+              <InfoAlert />
+              <SuccessAlert />
             </div>
             <Editor
               height="90vh"

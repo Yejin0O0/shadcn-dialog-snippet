@@ -33,9 +33,6 @@ export function InfoAlert() {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Dismiss</AlertDialogCancel>
-            {/* <AlertDialogAction className="w-fit bg-blue-500 text-white hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-500">
-              Delete
-            </AlertDialogAction> */}
           </AlertDialogFooter>
         </div>
       </AlertDialogContent>

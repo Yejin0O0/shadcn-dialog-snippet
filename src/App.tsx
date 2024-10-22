@@ -2,8 +2,6 @@ import Editor from "@monaco-editor/react";
 import { useState } from "react";
 import { Button } from "./components/ui/button";
 import "@/App.css";
-import { CheckBoxColumnForm } from "./components/examples/CheckBoxColumnForm";
-import { CheckBoxRowForm } from "./components/examples/CheckBoxRowForm";
 import {
   Dialog,
   DialogContent,

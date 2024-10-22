@@ -1,74 +1,13 @@
 import Editor from "@monaco-editor/react";
-import { useState } from "react";
 import { Button } from "./components/ui/button";
 import "@/App.css";
 import ErrorAlert from "@/components/examples/alert/ErrorAlert";
+import SignIn from "./components/examples/SignIn";
 import InfoAlert from "./components/examples/alert/InfoAlert";
 import SuccessAlert from "./components/examples/alert/SuccessAlert";
 import WarningAlert from "./components/examples/alert/WarningAlert";
-const buttonData = [
-  {
-    id: 1,
-    label: "Settings",
-    dialogTitle: "Settings",
-    dialogDescription: "Adjust your app settings here.",
-  },
-  {
-    id: 2,
-    label: "Profile",
-    dialogTitle: "User Profile",
-    dialogDescription: "View and edit your profile information.",
-  },
-  {
-    id: 3,
-    label: "Notifications",
-    dialogTitle: "Notifications",
-    dialogDescription: "Manage your notification preferences.",
-  },
-  {
-    id: 4,
-    label: "Help",
-    dialogTitle: "Help Center",
-    dialogDescription: "Find answers to common questions and issues.",
-  },
-  {
-    id: 5,
-    label: "5th",
-    dialogTitle: "5th",
-    dialogDescription: "Find answers to common questions and issues.",
-  },
-  {
-    id: 6,
-    label: "6th",
-    dialogTitle: "6th",
-    dialogDescription: "Find answers to common questions and issues.",
-  },
-  {
-    id: 7,
-    label: "7th",
-    dialogTitle: "7th",
-    dialogDescription: "Find answers to common questions and issues.",
-  },
-  {
-    id: 8,
-    label: "8th",
-    dialogTitle: "8th",
-    dialogDescription: "Find answers to common questions and issues.",
-  },
-  {
-    id: 9,
-    label: "9th",
-    dialogTitle: "9th",
-    dialogDescription: "Find answers to common questions and issues.",
-  },
-];
 
 function App() {
-  const [openDialogs, setOpenDialogs] = useState<Record<number, boolean>>({});
-
-  const handleOpenChange = (id: number, isOpen: boolean) => {
-    setOpenDialogs((prev) => ({ ...prev, [id]: isOpen }));
-  };
   return (
     <main className="w-full">
       <div className="contianer">
@@ -90,6 +29,7 @@ function App() {
               <WarningAlert />
               <InfoAlert />
               <SuccessAlert />
+              <SignIn />
             </div>
             <Editor
               height="90vh"

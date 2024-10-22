@@ -37,11 +37,11 @@ export function RadioBoxRowForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">RadioBoxForm</Button>
+        <Button variant="outline">RadioBoxRowForm</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>RadioBoxForm</DialogTitle>
+          <DialogTitle>RadioBoxRowForm</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

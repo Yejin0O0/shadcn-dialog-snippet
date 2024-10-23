@@ -13,6 +13,7 @@ import {
   FormControl,
   FormField,
   FormItem,
+  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -26,16 +27,25 @@ import * as z from "zod";
 import { Checkbox } from "../ui/checkbox";
 import { Label } from "../ui/label";
 
-const formSchema = z.object({
-  email: z.string().email({ message: "Invalid email address" }),
-  password: z
-    .string()
-    .min(6, { message: "Password must be at least 6 characters" }),
-});
+const formSchema = z
+  .object({
+    email: z.string().email({ message: "Invalid email address" }),
+    password: z
+      .string()
+      .min(6, { message: "Password must be at least 6 characters" }),
+    confirmPassword: z
+      .string()
+      .min(6, { message: "Please confirm your password" }),
+    terms: z.boolean(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"], // 오류 메시지를 표시할 경로
+  });
 
 type FormData = z.infer<typeof formSchema>;
 
-function SignIn() {
+function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -47,25 +57,26 @@ function SignIn() {
     defaultValues: {
       email: "",
       password: "",
+      confirmPassword: "",
     },
   });
 
   const onSubmit = () => {
-    alert("Login Success");
+    alert("Sign Up Successful");
   };
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Sign In</Button>
+        <Button variant="outline">Sign Up</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] rounded-md shadow-lg p-6">
         <DialogHeader>
           <DialogTitle className="text-center text-2xl font-semibold">
-            Sign In
+            Sign Up
           </DialogTitle>
           <DialogDescription className="text-center text-gray-500">
-            Welcome back! Please enter your details
+            Create your account by filling in the details below
           </DialogDescription>
         </DialogHeader>
 
@@ -74,7 +85,6 @@ function SignIn() {
             onSubmit={form.handleSubmit(onSubmit)}
             className="grid gap-4 py-4"
           >
-            {/* Email Input */}
             <FormField
               control={form.control}
               name="email"
@@ -89,7 +99,9 @@ function SignIn() {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage>
+                    {form.formState.errors.email?.message}
+                  </FormMessage>
                 </FormItem>
               )}
             />
@@ -122,25 +134,61 @@ function SignIn() {
                       )}
                     </Button>
                   </div>
-                  <FormMessage />
+                  <FormMessage>
+                    {form.formState.errors.password?.message}
+                  </FormMessage>
                 </FormItem>
               )}
             />
 
-            <div className="flex justify-between items-center">
-              <div className="flex items-center space-x-2">
-                <Checkbox id="remember" />
-                <label htmlFor="remember" className="text-sm cursor-pointer">
-                  Remember for 30 Days
-                </label>
-              </div>
-              <a href="/" className="text-sm text-blue-500 hover:underline">
-                Forgot password
-              </a>
-            </div>
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <Label>Confirm Password</Label>
+                  <div className="relative">
+                    <FormControl>
+                      <Input
+                        type={showPassword ? "text" : "password"}
+                        placeholder="Confirm your password"
+                        className="w-full p-3 border rounded-lg pr-10"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage>
+                      {form.formState.errors.confirmPassword?.message}
+                    </FormMessage>
+                  </div>
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="terms"
+              rules={{ required: "You must agree to the terms" }}
+              render={({ field }) => (
+                <FormItem className="flex items-center space-x-2">
+                  <div className="flex justify-center items-center gap-1">
+                    <Checkbox
+                      id="agreeTerms"
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                    />
+                    <FormLabel
+                      htmlFor="agreeTerms"
+                      className="text-sm font-semibold"
+                    >
+                      I agree to the terms and conditions
+                    </FormLabel>
+                  </div>
+                </FormItem>
+              )}
+            />
 
             <Button type="submit" className="w-full p-3 rounded-lg">
-              Sign in
+              Sign up
             </Button>
 
             <div className="relative flex py-4 items-center">
@@ -167,9 +215,18 @@ function SignIn() {
             </div>
           </form>
         </Form>
+        <DialogFooter>
+          <p className="text-sm font-semibold">Already Have an account?</p>
+          <a
+            href="/"
+            className="text-sm font-semibold text-blue-500 hover:underline"
+          >
+            Sign In
+          </a>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
 }
 
-export default SignIn;
+export default SignUp;

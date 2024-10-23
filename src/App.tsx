@@ -7,6 +7,7 @@ import { CheckBoxRowForm } from "./components/examples/CheckBoxRowForm";
 import { RadioBoxColumnForm } from "./components/examples/RadioBoxColumnForm";
 import { RadioBoxRowForm } from "./components/examples/RadioBoxRowForm";
 import SignIn from "./components/examples/SignIn";
+import SignUp from "./components/examples/SignUp";
 import SurveyForm from "./components/examples/SurveyForm";
 import InfoAlert from "./components/examples/alert/InfoAlert";
 import SuccessAlert from "./components/examples/alert/SuccessAlert";
@@ -40,6 +41,7 @@ function App() {
               <CheckBoxColumnForm />
               <CheckBoxRowForm />
               <SurveyForm />
+              <SignUp />
             </div>
             <Editor
               height="90vh"

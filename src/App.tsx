@@ -2,7 +2,12 @@ import Editor from "@monaco-editor/react";
 import { Button } from "./components/ui/button";
 import "@/App.css";
 import ErrorAlert from "@/components/examples/alert/ErrorAlert";
+import { CheckBoxColumnForm } from "./components/examples/CheckBoxColumnForm";
+import { CheckBoxRowForm } from "./components/examples/CheckBoxRowForm";
+import { RadioBoxColumnForm } from "./components/examples/RadioBoxColumnForm";
+import { RadioBoxRowForm } from "./components/examples/RadioBoxRowForm";
 import SignIn from "./components/examples/SignIn";
+import SurveyForm from "./components/examples/SurveyForm";
 import InfoAlert from "./components/examples/alert/InfoAlert";
 import SuccessAlert from "./components/examples/alert/SuccessAlert";
 import WarningAlert from "./components/examples/alert/WarningAlert";
@@ -30,6 +35,11 @@ function App() {
               <InfoAlert />
               <SuccessAlert />
               <SignIn />
+              <RadioBoxColumnForm />
+              <RadioBoxRowForm />
+              <CheckBoxColumnForm />
+              <CheckBoxRowForm />
+              <SurveyForm />
             </div>
             <Editor
               height="90vh"

@@ -73,7 +73,7 @@ function SurveyForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="w-full">
+        <Button variant="outline" className="w-fit">
           Open Satisfaction Survey
         </Button>
       </DialogTrigger>

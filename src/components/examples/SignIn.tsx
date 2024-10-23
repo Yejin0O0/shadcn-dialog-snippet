@@ -116,9 +116,9 @@ function SignIn() {
                       className="absolute inset-y-0 right-0 flex items-center pr-3 hover:bg-transparent focus:outline-none"
                     >
                       {showPassword ? (
-                        <FaRegEyeSlash className="w-5 h-5 text-gray-500" />
-                      ) : (
                         <FaRegEye className="w-5 h-5 text-gray-500" />
+                      ) : (
+                        <FaRegEyeSlash className="w-5 h-5 text-gray-500" />
                       )}
                     </Button>
                   </div>
@@ -138,6 +138,10 @@ function SignIn() {
                 Forgot password
               </a>
             </div>
+
+            <Button type="submit" className="w-full p-3 rounded-lg">
+              Sign in
+            </Button>
 
             <div className="relative flex py-4 items-center">
               <div className="flex-grow border-t border-gray-300" />
@@ -161,12 +165,6 @@ function SignIn() {
                 Sign up with Facebook
               </Button>
             </div>
-
-            <DialogFooter>
-              <Button type="submit" className="w-full p-3 rounded-lg">
-                Sign in
-              </Button>
-            </DialogFooter>
           </form>
         </Form>
       </DialogContent>

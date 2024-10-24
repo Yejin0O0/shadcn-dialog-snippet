@@ -6,6 +6,7 @@ import PaymentStep from "./components/examples/PaymentStep";
 import SignIn from "./components/examples/SignIn";
 import SignUp from "./components/examples/SignUp";
 import SurveyForm from "./components/examples/SurveyForm";
+import UserDetail from "./components/examples/UserDetail";
 import InfoAlert from "./components/examples/alert/InfoAlert";
 import SuccessAlert from "./components/examples/alert/SuccessAlert";
 import WarningAlert from "./components/examples/alert/WarningAlert";
@@ -36,6 +37,7 @@ function App() {
               <SurveyForm />
               <SignUp />
               <PaymentStep />
+              <UserDetail />
             </div>
             <Editor
               height="90vh"

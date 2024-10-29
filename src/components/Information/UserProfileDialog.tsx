@@ -22,12 +22,12 @@ import {
 const profileImageUrl = "https://avatar.iran.liara.run/public/15";
 const backgroundImageUrl = "https://picsum.photos/500/200";
 
-function UserProfileDialog() {
+export function UserProfileDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" className="w-fit">
-          View Profile
+          UserProfile
         </Button>
       </DialogTrigger>
 
@@ -145,5 +145,3 @@ function UserProfileDialog() {
     </Dialog>
   );
 }
-
-export default UserProfileDialog;

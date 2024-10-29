@@ -1,16 +1,17 @@
 import Editor from "@monaco-editor/react";
 import { Button } from "@/components/ui/button";
 import "@/App.css";
-import ErrorAlert from "@/components/examples/alert/ErrorAlert";
-import PaymentStep from "@/components/examples/PaymentStep";
-import SignIn from "@/components/examples/SignIn";
-import SignUp from "@/components/examples/SignUp";
-import SurveyForm from "@/components/examples/SurveyForm";
-import UserDetail from "@/components/examples/UserDetail";
-import InfoAlert from "@/components/examples/alert/InfoAlert";
-import SuccessAlert from "@/components/examples/alert/SuccessAlert";
-import WarningAlert from "@/components/examples/alert/WarningAlert";
-import Header from "@/components/Header";
+import { Header } from "@/components/Header";
+import ErrorAlert from "@/components/Interrupt/Alert/ErrorAlert";
+import { WarningAlert } from "@/components/Interrupt/Alert/WarningAlert";
+import { InfoDialog } from "@/components/Information/InfoDialog";
+import { SuccessAlert } from "@/components/Information/SuccessDialog";
+import { SignInForm } from "@/components/Form/SignInForm";
+import { SurveyForm } from "@/components/Form/SurveyForm";
+import { SignUpForm } from "@/components/Form/SignUpForm";
+import { PaymentStepForm } from "@/components/Form/PaymentStepForm";
+import { UserProfileDialog } from "@/components/Information/UserProfileDialog";
+import { InnerScrollForm } from "@/components/Form/InnerScrollForm";
 
 function App() {
   return (
@@ -34,13 +35,14 @@ function App() {
               <div className="p-4 space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-4">
                 <ErrorAlert />
                 <WarningAlert />
-                <InfoAlert />
+                <InfoDialog />
                 <SuccessAlert />
-                <SignIn />
+                <SignInForm />
                 <SurveyForm />
-                <SignUp />
-                <PaymentStep />
-                <UserDetail />
+                <SignUpForm />
+                <PaymentStepForm />
+                <UserProfileDialog />
+                <InnerScrollForm />
               </div>
               <Editor
                 height="90vh"

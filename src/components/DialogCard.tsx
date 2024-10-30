@@ -1,13 +1,28 @@
-import { AreaChart, Clipboard } from "lucide-react";
+import { AreaChart, Clipboard, Info, TriangleAlert } from "lucide-react";
 import { Card, CardContent, CardHeader } from "./ui/card";
 
-function DialogCard() {
+interface DialogCardProps {
+  category: string;
+}
+
+function DialogCard(props: DialogCardProps) {
+  const { category } = props;
+
+  const renderCategoryIcon = (categoryType: string) => {
+    if (categoryType === "interrupt") {
+      return <TriangleAlert className="text-current" />;
+    }
+    if (categoryType === "information") {
+      return <Info className="text-current" />;
+    }
+  };
+
   return (
     <Card className="min-h-96">
       <CardHeader className="items-center gap-2 relative z-20 flex flex-row justify-between border-b px-3 py-2.5">
         <div className="flex items-center gap-1.5 pl-1 text-[13px] text-muted-foreground [&>svg]:h-[0.9rem] [&>svg]:w-[0.9rem]">
-          <AreaChart className="text-current" />
-          Chart
+          {renderCategoryIcon(category)}
+          Dialog
         </div>
         <div className="flex items-center justify-center gap-2 !m-0">
           <span className="sr-only">Copy</span>

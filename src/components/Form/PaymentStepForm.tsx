@@ -40,7 +40,7 @@ const formSchema = z.object({
     .max(3, { message: "CVV must be 3 digits" }),
 });
 
-function PaymentStep() {
+export function PaymentStepForm() {
   const [step, setStep] = useState<number>(1);
   const [progressValue, setProgressValue] = useState<number>(33);
 
@@ -104,7 +104,7 @@ function PaymentStep() {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" className="w-fit">
-          Activate Account
+          Payment Step
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px] rounded-md shadow-lg p-6">
@@ -265,5 +265,3 @@ function PaymentStep() {
     </Dialog>
   );
 }
-
-export default PaymentStep;

@@ -1,15 +1,12 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { Button } from "../ui/button";
-import { Checkbox } from "../ui/checkbox";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
+} from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -18,7 +15,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form";
+} from "@/components/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 const items = [
   {
@@ -41,7 +41,7 @@ const FormSchema = z.object({
   }),
 });
 
-export function CheckBoxRowForm() {
+export function CheckBoxColumnForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -57,11 +57,11 @@ export function CheckBoxRowForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">CheckBoxRowForm</Button>
+        <Button variant="outline">CheckBoxColumnForm</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>CheckBoxRowForm</DialogTitle>
+          <DialogTitle>CheckBoxColumnForm</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -74,7 +74,7 @@ export function CheckBoxRowForm() {
                     <FormLabel className="text-base">Items Title</FormLabel>
                     <FormDescription>Write your description</FormDescription>
                   </div>
-                  <div className="flex flex-col space-y-3">
+                  <div className="flex justify-between">
                     {items.map((item) => (
                       <FormField
                         key={item.id}

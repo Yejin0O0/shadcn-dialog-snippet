@@ -1,5 +1,6 @@
-import { Header } from "./components/Header";
-import { Button } from "./components/ui/button";
+import DialogCard from "@/components/common/DialogCard";
+import { Header } from "@/components/common/Header";
+import { Button } from "@/components/ui/button";
 import "@/App.css";
 
 function App() {
@@ -29,7 +30,9 @@ function App() {
                   id="category1"
                   className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
                 >
-                  dialogCard
+                  <DialogCard category="information" />
+                  <DialogCard category="interrupt" />
+                  <DialogCard category="form" />
                 </div>
               </div>
             </div>

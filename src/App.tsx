@@ -32,6 +32,7 @@ function App() {
                 >
                   <DialogCard category="information" />
                   <DialogCard category="interrupt" />
+                  <DialogCard category="form" />
                 </div>
               </div>
             </div>

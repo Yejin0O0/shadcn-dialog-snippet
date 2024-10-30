@@ -1,8 +1,8 @@
-import { AreaChart, Clipboard, Info, TriangleAlert } from "lucide-react";
+import { Clipboard, File, Info, TriangleAlert } from "lucide-react";
 import { Card, CardContent, CardHeader } from "../ui/card";
 
 interface DialogCardProps {
-  category: string;
+  category: "information" | "interrupt" | "form";
 }
 
 function DialogCard(props: DialogCardProps) {
@@ -14,6 +14,10 @@ function DialogCard(props: DialogCardProps) {
     }
     if (categoryType === "information") {
       return <Info className="text-current" />;
+    }
+
+    if (categoryType === "form") {
+      return <File className="text-current" />;
     }
   };
 

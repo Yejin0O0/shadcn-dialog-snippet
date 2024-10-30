@@ -1,5 +1,5 @@
 import { AreaChart, Clipboard, Info, TriangleAlert } from "lucide-react";
-import { Card, CardContent, CardHeader } from "./ui/card";
+import { Card, CardContent, CardHeader } from "../ui/card";
 
 interface DialogCardProps {
   category: string;

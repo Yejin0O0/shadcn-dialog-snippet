@@ -1,6 +1,6 @@
-import DialogCard from "./components/DialogCard";
-import { Header } from "./components/Header";
-import { Button } from "./components/ui/button";
+import DialogCard from "@/components/common/DialogCard";
+import { Header } from "@/components/common/Header";
+import { Button } from "@/components/ui/button";
 import "@/App.css";
 
 function App() {

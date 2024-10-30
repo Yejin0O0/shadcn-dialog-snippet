@@ -34,7 +34,7 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-function SignIn() {
+export function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -170,5 +170,3 @@ function SignIn() {
     </Dialog>
   );
 }
-
-export default SignIn;

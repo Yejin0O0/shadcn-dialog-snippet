@@ -11,29 +11,29 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
-export function InfoAlert() {
+export function SuccessAlert() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <Button
           variant="outline"
-          className="w-fit border-blue-500 text-blue-500 hover:bg-blue-100 hover:text-blue-500"
+          className="w-fit border-green-500 text-green-500 hover:bg-green-100 hover:text-green-500"
         >
-          Informative
+          Success
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="ltr">
-        <div className="border-s-4 border-blue-500 pl-6">
+        <div className="border-s-4 border-green-500 pl-6">
           <AlertDialogHeader>
-            <AlertDialogTitle>Info</AlertDialogTitle>
+            <AlertDialogTitle>Success</AlertDialogTitle>
             <AlertDialogDescription>
-              This is an informative message to notify you of something
-              important. Please review the information carefully.
+              Operation completed successfully! Everything went according to
+              plan.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Dismiss</AlertDialogCancel>
-            <AlertDialogAction className="w-fit bg-blue-500 text-white hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-500">
+            <AlertDialogAction className="w-fit bg-green-500 text-white hover:bg-green-700 hover:text-white focus:ring-2 focus:ring-green-500">
               Action
             </AlertDialogAction>
           </AlertDialogFooter>
@@ -42,5 +42,3 @@ export function InfoAlert() {
     </AlertDialog>
   );
 }
-
-export default InfoAlert;

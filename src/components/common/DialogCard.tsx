@@ -39,9 +39,7 @@ function DialogCard(props: DialogCardProps) {
           </button>
           <div className="shrink-0 bg-border w-[1px] mx-0 hidden h-4 md:flex" />
 
-          <CodeSheet>
-            <div>test</div>
-          </CodeSheet>
+          <CodeSheet>test</CodeSheet>
         </div>
       </CardHeader>
       <CardContent className="relative z-10 [&>div]:rounded-none [&>div]:border-none [&>div]:shadow-none">

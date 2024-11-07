@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { type ReactNode, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import CodeEditor from "./CodeEditor";
 
 export function CodeSheet({ children }: { children: ReactNode }) {
   const [tab, setTab] = useState("code");
@@ -22,9 +23,7 @@ export function CodeSheet({ children }: { children: ReactNode }) {
         side="right"
         className="flex flex-col gap-0 border-l-0 p-0 dark:border-l sm:max-w-sm md:w-[700px] md:max-w-[700px]"
       >
-        <div className="chart-wrapper hidden sm:block [&>div]:rounded-none [&>div]:border-0 [&>div]:border-b [&>div]:shadow-none [&_[data-chart]]:mx-auto [&_[data-chart]]:max-h-[35vh]">
-          {children}
-        </div>
+        <div className="flex-1">{children}</div>
         <Tabs
           defaultValue="code"
           className="relative flex h-full flex-1 flex-col overflow-hidden p-4"
@@ -51,13 +50,13 @@ export function CodeSheet({ children }: { children: ReactNode }) {
             value="code"
             className="h-full flex-1 flex-col overflow-hidden data-[state=active]:flex"
           >
-            code contents
+            <CodeEditor code="<div>code content</div>" />
           </TabsContent>
           <TabsContent
             value="theme"
             className="h-full flex-1 flex-col overflow-hidden data-[state=active]:flex"
           >
-            theme content
+            <CodeEditor code="<div>theme content</div>" />
           </TabsContent>
         </Tabs>
       </SheetContent>

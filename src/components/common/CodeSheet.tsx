@@ -6,6 +6,7 @@ import { highlightCode } from "@/lib/highlightCode";
 import { type ReactNode, useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import "@/styles/shikiStyles.css";
+import { CopyButton } from "./CopyButton";
 
 interface CodeSheetProps {
   dialog: ReactNode;
@@ -52,7 +53,7 @@ export function CodeSheet({ dialog, code, themeCode }: CodeSheetProps) {
           value={tab}
           onValueChange={setTab}
         >
-          <div className="flex w-full items-center">
+          <div className="flex w-full items-center justify-between">
             <TabsList className="h-7 w-auto rounded-md p-0 px-[calc(theme(spacing.1)_-_2px)] py-[theme(spacing.1)]">
               <TabsTrigger
                 value="code"
@@ -67,6 +68,7 @@ export function CodeSheet({ dialog, code, themeCode }: CodeSheetProps) {
                 Theme
               </TabsTrigger>
             </TabsList>
+            <CopyButton code={code} />
           </div>
           <TabsContent
             value="code"

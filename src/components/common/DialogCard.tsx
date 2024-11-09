@@ -1,7 +1,8 @@
-import { Clipboard, File, Info, TriangleAlert } from "lucide-react";
+import { File, Info, TriangleAlert } from "lucide-react";
 import { InfoDialog } from "../dialog/information/InfoDialog";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { CodeSheet } from "./CodeSheet";
+import { CopyButton } from "./CopyButton";
 
 interface DialogCardProps {
   category: "information" | "interrupt" | "form";
@@ -167,13 +168,7 @@ function DialogCard(props: DialogCardProps) {
           Dialog
         </div>
         <div className="flex items-center justify-center gap-2 !m-0">
-          <span className="sr-only">Copy</span>
-          <button
-            type="button"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:text-accent-foreground [&_svg]-h-3.5 [&_svg]-h-3 h-6 w-6 rounded-[6px] bg-transparent text-foreground shadow-none hover:bg-muted dark:text-foreground [&_svg]:w-3"
-          >
-            <Clipboard width={24} height={24} className="text-current" />
-          </button>
+          <CopyButton code={code} />
           <div className="shrink-0 bg-border w-[1px] mx-0 hidden h-4 md:flex" />
 
           <CodeSheet

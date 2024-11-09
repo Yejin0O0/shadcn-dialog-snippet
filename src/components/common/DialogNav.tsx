@@ -19,6 +19,7 @@ const DIALOG_LINK = [
     href: "#form",
   },
 ];
+
 function DialogNav({ className, ...props }: React.ComponentProps<"div">) {
   const { pathname } = useLocation();
 

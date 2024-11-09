@@ -5,16 +5,20 @@ import { Button } from "@/components/ui/button";
 function HomePage() {
   return (
     <div className="relative">
-      <section className="container flex flex-col items-start gap-2 border-b border-border/40 py-8 dark:border-border md:py-10 lg:py-12">
-        <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
-          shadcn/ui Dialog Snippet
-        </h1>
-        <p className="max-w-2xl text-balance text-lg font-light text-foreground">
-          Copy and paste into your apps. Open Source.
-        </p>
-        <Button className="inline-flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-1 rounded-md px-3 h-8 text-xs">
-          Documentation
-        </Button>
+      <section className="flex flex-col items-start gap-2 border-b border-border/40 py-8 dark:border-border md:py-10 lg:py-12">
+        <div className="container">
+          <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
+            shadcn/ui Dialog Snippet
+          </h1>
+          <p className="max-w-2xl text-balance text-lg font-light text-foreground">
+            Copy and paste into your apps. Open Source.
+          </p>
+          <div className="flex w-full items-center justify-start gap-2 py-2">
+            <Button asChild size="sm">
+              <a href="https://ui.shadcn.com/docs">Documentation</a>
+            </Button>
+          </div>
+        </div>
       </section>
       <section id="dialog" className="container py-6 scroll-mt-20">
         <div className="grid gap-4">

@@ -5,8 +5,8 @@ import TwitterIcon from "@/assets/twitter.svg";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
-      <div className="flex h-14 max-w-screen-2xl items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-border">
+      <div className="flex h-14 items-center justify-between px-4">
         <div className="mr-4 flex">
           <a className="mr-4 flex items-center space-x-2" href="/">
             <LogoIcon />

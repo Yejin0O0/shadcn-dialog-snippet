@@ -2,12 +2,34 @@
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { type ReactNode, useState } from "react";
+import { highlightCode } from "@/lib/highlightCode";
+import { type ReactNode, useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import CodeEditor from "./CodeEditor";
+import "@/styles/shikiStyles.css";
 
-export function CodeSheet({ children }: { children: ReactNode }) {
+interface CodeSheetProps {
+  dialog: ReactNode;
+  code: string;
+  themeCode: string;
+}
+
+export function CodeSheet({ dialog, code, themeCode }: CodeSheetProps) {
   const [tab, setTab] = useState("code");
+  const [html, setHtml] = useState<string>("");
+  const [themeHtml, setThemeHtml] = useState<string>("");
+
+  useEffect(() => {
+    async function loadHighlightedCode() {
+      const highlightedCodeHtml = await highlightCode(code, "typescript");
+      const highlightedThemeHtml = await highlightCode(themeCode, "css");
+
+      setHtml(highlightedCodeHtml);
+      setThemeHtml(highlightedThemeHtml);
+    }
+
+    loadHighlightedCode();
+  }, [code, themeCode]);
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -23,7 +45,7 @@ export function CodeSheet({ children }: { children: ReactNode }) {
         side="right"
         className="flex flex-col gap-0 border-l-0 p-0 dark:border-l sm:max-w-sm md:w-[700px] md:max-w-[700px]"
       >
-        <div className="flex-1">{children}</div>
+        <div className="flex-1">{dialog}</div>
         <Tabs
           defaultValue="code"
           className="relative flex h-full flex-1 flex-col overflow-hidden p-4"
@@ -50,13 +72,23 @@ export function CodeSheet({ children }: { children: ReactNode }) {
             value="code"
             className="h-full flex-1 flex-col overflow-hidden data-[state=active]:flex"
           >
-            <CodeEditor code="<div>code content</div>" />
+            <div
+              data-rehype-pretty-code-fragment
+              // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+              dangerouslySetInnerHTML={{ __html: html }}
+              className="w-full overflow-auto [&_pre]:overflow-auto [&_pre]:!bg-black [&_pre]:py-6 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed rounded-lg"
+            />
           </TabsContent>
           <TabsContent
             value="theme"
             className="h-full flex-1 flex-col overflow-hidden data-[state=active]:flex"
           >
-            <CodeEditor code="<div>theme content</div>" />
+            <div
+              data-rehype-pretty-code-fragment
+              // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+              dangerouslySetInnerHTML={{ __html: themeHtml }}
+              className="w-full overflow-auto [&_pre]:overflow-auto [&_pre]:!bg-black [&_pre]:py-6 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed rounded-lg"
+            />
           </TabsContent>
         </Tabs>
       </SheetContent>

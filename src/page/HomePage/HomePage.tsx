@@ -1,5 +1,6 @@
 import DialogCard from "@/components/common/DialogCard";
 import DialogNav from "@/components/common/DialogNav";
+import { Separator } from "@/components/common/Separator";
 import { Button } from "@/components/ui/button";
 
 function HomePage() {
@@ -24,13 +25,33 @@ function HomePage() {
         <div className="grid gap-4">
           <DialogNav className="[&>a:first-child]:bg-muted [&>a:first-child]:font-medium [&>a:first-child]:text-primary" />
           <div className="gap-6 md:flex md:flex-row-reverse md:items-start">
-            <div
-              id="category1"
-              className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
-            >
-              <DialogCard category="information" />
-              <DialogCard category="interrupt" />
-              <DialogCard category="form" />
+            <div className="grid flex-1 gap-12">
+              <div
+                id="interrupt"
+                className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
+              >
+                <DialogCard category="interrupt" />
+                <DialogCard category="interrupt" />
+                <DialogCard category="interrupt" />
+              </div>
+              <Separator />
+              <div
+                id="information"
+                className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
+              >
+                <DialogCard category="information" />
+                <DialogCard category="information" />
+                <DialogCard category="information" />
+              </div>
+              <Separator />
+              <div
+                id="form"
+                className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
+              >
+                <DialogCard category="form" />
+                <DialogCard category="form" />
+                <DialogCard category="form" />
+              </div>
             </div>
           </div>
         </div>

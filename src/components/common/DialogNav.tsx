@@ -1,27 +1,34 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const DIALOG_LINK = [
   {
-    id: 1,
-    name: "Interrupt",
+    name: "interrupt",
     href: "#interrupt",
   },
   {
-    id: 1,
-    name: "Information",
+    name: "information",
     href: "#information",
   },
   {
-    id: 1,
-    name: "Form",
+    name: "form",
     href: "#form",
   },
 ];
 
 function DialogNav({ className, ...props }: React.ComponentProps<"div">) {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
 
   return (
     <ScrollArea className="max-w-[600px] lg:max-w-none">
@@ -29,7 +36,7 @@ function DialogNav({ className, ...props }: React.ComponentProps<"div">) {
         {DIALOG_LINK.map((link, index) => (
           <Link
             to={link.href}
-            key={link.id}
+            key={link.name}
             className={cn(
               "flex h-7 shrink-0 items-center justify-center rounded-full px-4 text-center text-sm transition-colors hover:text-primary",
               pathname?.startsWith(link.href) ||

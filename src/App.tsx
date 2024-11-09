@@ -1,4 +1,4 @@
-import DialogCard from "@/components/common/DialogCard";
+import DialogDisplay from "@/components/common/DialogDisplay";
 import { Header } from "@/components/common/Header";
 import { Button } from "@/components/ui/button";
 import "@/App.css";
@@ -30,9 +30,36 @@ function App() {
                   id="category1"
                   className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
                 >
-                  <DialogCard category="information" />
-                  <DialogCard category="interrupt" />
-                  <DialogCard category="form" />
+                  <DialogDisplay category="information">
+                    <div className="flex flex-col space-y-1.5 p-6">
+                      <h3 className="font-semibold leading-none tracking-tight w-full">
+                        test code
+                      </h3>
+                      <p className="w-full text-sm text-muted-foreground">
+                        test code description
+                      </p>
+                    </div>
+                  </DialogDisplay>
+                  <DialogDisplay category="interrupt">
+                    <div className="flex flex-col space-y-1.5 p-6">
+                      <h3 className="font-semibold leading-none tracking-tight w-full">
+                        test code
+                      </h3>
+                      <p className="w-full text-sm text-muted-foreground">
+                        test code description
+                      </p>
+                    </div>
+                  </DialogDisplay>
+                  <DialogDisplay category="form">
+                    <div className="flex flex-col space-y-1.5 p-6">
+                      <h3 className="font-semibold leading-none tracking-tight w-full">
+                        test code
+                      </h3>
+                      <p className="w-full text-sm text-muted-foreground">
+                        test code description
+                      </p>
+                    </div>
+                  </DialogDisplay>
                 </div>
               </div>
             </div>

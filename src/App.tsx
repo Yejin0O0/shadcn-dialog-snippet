@@ -6,7 +6,7 @@ import "@/App.css";
 
 function App() {
   return (
-    <ThemeProvider>
+    <ThemeProvider storageKey="vite-ui-theme">
       <Header />
       <main className="w-full flex-1 px-8">
         <div className="container relative">

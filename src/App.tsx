@@ -1,13 +1,14 @@
 import DialogCard from "@/components/common/DialogCard";
 import { Header } from "@/components/common/Header";
 import { Button } from "@/components/ui/button";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 import "@/App.css";
 
 function App() {
   return (
-    <>
+    <ThemeProvider storageKey="vite-ui-theme">
       <Header />
-      <main className="w-full flex-1">
+      <main className="w-full flex-1 px-8">
         <div className="container relative">
           <section className="mx-auto flex flex-col items-start gap-2 px-4 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10">
             <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
@@ -39,7 +40,7 @@ function App() {
           </section>
         </div>
       </main>
-    </>
+    </ThemeProvider>
   );
 }
 

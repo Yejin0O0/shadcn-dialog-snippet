@@ -1,5 +1,6 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Clipboard, File, Info, TriangleAlert } from "lucide-react";
-import { Card, CardContent, CardHeader } from "../ui/card";
 
 interface DialogCardProps {
   category: "information" | "interrupt" | "form";
@@ -37,12 +38,13 @@ function DialogCard(props: DialogCardProps) {
             <Clipboard width={24} height={24} className="text-current" />
           </button>
           <div className="shrink-0 bg-border w-[1px] mx-0 hidden h-4 md:flex" />
-          <button
-            type="button"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-input hover:text-accent-foreground h-6 rounded-[6px] border bg-transparent px-2 text-xs text-foreground shadow-none hover:bg-muted dark:text-foreground"
+          <Button
+            size="sm"
+            variant="outline"
+            className="h-6 rounded-[6px] border bg-transparent px-2 text-xs text-foreground shadow-none hover:bg-muted dark:text-foreground"
           >
             View Code
-          </button>
+          </Button>
         </div>
       </CardHeader>
       <CardContent className="relative z-10 [&>div]:rounded-none [&>div]:border-none [&>div]:shadow-none">

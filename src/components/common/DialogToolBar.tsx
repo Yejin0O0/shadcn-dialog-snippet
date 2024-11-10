@@ -1,10 +1,9 @@
 import { File, Info, TriangleAlert } from "lucide-react";
 import { InfoDialog } from "../dialog/information/InfoDialog";
-import { Card, CardContent, CardHeader } from "../ui/card";
 import { CodeSheet } from "./CodeSheet";
 import { CopyButton } from "./CopyButton";
 
-interface DialogCardProps {
+interface DialogToolBarProps {
   category: "information" | "interrupt" | "form";
 }
 
@@ -144,9 +143,8 @@ const themeCode = `
   }
 }`;
 
-function DialogCard(props: DialogCardProps) {
+function DialogToolBar(props: DialogToolBarProps) {
   const { category } = props;
-
   const renderCategoryIcon = (categoryType: string) => {
     if (categoryType === "interrupt") {
       return <TriangleAlert className="text-current" />;
@@ -161,35 +159,21 @@ function DialogCard(props: DialogCardProps) {
   };
 
   return (
-    <Card className="min-h-96">
-      <CardHeader className="items-center gap-2 relative z-20 flex flex-row justify-between border-b px-3 py-2.5">
+    <div className="flex items-center gap-2 relative z-20 justify-end border-b bg-card px-3 py-2.5 text-card-foreground">
+      <div className="flex items-center gap-1.5 pl-1 text-[13px] text-muted-foreground [&>svg]:h-[0.9rem] [&>svg]:w-[0.9rem]">
         <div className="flex items-center gap-1.5 pl-1 text-[13px] text-muted-foreground [&>svg]:h-[0.9rem] [&>svg]:w-[0.9rem]">
           {renderCategoryIcon(category)}
           Dialog
         </div>
-        <div className="flex items-center justify-center gap-2 !m-0">
-          <CopyButton code={code} />
-          <div className="shrink-0 bg-border w-[1px] mx-0 hidden h-4 md:flex" />
+      </div>
+      <div className="ml-auto flex items-center gap-2 [&>form]:flex">
+        <CopyButton code={code} />
+        <div className="shrink-0 bg-border w-[1px] mx-0 hidden h-4 md:flex" />
 
-          <CodeSheet
-            dialog={<InfoDialog />}
-            code={code}
-            themeCode={themeCode}
-          />
-        </div>
-      </CardHeader>
-      <CardContent className="relative z-10 [&>div]:rounded-none [&>div]:border-none [&>div]:shadow-none">
-        <div className="flex flex-col space-y-1.5 p-6">
-          <h3 className="font-semibold leading-none tracking-tight w-full">
-            test code
-          </h3>
-          <p className="w-full text-sm text-muted-foreground">
-            test code description
-          </p>
-        </div>
-      </CardContent>
-    </Card>
+        <CodeSheet dialog={<InfoDialog />} code={code} themeCode={themeCode} />
+      </div>
+    </div>
   );
 }
 
-export default DialogCard;
+export default DialogToolBar;

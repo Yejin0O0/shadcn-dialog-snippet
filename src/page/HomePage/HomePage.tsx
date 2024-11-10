@@ -1,4 +1,4 @@
-import DialogCard from "@/components/common/DialogCard";
+import DialogDisplay from "@/components/common/DialogDisplay";
 import DialogNav from "@/components/common/DialogNav";
 import { Separator } from "@/components/common/Separator";
 import { Button } from "@/components/ui/button";
@@ -30,27 +30,108 @@ function HomePage() {
                 id="interrupt"
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
-                <DialogCard category="interrupt" />
-                <DialogCard category="interrupt" />
-                <DialogCard category="interrupt" />
+                <DialogDisplay category="interrupt">
+                  <div className="flex flex-col space-y-1.5 p-6">
+                    <h3 className="font-semibold leading-none tracking-tight w-full">
+                      test code
+                    </h3>
+                    <p className="w-full text-sm text-muted-foreground">
+                      test code description
+                    </p>
+                  </div>
+                </DialogDisplay>
+                <DialogDisplay category="interrupt">
+                  <div className="flex flex-col space-y-1.5 p-6">
+                    <h3 className="font-semibold leading-none tracking-tight w-full">
+                      test code
+                    </h3>
+                    <p className="w-full text-sm text-muted-foreground">
+                      test code description
+                    </p>
+                  </div>
+                </DialogDisplay>
+                <DialogDisplay category="interrupt">
+                  <div className="flex flex-col space-y-1.5 p-6">
+                    <h3 className="font-semibold leading-none tracking-tight w-full">
+                      test code
+                    </h3>
+                    <p className="w-full text-sm text-muted-foreground">
+                      test code description
+                    </p>
+                  </div>
+                </DialogDisplay>
               </div>
               <Separator />
               <div
                 id="information"
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
-                <DialogCard category="information" />
-                <DialogCard category="information" />
-                <DialogCard category="information" />
+                <DialogDisplay category="information">
+                  <div className="flex flex-col space-y-1.5 p-6">
+                    <h3 className="font-semibold leading-none tracking-tight w-full">
+                      test code
+                    </h3>
+                    <p className="w-full text-sm text-muted-foreground">
+                      test code description
+                    </p>
+                  </div>
+                </DialogDisplay>
+                <DialogDisplay category="information">
+                  <div className="flex flex-col space-y-1.5 p-6">
+                    <h3 className="font-semibold leading-none tracking-tight w-full">
+                      test code
+                    </h3>
+                    <p className="w-full text-sm text-muted-foreground">
+                      test code description
+                    </p>
+                  </div>
+                </DialogDisplay>
+                <DialogDisplay category="information">
+                  <div className="flex flex-col space-y-1.5 p-6">
+                    <h3 className="font-semibold leading-none tracking-tight w-full">
+                      test code
+                    </h3>
+                    <p className="w-full text-sm text-muted-foreground">
+                      test code description
+                    </p>
+                  </div>
+                </DialogDisplay>
               </div>
               <Separator />
               <div
                 id="form"
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
-                <DialogCard category="form" />
-                <DialogCard category="form" />
-                <DialogCard category="form" />
+                <DialogDisplay category="form">
+                  <div className="flex flex-col space-y-1.5 p-6">
+                    <h3 className="font-semibold leading-none tracking-tight w-full">
+                      test code
+                    </h3>
+                    <p className="w-full text-sm text-muted-foreground">
+                      test code description
+                    </p>
+                  </div>
+                </DialogDisplay>
+                <DialogDisplay category="form">
+                  <div className="flex flex-col space-y-1.5 p-6">
+                    <h3 className="font-semibold leading-none tracking-tight w-full">
+                      test code
+                    </h3>
+                    <p className="w-full text-sm text-muted-foreground">
+                      test code description
+                    </p>
+                  </div>
+                </DialogDisplay>
+                <DialogDisplay category="form">
+                  <div className="flex flex-col space-y-1.5 p-6">
+                    <h3 className="font-semibold leading-none tracking-tight w-full">
+                      test code
+                    </h3>
+                    <p className="w-full text-sm text-muted-foreground">
+                      test code description
+                    </p>
+                  </div>
+                </DialogDisplay>
               </div>
             </div>
           </div>

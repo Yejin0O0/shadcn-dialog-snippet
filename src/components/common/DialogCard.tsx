@@ -1,6 +1,6 @@
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Clipboard, File, Info, TriangleAlert } from "lucide-react";
 import { InfoDialog } from "../dialog/information/InfoDialog";
-import { Card, CardContent, CardHeader } from "../ui/card";
 import { CodeSheet } from "./CodeSheet";
 
 interface DialogCardProps {

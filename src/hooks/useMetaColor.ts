@@ -5,12 +5,12 @@ import { useCallback, useEffect, useState } from "react";
 export function useMetaColor() {
   const { theme } = useTheme();
 
-  // metaColor를 state로 관리하여 필요한 색상을 저장
+  // Manage metaColor in state to store the required color
   const [metaColor, setMetaColor] = useState(
     theme === "dark" ? META_THEME_COLORS.dark : META_THEME_COLORS.light,
   );
 
-  // 테마가 변경될 때 metaColor를 업데이트
+  // Update metaColor when the theme changes
   useEffect(() => {
     const newMetaColor =
       theme === "dark" ? META_THEME_COLORS.dark : META_THEME_COLORS.light;
@@ -20,7 +20,7 @@ export function useMetaColor() {
       ?.setAttribute("content", newMetaColor);
   }, [theme]);
 
-  // 수동으로 metaColor를 변경할 수 있는 함수
+  // Function to manually update metaColor
   const updateMetaColor = useCallback((color: string) => {
     setMetaColor(color);
     document

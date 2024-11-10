@@ -20,9 +20,6 @@ import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaFacebook } from "react-icons/fa";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
-import { FcGoogle } from "react-icons/fc";
 import * as z from "zod";
 
 const formSchema = z.object({
@@ -114,11 +111,7 @@ export function SignInForm() {
                       onClick={togglePasswordVisibility}
                       className="absolute inset-y-0 right-0 flex items-center pr-3 hover:bg-transparent focus:outline-none"
                     >
-                      {showPassword ? (
-                        <FaRegEye className="w-5 h-5 text-gray-500" />
-                      ) : (
-                        <FaRegEyeSlash className="w-5 h-5 text-gray-500" />
-                      )}
+                      {showPassword ? "아이콘 추가 필요" : "아이콘 추가 필요"}
                     </Button>
                   </div>
                   <FormMessage />
@@ -153,15 +146,13 @@ export function SignInForm() {
                 variant="outline"
                 className="w-full flex justify-center items-center gap-2"
               >
-                <FcGoogle className="w-5 h-5" />
-                Sign up with Google
+                구글 아이콘 추가 필요 Sign up with Google
               </Button>
               <Button
                 variant="outline"
                 className="w-full flex justify-center items-center gap-2"
               >
-                <FaFacebook className="w-5 h-5 text-blue-600" />
-                Sign up with Facebook
+                페이스북 아이콘 추가 필요 Sign up with Facebook
               </Button>
             </div>
           </form>

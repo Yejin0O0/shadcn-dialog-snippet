@@ -22,7 +22,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { RiVisaLine } from "react-icons/ri";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -179,10 +178,7 @@ export function PaymentStepForm() {
                               placeholder="1234 1234 1234 1234"
                               {...field}
                             />
-                            <RiVisaLine
-                              className="absolute right-2 text-gray-300 top-1"
-                              size="2rem"
-                            />
+                            아이콘 추가 필요
                           </div>
                         </FormControl>
                         <FormMessage>

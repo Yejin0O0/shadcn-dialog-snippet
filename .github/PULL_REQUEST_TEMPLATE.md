@@ -2,16 +2,17 @@
 
 ## What is this PR? 🔍
 
-- 기능 :
+- Feature :
 - issue : #
 
 ## Changes 📝
 
-<!-- 이번 PR에서의 변경점 -->
+<!-- Describe your changes -->
 
 ## ScreenShot 📷
 
-<!-- 개발 기능을 보여줄 수 있는 이미지, GIF -->
+<!-- Images or GIFs showcasing the developed feature -->
+
 
 ## Precaution
 

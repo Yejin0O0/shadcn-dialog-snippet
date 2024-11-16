@@ -1,5 +1,5 @@
 import { File, Info, TriangleAlert } from "lucide-react";
-import { InfoDialog } from "../dialog/information/InfoDialog";
+import { InfoDialogBase } from "../dialog/information/InfoDialog/InfoDialogBase";
 import { CodeSheet } from "./CodeSheet";
 import { CopyButton } from "./CopyButton";
 
@@ -170,7 +170,11 @@ function DialogToolBar(props: DialogToolBarProps) {
         <CopyButton code={code} />
         <div className="shrink-0 bg-border w-[1px] mx-0 hidden h-4 md:flex" />
 
-        <CodeSheet dialog={<InfoDialog />} code={code} themeCode={themeCode} />
+        <CodeSheet
+          dialog={<InfoDialogBase />}
+          code={code}
+          themeCode={themeCode}
+        />
       </div>
     </div>
   );

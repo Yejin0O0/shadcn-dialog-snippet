@@ -1,6 +1,8 @@
+import DialogCard from "@/components/common/DialogCard";
 import DialogDisplay from "@/components/common/DialogDisplay";
 import DialogNav from "@/components/common/DialogNav";
 import { Separator } from "@/components/common/Separator";
+import * as Dialog from "@/components/dialog/index";
 import { Button } from "@/components/ui/button";
 
 function HomePage() {
@@ -31,34 +33,12 @@ function HomePage() {
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
                 <DialogDisplay category="interrupt">
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <DialogCard>
+                    <Dialog.WarningAlert />
+                  </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay category="interrupt">
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
-                </DialogDisplay>
-                <DialogDisplay category="interrupt">
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <Dialog.ErrorAlert />
                 </DialogDisplay>
               </div>
               <Separator />
@@ -67,34 +47,13 @@ function HomePage() {
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
                 <DialogDisplay category="information">
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <Dialog.InfoDialog />
                 </DialogDisplay>
                 <DialogDisplay category="information">
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <Dialog.SuccessDialog />
                 </DialogDisplay>
                 <DialogDisplay category="information">
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <Dialog.UserProfileDialog />
                 </DialogDisplay>
               </div>
               <Separator />
@@ -103,34 +62,13 @@ function HomePage() {
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
                 <DialogDisplay category="form">
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <Dialog.CheckBoxColumnForm />
                 </DialogDisplay>
                 <DialogDisplay category="form">
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <Dialog.CheckBoxRowForm />
                 </DialogDisplay>
                 <DialogDisplay category="form">
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <Dialog.InnerScrollForm />
                 </DialogDisplay>
               </div>
             </div>

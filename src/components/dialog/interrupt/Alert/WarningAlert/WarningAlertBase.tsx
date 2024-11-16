@@ -11,18 +11,10 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
-export function WarningAlert() {
+export function WarningAlertBase() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger asChild>
-        <Button
-          variant="outline"
-          className="w-fit border-amber-500 text-amber-500 hover:bg-amber-100 hover:text-amber-500"
-        >
-          Warning
-        </Button>
-      </AlertDialogTrigger>
-      <AlertDialogContent className="ltr">
+      <AlertDialogContent>
         <div className="border-s-4 border-amber-500 pl-6">
           <AlertDialogHeader>
             <AlertDialogTitle>Warning Message</AlertDialogTitle>
@@ -39,6 +31,16 @@ export function WarningAlert() {
           </AlertDialogFooter>
         </div>
       </AlertDialogContent>
+      <AlertDialogTrigger asChild>
+        <div className="flex justify-center p-4">
+          <Button
+            variant="outline"
+            className="w-fit border-amber-500 text-amber-500 hover:bg-amber-100 hover:text-amber-500"
+          >
+            Warning
+          </Button>
+        </div>
+      </AlertDialogTrigger>
     </AlertDialog>
   );
 }

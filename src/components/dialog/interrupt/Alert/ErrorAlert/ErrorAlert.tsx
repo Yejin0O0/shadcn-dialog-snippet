@@ -11,29 +11,29 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
-export function SuccessAlert() {
+export function ErrorAlert() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <Button
           variant="outline"
-          className="w-fit border-green-500 text-green-500 hover:bg-green-100 hover:text-green-500"
+          className="w-fit border-red-500 text-red-500 hover:bg-red-100 hover:text-red-500"
         >
-          Success
+          Error
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="ltr">
-        <div className="border-s-4 border-green-500 pl-6">
+        <div className="border-s-4 border-red-500 pl-6">
           <AlertDialogHeader>
-            <AlertDialogTitle>Success</AlertDialogTitle>
+            <AlertDialogTitle>Permission Denied</AlertDialogTitle>
             <AlertDialogDescription>
-              Operation completed successfully! Everything went according to
-              plan.
+              You do not have permission to view this content. Please contact
+              your administrator if you believe this is a mistake.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Dismiss</AlertDialogCancel>
-            <AlertDialogAction className="w-fit bg-green-500 text-white hover:bg-green-700 hover:text-white focus:ring-2 focus:ring-green-500">
+            <AlertDialogAction className="w-fit bg-red-500 text-white hover:bg-red-700 hover:text-white focus:ring-2 focus:ring-red-500">
               Action
             </AlertDialogAction>
           </AlertDialogFooter>

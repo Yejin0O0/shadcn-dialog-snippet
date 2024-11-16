@@ -73,7 +73,7 @@ export function PaymentStepForm() {
   }, [step]);
 
   const onSubmit = (data: object) => {
-    alert(\`Payment Processed.\\n\${JSON.stringify(data, null, 2)}\`);
+    alert(JSON.stringify(data, null, 2));
     setStep(3);
   };
 
@@ -178,7 +178,6 @@ export function PaymentStepForm() {
                               placeholder="1234 1234 1234 1234"
                               {...field}
                             />
-                            {/* 아이콘 추가 필요 */}
                           </div>
                         </FormControl>
                         <FormMessage>

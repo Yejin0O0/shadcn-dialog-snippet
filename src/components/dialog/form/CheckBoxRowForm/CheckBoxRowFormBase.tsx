@@ -41,7 +41,7 @@ const FormSchema = z.object({
   }),
 });
 
-export function CheckBoxRowForm() {
+export function CheckBoxRowFormBase() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {

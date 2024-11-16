@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { MessageCircle, MoreHorizontal, User } from "lucide-react";
 
-export function UserProfileDialog() {
+export function UserProfileDialogBase() {
   return (
     <Dialog>
       <DialogTrigger asChild>

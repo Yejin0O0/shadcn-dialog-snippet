@@ -35,7 +35,7 @@ interface SurveyFormData {
   newsletter: boolean;
 }
 
-export function SurveyForm() {
+export function SurveyFormBase() {
   const form = useForm<SurveyFormData>({
     defaultValues: {
       satisfaction: "",

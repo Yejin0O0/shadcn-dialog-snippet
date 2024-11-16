@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
-export function ErrorAlert() {
+export function ErrorAlertBase() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -42,5 +42,3 @@ export function ErrorAlert() {
     </AlertDialog>
   );
 }
-
-export default ErrorAlert;

@@ -25,7 +25,7 @@ const FormSchema = z.object({
   }),
 });
 
-export function RadioBoxRowForm() {
+export function RadioBoxRowFormBase() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });

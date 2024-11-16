@@ -1,6 +1,8 @@
+import DialogCard from "@/components/common/DialogCard";
 import DialogDisplay from "@/components/common/DialogDisplay";
 import DialogNav from "@/components/common/DialogNav";
 import { Separator } from "@/components/common/Separator";
+import * as Dialog from "@/components/dialog/index";
 import { successDialogString } from "@/components/dialog/information/SuccessDialog/successDialogString";
 import { Button } from "@/components/ui/button";
 
@@ -31,35 +33,21 @@ function HomePage() {
                 id="interrupt"
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
-                <DialogDisplay category="interrupt" code={successDialogString}>
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                <DialogDisplay
+                  category="interrupt"
+                  code={Dialog.warningAlertString}
+                >
+                  <DialogCard>
+                    <Dialog.WarningAlert />
+                  </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="interrupt" code={successDialogString}>
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
-                </DialogDisplay>
-                <DialogDisplay category="interrupt" code={successDialogString}>
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                <DialogDisplay
+                  category="interrupt"
+                  code={Dialog.errorAlertString}
+                >
+                  <DialogCard>
+                    <Dialog.ErrorAlert />
+                  </DialogCard>
                 </DialogDisplay>
               </div>
               <Separator />
@@ -69,42 +57,27 @@ function HomePage() {
               >
                 <DialogDisplay
                   category="information"
-                  code={successDialogString}
+                  code={Dialog.infoDialogString}
                 >
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <DialogCard>
+                    <Dialog.InfoDialog />
+                  </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="information"
-                  code={successDialogString}
+                  code={Dialog.successDialogString}
                 >
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <DialogCard>
+                    <Dialog.SuccessDialog />
+                  </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="information"
-                  code={successDialogString}
+                  code={Dialog.userProfileDialogString}
                 >
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <DialogCard>
+                    <Dialog.UserProfileDialog />
+                  </DialogCard>
                 </DialogDisplay>
               </div>
               <Separator />
@@ -113,34 +86,24 @@ function HomePage() {
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
                 <DialogDisplay category="form" code={successDialogString}>
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <DialogCard>
+                    <Dialog.CheckBoxColumnForm />
+                  </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay category="form" code={successDialogString}>
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <DialogCard>
+                    <Dialog.CheckBoxRowForm />
+                  </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay category="form" code={successDialogString}>
-                  <div className="flex flex-col space-y-1.5 p-6">
-                    <h3 className="font-semibold leading-none tracking-tight w-full">
-                      test code
-                    </h3>
-                    <p className="w-full text-sm text-muted-foreground">
-                      test code description
-                    </p>
-                  </div>
+                  <DialogCard>
+                    <Dialog.InnerScrollForm />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay category="form" code={successDialogString}>
+                  <DialogCard>
+                    <Dialog.SurveyFormBase />
+                  </DialogCard>
                 </DialogDisplay>
               </div>
             </div>

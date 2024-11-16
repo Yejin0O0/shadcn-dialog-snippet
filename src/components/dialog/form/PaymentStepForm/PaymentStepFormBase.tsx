@@ -39,7 +39,7 @@ const formSchema = z.object({
     .max(3, { message: "CVV must be 3 digits" }),
 });
 
-export function PaymentStepForm() {
+export function PaymentStepFormBase() {
   const [step, setStep] = useState<number>(1);
   const [progressValue, setProgressValue] = useState<number>(33);
 

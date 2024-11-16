@@ -1,8 +1,6 @@
 function DialogCard({ children }: { children: React.ReactNode }) {
   return (
-    <div className="m-auto min-h-[204px] flex items-center justify-center">
-      {children}
-    </div>
+    <div className="m-auto min-h-[400px] w-full max-h-full">{children}</div>
   );
 }
 

@@ -38,7 +38,9 @@ function HomePage() {
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay category="interrupt">
-                  <Dialog.ErrorAlert />
+                  <DialogCard>
+                    <Dialog.ErrorAlert />
+                  </DialogCard>
                 </DialogDisplay>
               </div>
               <Separator />
@@ -47,13 +49,19 @@ function HomePage() {
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
                 <DialogDisplay category="information">
-                  <Dialog.InfoDialog />
+                  <DialogCard>
+                    <Dialog.InfoDialog />
+                  </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay category="information">
-                  <Dialog.SuccessDialog />
+                  <DialogCard>
+                    <Dialog.SuccessDialog />
+                  </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay category="information">
-                  <Dialog.UserProfileDialog />
+                  <DialogCard>
+                    <Dialog.UserProfileDialog />
+                  </DialogCard>
                 </DialogDisplay>
               </div>
               <Separator />
@@ -62,13 +70,24 @@ function HomePage() {
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
                 <DialogDisplay category="form">
-                  <Dialog.CheckBoxColumnForm />
+                  <DialogCard>
+                    <Dialog.CheckBoxColumnForm />
+                  </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay category="form">
-                  <Dialog.CheckBoxRowForm />
+                  <DialogCard>
+                    <Dialog.CheckBoxRowForm />
+                  </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay category="form">
-                  <Dialog.InnerScrollForm />
+                  <DialogCard>
+                    <Dialog.InnerScrollForm />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay category="form">
+                  <DialogCard>
+                    <Dialog.SurveyFormBase />
+                  </DialogCard>
                 </DialogDisplay>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import { File, Info, TriangleAlert } from "lucide-react";
-import { InfoDialog } from "../dialog/information/InfoDialog";
+import { InfoDialog } from "../dialog/information/InfoDialog/InfoDialogBase";
 import { CodeSheet } from "./CodeSheet";
 import { CopyButton } from "./CopyButton";
 

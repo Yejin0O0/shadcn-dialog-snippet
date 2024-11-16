@@ -1,6 +1,7 @@
 import DialogDisplay from "@/components/common/DialogDisplay";
 import DialogNav from "@/components/common/DialogNav";
 import { Separator } from "@/components/common/Separator";
+import { successDialogString } from "@/components/dialog/information/SuccessDialog/successDialogString";
 import { Button } from "@/components/ui/button";
 
 function HomePage() {
@@ -30,7 +31,7 @@ function HomePage() {
                 id="interrupt"
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
-                <DialogDisplay category="interrupt">
+                <DialogDisplay category="interrupt" code={successDialogString}>
                   <div className="flex flex-col space-y-1.5 p-6">
                     <h3 className="font-semibold leading-none tracking-tight w-full">
                       test code
@@ -40,7 +41,7 @@ function HomePage() {
                     </p>
                   </div>
                 </DialogDisplay>
-                <DialogDisplay category="interrupt">
+                <DialogDisplay category="interrupt" code={successDialogString}>
                   <div className="flex flex-col space-y-1.5 p-6">
                     <h3 className="font-semibold leading-none tracking-tight w-full">
                       test code
@@ -50,7 +51,7 @@ function HomePage() {
                     </p>
                   </div>
                 </DialogDisplay>
-                <DialogDisplay category="interrupt">
+                <DialogDisplay category="interrupt" code={successDialogString}>
                   <div className="flex flex-col space-y-1.5 p-6">
                     <h3 className="font-semibold leading-none tracking-tight w-full">
                       test code
@@ -66,7 +67,10 @@ function HomePage() {
                 id="information"
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
-                <DialogDisplay category="information">
+                <DialogDisplay
+                  category="information"
+                  code={successDialogString}
+                >
                   <div className="flex flex-col space-y-1.5 p-6">
                     <h3 className="font-semibold leading-none tracking-tight w-full">
                       test code
@@ -76,7 +80,10 @@ function HomePage() {
                     </p>
                   </div>
                 </DialogDisplay>
-                <DialogDisplay category="information">
+                <DialogDisplay
+                  category="information"
+                  code={successDialogString}
+                >
                   <div className="flex flex-col space-y-1.5 p-6">
                     <h3 className="font-semibold leading-none tracking-tight w-full">
                       test code
@@ -86,7 +93,10 @@ function HomePage() {
                     </p>
                   </div>
                 </DialogDisplay>
-                <DialogDisplay category="information">
+                <DialogDisplay
+                  category="information"
+                  code={successDialogString}
+                >
                   <div className="flex flex-col space-y-1.5 p-6">
                     <h3 className="font-semibold leading-none tracking-tight w-full">
                       test code
@@ -102,7 +112,7 @@ function HomePage() {
                 id="form"
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
-                <DialogDisplay category="form">
+                <DialogDisplay category="form" code={successDialogString}>
                   <div className="flex flex-col space-y-1.5 p-6">
                     <h3 className="font-semibold leading-none tracking-tight w-full">
                       test code
@@ -112,7 +122,7 @@ function HomePage() {
                     </p>
                   </div>
                 </DialogDisplay>
-                <DialogDisplay category="form">
+                <DialogDisplay category="form" code={successDialogString}>
                   <div className="flex flex-col space-y-1.5 p-6">
                     <h3 className="font-semibold leading-none tracking-tight w-full">
                       test code
@@ -122,7 +132,7 @@ function HomePage() {
                     </p>
                   </div>
                 </DialogDisplay>
-                <DialogDisplay category="form">
+                <DialogDisplay category="form" code={successDialogString}>
                   <div className="flex flex-col space-y-1.5 p-6">
                     <h3 className="font-semibold leading-none tracking-tight w-full">
                       test code

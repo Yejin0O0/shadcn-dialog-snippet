@@ -18,6 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Eye, EyeClosed } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -111,7 +112,7 @@ export function SignInForm() {
                       onClick={togglePasswordVisibility}
                       className="absolute inset-y-0 right-0 flex items-center pr-3 hover:bg-transparent focus:outline-none"
                     >
-                      {showPassword ? "아이콘 추가 필요" : "아이콘 추가 필요"}
+                      {showPassword ? <Eye /> : <EyeClosed />}
                     </Button>
                   </div>
                   <FormMessage />
@@ -146,13 +147,13 @@ export function SignInForm() {
                 variant="outline"
                 className="w-full flex justify-center items-center gap-2"
               >
-                구글 아이콘 추가 필요 Sign up with Google
+                Sign up with Google
               </Button>
               <Button
                 variant="outline"
                 className="w-full flex justify-center items-center gap-2"
               >
-                페이스북 아이콘 추가 필요 Sign up with Facebook
+                Sign up with Facebook
               </Button>
             </div>
           </form>

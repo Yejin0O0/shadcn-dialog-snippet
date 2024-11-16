@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   Dialog,
   DialogContent,
@@ -14,12 +13,11 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RadioGroup } from "@/components/ui/radio-group";
 import {
   Select,
   SelectContent,
@@ -31,27 +29,19 @@ import { Switch } from "@/components/ui/switch";
 import { useForm } from "react-hook-form";
 
 interface SurveyFormData {
-  name: string;
-  email: string;
-  serviceUsage: string;
   satisfaction: string;
   reason: string;
   serviceSource: string;
   newsletter: boolean;
-  agreeTerms: boolean;
 }
 
 export function SurveyFormBase() {
   const form = useForm<SurveyFormData>({
     defaultValues: {
-      name: "",
-      email: "",
-      serviceUsage: "",
       satisfaction: "",
       reason: "",
       serviceSource: "",
       newsletter: false,
-      agreeTerms: false,
     },
   });
 
@@ -59,14 +49,10 @@ export function SurveyFormBase() {
 
   const onSubmit = (data: SurveyFormData) => {
     alert(`Submitted Data:
-      Name: ${data.name}
-      Email: ${data.email}
-      Service Usage: ${data.serviceUsage}
       Satisfaction: ${data.satisfaction}
       Reason: ${data.reason}
       Service Source: ${data.serviceSource}
       Newsletter: ${data.newsletter ? "Yes" : "No"}
-      Agree to Terms: ${data.agreeTerms ? "Yes" : "No"}
     `);
   };
 
@@ -92,79 +78,6 @@ export function SurveyFormBase() {
             onSubmit={form.handleSubmit(onSubmit)}
             className="grid gap-4 py-4"
           >
-            <FormField
-              control={form.control}
-              name="name"
-              rules={{ required: "Name is required" }}
-              render={({ field }) => (
-                <FormItem>
-                  <Label className="text-sm font-semibold">Name</Label>
-                  <FormControl>
-                    <Input id="name" placeholder="Enter your name" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="email"
-              rules={{ required: "Email is required" }}
-              render={({ field }) => (
-                <FormItem>
-                  <Label className="text-sm font-semibold">Email</Label>
-                  <FormControl>
-                    <Input
-                      id="email"
-                      placeholder="Enter your email"
-                      type="email"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="serviceUsage"
-              rules={{ required: "Service usage is required" }}
-              render={({ field }) => (
-                <FormItem>
-                  <Label>How often do you use our service?</Label>
-                  <FormControl>
-                    <RadioGroup
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                      className="flex justify-between"
-                    >
-                      <FormItem>
-                        <div className="flex justify-center items-center gap-1">
-                          <RadioGroupItem value="daily" id="daily" />
-                          <Label htmlFor="daily">Daily</Label>
-                        </div>
-                      </FormItem>
-                      <FormItem>
-                        <div className="flex justify-center items-center gap-1">
-                          <RadioGroupItem value="weekly" id="weekly" />
-                          <Label htmlFor="weekly">Weekly</Label>
-                        </div>
-                      </FormItem>
-                      <FormItem>
-                        <div className="flex justify-center items-center gap-1">
-                          <RadioGroupItem value="monthly" id="monthly" />
-                          <Label htmlFor="monthly">Monthly</Label>
-                        </div>
-                      </FormItem>
-                    </RadioGroup>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
             <FormField
               control={form.control}
               name="satisfaction"
@@ -371,29 +284,6 @@ export function SurveyFormBase() {
                       onCheckedChange={field.onChange}
                     />
                   </FormControl>
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="agreeTerms"
-              rules={{ required: "You must agree to the terms" }}
-              render={({ field }) => (
-                <FormItem className="flex items-center space-x-2">
-                  <div className="flex justify-center items-center gap-1">
-                    <Checkbox
-                      id="agreeTerms"
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                    />
-                    <FormLabel
-                      htmlFor="agreeTerms"
-                      className="text-sm font-semibold"
-                    >
-                      I agree to the terms and conditions
-                    </FormLabel>
-                  </div>
                 </FormItem>
               )}
             />

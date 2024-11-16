@@ -41,7 +41,7 @@ interface SurveyFormData {
   agreeTerms: boolean;
 }
 
-export function SurveyForm() {
+export function SurveyFormBase() {
   const form = useForm<SurveyFormData>({
     defaultValues: {
       name: "",

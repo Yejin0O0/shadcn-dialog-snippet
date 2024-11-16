@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+export const innerScrollFormString = `import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -97,3 +97,4 @@ export function InnerScrollForm() {
     </Dialog>
   );
 }
+`;

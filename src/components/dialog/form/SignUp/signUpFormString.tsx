@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+export const signUpFormString = `import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Dialog,
@@ -229,3 +229,4 @@ export function SignUpForm() {
     </Dialog>
   );
 }
+`;

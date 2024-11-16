@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+export const checkBoxRowFormString = `import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Dialog,
@@ -127,3 +127,4 @@ export function CheckBoxColumnForm() {
     </Dialog>
   );
 }
+`;

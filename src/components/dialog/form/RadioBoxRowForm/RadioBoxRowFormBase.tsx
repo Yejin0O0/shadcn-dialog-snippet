@@ -25,7 +25,7 @@ const FormSchema = z.object({
   }),
 });
 
-export function RadioBoxColumnForm() {
+export function RadioBoxRowFormBase() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
@@ -37,11 +37,11 @@ export function RadioBoxColumnForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">RadioBoxColumnForm</Button>
+        <Button variant="outline">RadioBoxRowForm</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>RadioBoxColumnForm</DialogTitle>
+          <DialogTitle>RadioBoxRowForm</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -55,7 +55,7 @@ export function RadioBoxColumnForm() {
                     <RadioGroup
                       onValueChange={field.onChange}
                       defaultValue={field.value}
-                      className="flex justify-between"
+                      className="flex flex-col space-y-3"
                     >
                       <FormItem className="flex items-center space-x-3 space-y-0">
                         <FormControl>

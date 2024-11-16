@@ -11,25 +11,21 @@ import { CopyButton } from "@/components/common/CopyButton";
 interface CodeSheetProps {
   dialog: ReactNode;
   code: string;
-  themeCode: string;
 }
 
-export function CodeSheet({ dialog, code, themeCode }: CodeSheetProps) {
+export function CodeSheet({ dialog, code }: CodeSheetProps) {
   const [tab, setTab] = useState("code");
   const [html, setHtml] = useState<string>("");
-  const [themeHtml, setThemeHtml] = useState<string>("");
 
   useEffect(() => {
     async function loadHighlightedCode() {
       const highlightedCodeHtml = await highlightCode(code, "typescript");
-      const highlightedThemeHtml = await highlightCode(themeCode, "css");
 
       setHtml(highlightedCodeHtml);
-      setThemeHtml(highlightedThemeHtml);
     }
 
     loadHighlightedCode();
-  }, [code, themeCode]);
+  }, [code]);
 
   return (
     <Sheet>
@@ -61,12 +57,6 @@ export function CodeSheet({ dialog, code, themeCode }: CodeSheetProps) {
               >
                 Code
               </TabsTrigger>
-              <TabsTrigger
-                value="theme"
-                className="h-[1.45rem] rounded-sm px-2 text-xs"
-              >
-                Theme
-              </TabsTrigger>
             </TabsList>
             <CopyButton code={code} />
           </div>
@@ -78,17 +68,6 @@ export function CodeSheet({ dialog, code, themeCode }: CodeSheetProps) {
               data-rehype-pretty-code-fragment
               // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
               dangerouslySetInnerHTML={{ __html: html }}
-              className="w-full overflow-auto [&_pre]:overflow-auto [&_pre]:!bg-black [&_pre]:py-6 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed rounded-lg"
-            />
-          </TabsContent>
-          <TabsContent
-            value="theme"
-            className="h-full flex-1 flex-col overflow-hidden data-[state=active]:flex"
-          >
-            <div
-              data-rehype-pretty-code-fragment
-              // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-              dangerouslySetInnerHTML={{ __html: themeHtml }}
               className="w-full overflow-auto [&_pre]:overflow-auto [&_pre]:!bg-black [&_pre]:py-6 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed rounded-lg"
             />
           </TabsContent>

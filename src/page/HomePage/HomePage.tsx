@@ -3,6 +3,7 @@ import DialogDisplay from "@/components/common/DialogDisplay";
 import DialogNav from "@/components/common/DialogNav";
 import { Separator } from "@/components/common/Separator";
 import * as Dialog from "@/components/dialog/index";
+import { successDialogString } from "@/components/dialog/information/SuccessDialog/successDialogString";
 import { Button } from "@/components/ui/button";
 
 function HomePage() {
@@ -32,12 +33,18 @@ function HomePage() {
                 id="interrupt"
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
-                <DialogDisplay category="interrupt">
+                <DialogDisplay
+                  category="interrupt"
+                  code={Dialog.warningAlertString}
+                >
                   <DialogCard>
                     <Dialog.WarningAlert />
                   </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="interrupt">
+                <DialogDisplay
+                  category="interrupt"
+                  code={Dialog.errorAlertString}
+                >
                   <DialogCard>
                     <Dialog.ErrorAlert />
                   </DialogCard>
@@ -48,17 +55,26 @@ function HomePage() {
                 id="information"
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
-                <DialogDisplay category="information">
+                <DialogDisplay
+                  category="information"
+                  code={Dialog.infoDialogString}
+                >
                   <DialogCard>
                     <Dialog.InfoDialog />
                   </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="information">
+                <DialogDisplay
+                  category="information"
+                  code={Dialog.successDialogString}
+                >
                   <DialogCard>
                     <Dialog.SuccessDialog />
                   </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="information">
+                <DialogDisplay
+                  category="information"
+                  code={Dialog.userProfileDialogString}
+                >
                   <DialogCard>
                     <Dialog.UserProfileDialog />
                   </DialogCard>
@@ -69,22 +85,22 @@ function HomePage() {
                 id="form"
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
-                <DialogDisplay category="form">
+                <DialogDisplay category="form" code={successDialogString}>
                   <DialogCard>
                     <Dialog.CheckBoxColumnForm />
                   </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="form">
+                <DialogDisplay category="form" code={successDialogString}>
                   <DialogCard>
                     <Dialog.CheckBoxRowForm />
                   </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="form">
+                <DialogDisplay category="form" code={successDialogString}>
                   <DialogCard>
                     <Dialog.InnerScrollForm />
                   </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="form">
+                <DialogDisplay category="form" code={successDialogString}>
                   <DialogCard>
                     <Dialog.SurveyFormBase />
                   </DialogCard>

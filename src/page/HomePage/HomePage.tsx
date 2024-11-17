@@ -3,7 +3,6 @@ import DialogDisplay from "@/components/common/DialogDisplay";
 import DialogNav from "@/components/common/DialogNav";
 import { Separator } from "@/components/common/Separator";
 import * as Dialog from "@/components/dialog/index";
-import { successDialogString } from "@/components/dialog/information/SuccessDialog/successDialogString";
 import { Button } from "@/components/ui/button";
 
 function HomePage() {
@@ -85,24 +84,70 @@ function HomePage() {
                 id="form"
                 className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
               >
-                <DialogDisplay category="form" code={successDialogString}>
+                <DialogDisplay
+                  category="form"
+                  code={Dialog.checkBoxColumnFormString}
+                >
                   <DialogCard>
                     <Dialog.CheckBoxColumnForm />
                   </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="form" code={successDialogString}>
+                <DialogDisplay
+                  category="form"
+                  code={Dialog.checkBoxRowFormString}
+                >
                   <DialogCard>
                     <Dialog.CheckBoxRowForm />
                   </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="form" code={successDialogString}>
+                <DialogDisplay
+                  category="form"
+                  code={Dialog.innerScrollFormString}
+                >
                   <DialogCard>
                     <Dialog.InnerScrollForm />
                   </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="form" code={successDialogString}>
+                <DialogDisplay
+                  category="form"
+                  code={Dialog.openSatisfactionSurveyFormString}
+                >
                   <DialogCard>
-                    <Dialog.SurveyFormBase />
+                    <Dialog.OpenSatisfactionSurveyForm />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay
+                  category="form"
+                  code={Dialog.paymentStepFormString}
+                >
+                  <DialogCard>
+                    <Dialog.PaymentStepForm />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay
+                  category="form"
+                  code={Dialog.radioBoxColumnFormString}
+                >
+                  <DialogCard>
+                    <Dialog.RadioBoxColumnForm />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay
+                  category="form"
+                  code={Dialog.radioBoxRowFormString}
+                >
+                  <DialogCard>
+                    <Dialog.RadioBoxRowForm />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay category="form" code={Dialog.signInFormString}>
+                  <DialogCard>
+                    <Dialog.SignInForm />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay category="form" code={Dialog.signUpFormString}>
+                  <DialogCard>
+                    <Dialog.SignUpForm />
                   </DialogCard>
                 </DialogDisplay>
               </div>

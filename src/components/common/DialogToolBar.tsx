@@ -1,15 +1,16 @@
 import { File, Info, TriangleAlert } from "lucide-react";
-import { InfoDialogBase } from "../dialog/information/InfoDialog/InfoDialogBase";
+import type { ReactNode } from "react";
 import { CodeSheet } from "./CodeSheet";
 import { CopyButton } from "./CopyButton";
 
 interface DialogToolBarProps {
   category: "information" | "interrupt" | "form";
+  dialog: ReactNode;
   code: string;
 }
 
 function DialogToolBar(props: DialogToolBarProps) {
-  const { category, code } = props;
+  const { category, code, dialog } = props;
   const renderCategoryIcon = (categoryType: string) => {
     if (categoryType === "interrupt") {
       return <TriangleAlert className="text-current" />;
@@ -35,7 +36,7 @@ function DialogToolBar(props: DialogToolBarProps) {
         <CopyButton code={code} />
         <div className="shrink-0 bg-border w-[1px] mx-0 hidden h-4 md:flex" />
 
-        <CodeSheet dialog={<InfoDialogBase />} code={code} />
+        <CodeSheet dialog={dialog} code={code} />
       </div>
     </div>
   );

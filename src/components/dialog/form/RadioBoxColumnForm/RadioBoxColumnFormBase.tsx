@@ -30,9 +30,9 @@ export function RadioBoxColumnFormBase() {
     resolver: zodResolver(FormSchema),
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  const onSubmit = (data: z.infer<typeof FormSchema>) => {
     alert(data.type);
-  }
+  };
 
   return (
     <Dialog>

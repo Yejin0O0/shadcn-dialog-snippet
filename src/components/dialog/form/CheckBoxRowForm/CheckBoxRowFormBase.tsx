@@ -50,9 +50,9 @@ export function CheckBoxRowFormBase() {
     mode: "onChange",
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  const onSubmit = (data: z.infer<typeof FormSchema>) => {
     alert(data.items);
-  }
+  };
 
   return (
     <Dialog>

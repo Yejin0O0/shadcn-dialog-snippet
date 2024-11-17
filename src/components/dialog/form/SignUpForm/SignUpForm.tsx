@@ -29,7 +29,7 @@ const formSchema = z
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords do not match",
-    path: ["confirmPassword"], // 오류 메시지를 표시할 경로
+    path: ["confirmPassword"],
   });
 
 type FormData = z.infer<typeof formSchema>;

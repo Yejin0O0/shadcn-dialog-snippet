@@ -11,7 +11,6 @@ const Separator = React.forwardRef<
     { className, orientation = "horizontal", decorative = true, ...props },
     ref,
   ) => {
-    console.log("Separator", className, orientation, decorative, props);
     return (
       <SeparatorPrimitive.Root
         ref={ref}

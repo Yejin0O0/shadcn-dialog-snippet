@@ -1,4 +1,4 @@
-export const checkBoxRowFormString = `import { Button } from "@/components/ui/button";
+export const checkBoxColumnFormString = `import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Dialog,
@@ -50,7 +50,7 @@ export function CheckBoxColumnForm() {
     mode: "onChange",
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  const onSubmit = (data: z.infer<typeof FormSchema>) => {
     alert(data.items);
   }
 

@@ -1,4 +1,4 @@
-export const surveyFormString = `import { Button } from "@/components/ui/button";
+export const openSatisfactionSurveyFormString = `import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,

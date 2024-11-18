@@ -4,6 +4,10 @@ A collection of various usage examples of the Dialog component from *shadcn/ui*.
 
 Link to production site: [shadcn-dialog-snippet](https://shadcn-dialog-snippet.vercel.app/)
 
+![image](https://github.com/user-attachments/assets/de3fef49-f621-4d4b-834e-ddf7be5a7df4)
+
+
+
 ## Documentation
 
 Visit http://ui.shadcn.com/docs to view the documentation.

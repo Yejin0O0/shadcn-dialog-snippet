@@ -66,7 +66,7 @@ export function InnerScrollFormBase() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">inner scroll</Button>
+        <Button variant="outline">Inner Scroll Form</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] overflow-y-auto max-h-[400px]">
         <DialogHeader>

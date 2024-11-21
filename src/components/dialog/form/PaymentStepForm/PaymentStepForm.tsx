@@ -107,7 +107,7 @@ export function PaymentStepForm() {
           className="w-fit"
           onClick={() => setIsOpen(true)}
         >
-          Payment Step
+          Payment Step Form
         </Button>
       )}
       {isOpen && (

@@ -75,7 +75,7 @@ export function UserProfileDialog() {
           className="w-fit"
           onClick={() => setIsOpen(true)}
         >
-          UserProfile
+          User Profile
         </Button>
       )}
     </div>

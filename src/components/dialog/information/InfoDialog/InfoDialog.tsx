@@ -41,7 +41,7 @@ export function InfoDialog() {
           className="w-fit border-blue-500 text-blue-500 hover:bg-blue-100 hover:text-blue-500"
           onClick={() => setIsOpen(true)}
         >
-          Informative
+          Information
         </Button>
       )}
     </div>

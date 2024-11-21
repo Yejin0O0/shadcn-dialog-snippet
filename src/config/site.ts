@@ -1,12 +1,12 @@
 export const siteConfig = {
-  name: "shadcn/ui",
-  url: "https://ui.shadcn.com",
+  name: "shadcn-dialog-snippet",
+  url: "/",
   ogImage: "https://ui.shadcn.com/og.jpg",
   description:
-    "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
+    "A collection of various usage examples of the Dialog component from shadcn/ui.",
   links: {
     twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn-ui/ui",
+    github: "https://github.com/Yejin0O0/shadcn-dialog-snippet",
   },
 };
 

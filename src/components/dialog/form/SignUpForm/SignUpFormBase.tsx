@@ -66,7 +66,7 @@ export function SignUpFormBase() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Sign Up</Button>
+        <Button variant="outline">Sign Up Form</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] rounded-md shadow-lg p-6">
         <DialogHeader>

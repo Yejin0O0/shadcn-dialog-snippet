@@ -3,7 +3,6 @@ import DialogDisplay from "@/components/common/DialogDisplay";
 import DialogNav from "@/components/common/DialogNav";
 import { Separator } from "@/components/common/Separator";
 import * as Dialog from "@/components/dialog/index";
-import { Button } from "@/components/ui/button";
 
 function HomePage() {
   return (
@@ -11,16 +10,12 @@ function HomePage() {
       <section className="flex flex-col items-start gap-2 border-b border-border/40 py-8 dark:border-border md:py-10 lg:py-12">
         <div className="container">
           <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
-            shadcn/ui Dialog Snippet
+            shadcn-dialog-snippet
           </h1>
           <p className="max-w-2xl text-balance text-lg font-light text-foreground">
-            Copy and paste into your apps. Open Source.
+            A collection of various usage examples of the Dialog component from
+            shadcn/ui.
           </p>
-          <div className="flex w-full items-center justify-start gap-2 py-2">
-            <Button asChild size="sm">
-              <a href="https://ui.shadcn.com/docs">Documentation</a>
-            </Button>
-          </div>
         </div>
       </section>
       <section id="dialog" className="container py-6 scroll-mt-20">
@@ -35,6 +30,7 @@ function HomePage() {
                 <DialogDisplay
                   category="interrupt"
                   code={Dialog.warningAlertString}
+                  title="Warning"
                 >
                   <DialogCard>
                     <Dialog.WarningAlert />
@@ -43,6 +39,7 @@ function HomePage() {
                 <DialogDisplay
                   category="interrupt"
                   code={Dialog.errorAlertString}
+                  title="Error"
                 >
                   <DialogCard>
                     <Dialog.ErrorAlert />
@@ -57,6 +54,7 @@ function HomePage() {
                 <DialogDisplay
                   category="information"
                   code={Dialog.infoDialogString}
+                  title="Information"
                 >
                   <DialogCard>
                     <Dialog.InfoDialog />
@@ -65,6 +63,7 @@ function HomePage() {
                 <DialogDisplay
                   category="information"
                   code={Dialog.successDialogString}
+                  title="Success"
                 >
                   <DialogCard>
                     <Dialog.SuccessDialog />
@@ -73,6 +72,7 @@ function HomePage() {
                 <DialogDisplay
                   category="information"
                   code={Dialog.userProfileDialogString}
+                  title="User Profile"
                 >
                   <DialogCard>
                     <Dialog.UserProfileDialog />
@@ -87,6 +87,7 @@ function HomePage() {
                 <DialogDisplay
                   category="form"
                   code={Dialog.checkBoxColumnFormString}
+                  title="Checkbox Column Form"
                 >
                   <DialogCard>
                     <Dialog.CheckBoxColumnForm />
@@ -95,6 +96,7 @@ function HomePage() {
                 <DialogDisplay
                   category="form"
                   code={Dialog.checkBoxRowFormString}
+                  title="Checkbox Row Form"
                 >
                   <DialogCard>
                     <Dialog.CheckBoxRowForm />
@@ -103,6 +105,7 @@ function HomePage() {
                 <DialogDisplay
                   category="form"
                   code={Dialog.innerScrollFormString}
+                  title="Inner Scroll Form"
                 >
                   <DialogCard>
                     <Dialog.InnerScrollForm />
@@ -111,6 +114,7 @@ function HomePage() {
                 <DialogDisplay
                   category="form"
                   code={Dialog.openSatisfactionSurveyFormString}
+                  title="Statisfaction Survey Form"
                 >
                   <DialogCard>
                     <Dialog.OpenSatisfactionSurveyForm />
@@ -119,6 +123,7 @@ function HomePage() {
                 <DialogDisplay
                   category="form"
                   code={Dialog.paymentStepFormString}
+                  title="Payment Step Form"
                 >
                   <DialogCard>
                     <Dialog.PaymentStepForm />
@@ -127,6 +132,7 @@ function HomePage() {
                 <DialogDisplay
                   category="form"
                   code={Dialog.radioBoxColumnFormString}
+                  title="Radiobox Column Form"
                 >
                   <DialogCard>
                     <Dialog.RadioBoxColumnForm />
@@ -135,17 +141,26 @@ function HomePage() {
                 <DialogDisplay
                   category="form"
                   code={Dialog.radioBoxRowFormString}
+                  title="Radiobox Row Form"
                 >
                   <DialogCard>
                     <Dialog.RadioBoxRowForm />
                   </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="form" code={Dialog.signInFormString}>
+                <DialogDisplay
+                  category="form"
+                  code={Dialog.signInFormString}
+                  title="Sign In Form"
+                >
                   <DialogCard>
                     <Dialog.SignInForm />
                   </DialogCard>
                 </DialogDisplay>
-                <DialogDisplay category="form" code={Dialog.signUpFormString}>
+                <DialogDisplay
+                  category="form"
+                  code={Dialog.signUpFormString}
+                  title="Sign Up Form"
+                >
                   <DialogCard>
                     <Dialog.SignUpForm />
                   </DialogCard>

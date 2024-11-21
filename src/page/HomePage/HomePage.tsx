@@ -3,7 +3,6 @@ import DialogDisplay from "@/components/common/DialogDisplay";
 import DialogNav from "@/components/common/DialogNav";
 import { Separator } from "@/components/common/Separator";
 import * as Dialog from "@/components/dialog/index";
-import { Button } from "@/components/ui/button";
 
 function HomePage() {
   return (

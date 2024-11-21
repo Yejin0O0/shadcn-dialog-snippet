@@ -1,7 +1,6 @@
 import { Icons } from "@/components/common/Icons";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
-import { ModeToggle } from "@/layout/Header/ModeToggle";
 
 export function Header() {
   return (

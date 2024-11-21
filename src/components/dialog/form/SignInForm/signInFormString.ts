@@ -54,7 +54,7 @@ export function SignInForm() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Sign In</Button>
+        <Button variant="outline">Sign In Form</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] rounded-md shadow-lg p-6">
         <DialogHeader>

@@ -7,10 +7,11 @@ interface DialogToolBarProps {
   category: "information" | "interrupt" | "form";
   dialog: ReactNode;
   code: string;
+  title: string;
 }
 
 function DialogToolBar(props: DialogToolBarProps) {
-  const { category, code, dialog } = props;
+  const { category, code, dialog, title } = props;
   const renderCategoryIcon = (categoryType: string) => {
     if (categoryType === "interrupt") {
       return <TriangleAlert className="text-current" />;
@@ -29,7 +30,7 @@ function DialogToolBar(props: DialogToolBarProps) {
       <div className="flex items-center gap-1.5 pl-1 text-[13px] text-muted-foreground [&>svg]:h-[0.9rem] [&>svg]:w-[0.9rem]">
         <div className="flex items-center gap-1.5 pl-1 text-[13px] text-muted-foreground [&>svg]:h-[0.9rem] [&>svg]:w-[0.9rem]">
           {renderCategoryIcon(category)}
-          Dialog
+          {title}
         </div>
       </div>
       <div className="ml-auto flex items-center gap-2 [&>form]:flex">

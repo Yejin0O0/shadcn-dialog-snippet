@@ -19,7 +19,7 @@ export function InfoDialog() {
           variant="outline"
           className="w-fit border-blue-500 text-blue-500 hover:bg-blue-100 hover:text-blue-500"
         >
-          Informative
+          Information
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="ltr">

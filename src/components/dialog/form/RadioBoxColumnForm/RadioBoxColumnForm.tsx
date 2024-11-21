@@ -45,7 +45,7 @@ export function RadioBoxColumnForm() {
           className="w-fit"
           onClick={() => setIsOpen(true)}
         >
-          Radio Box Column Form
+          Radiobox Column Form
         </Button>
       )}
 
@@ -53,7 +53,7 @@ export function RadioBoxColumnForm() {
         <div className="overflow-y-auto max-h-[450px] flex flex-col gap-4 scale-[0.80] absolute w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="flex justify-between">
             <h2 className="text-lg font-semibold leading-none tracking-tight">
-              Radio Box Column Form
+              Radiobox Column Form
             </h2>
             <XIcon
               className="cursor-pointer"

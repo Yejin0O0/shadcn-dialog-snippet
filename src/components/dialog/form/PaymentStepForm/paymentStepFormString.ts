@@ -103,7 +103,7 @@ export function PaymentStepForm() {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" className="w-fit">
-          Payment Step
+          Payment Step Form
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px] rounded-md shadow-lg p-6">

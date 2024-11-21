@@ -14,7 +14,7 @@ export function UserProfileDialogBase() {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" className="w-fit">
-          UserProfile
+          User Profile
         </Button>
       </DialogTrigger>
 

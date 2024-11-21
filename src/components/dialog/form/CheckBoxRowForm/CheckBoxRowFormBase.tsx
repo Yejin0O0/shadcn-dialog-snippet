@@ -57,11 +57,11 @@ export function CheckBoxRowFormBase() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">CheckBoxRowForm</Button>
+        <Button variant="outline">Checkbox Row Form</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>CheckBoxRowForm</DialogTitle>
+          <DialogTitle>Checkbox Row Form</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

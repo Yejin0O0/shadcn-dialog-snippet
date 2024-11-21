@@ -65,14 +65,14 @@ export function CheckBoxRowForm() {
           className="w-fit"
           onClick={() => setIsOpen(true)}
         >
-          CheckBox Row Form
+          Checkbox Row Form
         </Button>
       )}
       {isOpen && (
         <div className="flex flex-col gap-4 scale-95 absolute w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="flex justify-between">
             <h2 className="text-lg font-semibold leading-none tracking-tight">
-              CheckBoxRowForm
+              Checkbox Row Form
             </h2>
             <XIcon
               className="cursor-pointer"

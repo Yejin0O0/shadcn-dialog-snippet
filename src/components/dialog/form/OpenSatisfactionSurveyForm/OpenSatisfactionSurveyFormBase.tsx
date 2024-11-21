@@ -60,13 +60,13 @@ export function SurveyFormBase() {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" className="w-fit">
-          Open Satisfaction Survey
+          Satisfaction Survey Form
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[600px] rounded-md shadow-lg p-6 bg-white">
         <DialogHeader>
           <DialogTitle className="text-xl font-semibold">
-            Satisfaction Survey
+            Satisfaction Survey Form
           </DialogTitle>
           <DialogDescription className="text-gray-500">
             Please fill out the following information.

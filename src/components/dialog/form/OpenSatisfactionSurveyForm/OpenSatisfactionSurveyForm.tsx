@@ -64,7 +64,7 @@ export function OpenSatisfactionSurveyForm() {
           className="w-fit"
           onClick={() => setIsOpen(true)}
         >
-          Open Satisfaction Survey
+          Satisfaction Survey Form
         </Button>
       )}
       {isOpen && (
@@ -72,7 +72,7 @@ export function OpenSatisfactionSurveyForm() {
           <div>
             <div className="flex justify-between">
               <h2 className="text-lg font-semibold leading-none tracking-tight">
-                Satisfaction Survey
+                Satisfaction Survey Form
               </h2>
               <XIcon
                 className="cursor-pointer"

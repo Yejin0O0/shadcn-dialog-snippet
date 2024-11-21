@@ -1,16 +1,12 @@
 # shadcn-dialog-snippet
 
-A collection of various usage examples of the Dialog component from *shadcn/ui*. This project demonstrates how to implement and customize different types of dialogs, providing a practical reference for developers.
+A collection of various usage examples of the Dialog component from [shadcn/ui](https://ui.shadcn.com/). This project demonstrates how to implement and customize different types of dialogs, providing a practical reference for developers.
 
 Link to production site: [shadcn-dialog-snippet](https://shadcn-dialog-snippet.vercel.app/)
 
 ![image](https://github.com/user-attachments/assets/de3fef49-f621-4d4b-834e-ddf7be5a7df4)
 
 
-
-## Documentation
-
-Visit http://ui.shadcn.com/docs to view the documentation.
 
 ## Tech Stack
 shadcn/ui

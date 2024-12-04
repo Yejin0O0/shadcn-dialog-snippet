@@ -14,23 +14,6 @@ import { Button } from "@/components/ui/button";
 export function WarningAlertBase() {
   return (
     <AlertDialog>
-      <AlertDialogContent>
-        <div className="border-s-4 border-amber-500 pl-6">
-          <AlertDialogHeader>
-            <AlertDialogTitle>Warning Message</AlertDialogTitle>
-            <AlertDialogDescription>
-              This is a warning message. Please take caution before proceeding
-              further.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Dismiss</AlertDialogCancel>
-            <AlertDialogAction className="w-fit bg-amber-500 text-white hover:bg-amber-700 hover:text-white focus:ring-2 focus:ring-amber-500">
-              Action
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </div>
-      </AlertDialogContent>
       <AlertDialogTrigger asChild>
         <div className="flex justify-center p-4">
           <Button
@@ -41,6 +24,23 @@ export function WarningAlertBase() {
           </Button>
         </div>
       </AlertDialogTrigger>
+      <AlertDialogContent>
+        <div className="border-s-4 border-amber-500 pl-6">
+          <AlertDialogHeader className="mb-1.5">
+            <AlertDialogTitle>Warning Message</AlertDialogTitle>
+            <AlertDialogDescription>
+              This is a warning message. Please take caution before proceeding
+              further.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Dismiss</AlertDialogCancel>
+            <AlertDialogAction className="bg-amber-500 text-white hover:bg-amber-700 hover:text-white focus:ring-2 focus:ring-amber-500">
+              Action
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </div>
+      </AlertDialogContent>
     </AlertDialog>
   );
 }

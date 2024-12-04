@@ -82,7 +82,7 @@ export function InfoDialog({ type }: InfoDialogProps) {
       >
         <Button
           variant="outline"
-          className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2"
+          className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-fit border-blue-500 text-blue-500 hover:bg-blue-100 hover:text-blue-500"
           onClick={() => setIsOpen(true)}
         >
           Information

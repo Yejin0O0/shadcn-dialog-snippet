@@ -1,49 +1,119 @@
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { ExpandIcon } from "lucide-react";
+
 import { useState } from "react";
 
-export function InfoDialog() {
+interface InfoDialogProps {
+  type: "fullScreen" | "card";
+}
+
+const SCALE = 0.8;
+
+export function InfoDialog({ type }: InfoDialogProps) {
   const [isOpen, setIsOpen] = useState(true);
 
-  return (
-    <div
-      className={`h-[400px] ${
-        isOpen
-          ? "relative bg-black bg-opacity-50 p-4"
-          : "flex flex-col justify-center items-center"
-      }`}
-    >
-      {isOpen && (
-        <div className="scale-95 absolute w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+  if (type === "fullScreen") {
+    return (
+      <AlertDialog>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <AlertDialogTrigger asChild>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:text-accent-foreground [&_svg]-h-3.5 [&_svg]-h-3 h-6 w-6 rounded-[6px] bg-transparent text-foreground shadow-none hover:bg-muted dark:text-foreground [&_svg]:w-3"
+                >
+                  <ExpandIcon />
+                </Button>
+              </AlertDialogTrigger>
+            </TooltipTrigger>
+            <TooltipContent className="bg-black text-white">
+              full screen dialog
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        <AlertDialogContent className="ltr">
           <div className="border-s-4 border-blue-500 pl-6">
-            <h2 className="text-lg font-semibold">Info</h2>
-            <p className="text-sm text-muted-foreground">
-              This is an informative message to notify you of something
-              important. Please review the information carefully.
-            </p>
-            <div className="mt-4 flex justify-end space-x-2">
-              <Button variant="outline" onClick={() => setIsOpen(false)}>
-                Dismiss
-              </Button>
-              <Button
-                variant="outline"
-                className="w-fit bg-blue-500 text-white hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-500"
-                onClick={() => setIsOpen(false)}
-              >
+            <AlertDialogHeader className="mb-1.5">
+              <AlertDialogTitle>Info</AlertDialogTitle>
+              <AlertDialogDescription>
+                This is an informative message to notify you of something
+                important. Please review the information carefully.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Dismiss</AlertDialogCancel>
+              <AlertDialogAction className="bg-blue-500 text-white hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-500">
                 Action
-              </Button>
-            </div>
+              </AlertDialogAction>
+            </AlertDialogFooter>
           </div>
-        </div>
-      )}
-      {!isOpen && (
+        </AlertDialogContent>
+      </AlertDialog>
+    );
+  }
+
+  if (type === "card") {
+    return (
+      <div
+        className={`flex-1 ${
+          isOpen
+            ? "bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+            : ""
+        }`}
+      >
         <Button
           variant="outline"
-          className="w-fit border-blue-500 text-blue-500 hover:bg-blue-100 hover:text-blue-500"
+          className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2"
           onClick={() => setIsOpen(true)}
         >
           Information
         </Button>
-      )}
-    </div>
-  );
+        {isOpen && (
+          <div
+            className={`scale-[${SCALE}] absolute w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+          >
+            <div className="border-s-4 border-blue-500 pl-6">
+              <h2 className="text-lg font-semibold">Info</h2>
+              <p className="text-sm text-muted-foreground">
+                This is an informative message to notify you of something
+                important. Please review the information carefully.
+              </p>
+              <div className="mt-4 flex justify-end space-x-2">
+                <Button variant="outline" onClick={() => setIsOpen(false)}>
+                  Dismiss
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-fit bg-blue-500 text-white hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-500"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Action
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+  return null;
 }

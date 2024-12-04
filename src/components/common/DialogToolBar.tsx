@@ -8,10 +8,11 @@ interface DialogToolBarProps {
   dialog: ReactNode;
   code: string;
   title: string;
+  fullScreenButton: ReactNode;
 }
 
 function DialogToolBar(props: DialogToolBarProps) {
-  const { category, code, dialog, title } = props;
+  const { category, code, dialog, title, fullScreenButton } = props;
   const renderCategoryIcon = (categoryType: string) => {
     if (categoryType === "interrupt") {
       return <TriangleAlert className="text-current" />;
@@ -34,9 +35,9 @@ function DialogToolBar(props: DialogToolBarProps) {
         </div>
       </div>
       <div className="ml-auto flex items-center gap-2 [&>form]:flex">
+        {fullScreenButton}
         <CopyButton code={code} />
         <div className="shrink-0 bg-border w-[1px] mx-0 hidden h-4 md:flex" />
-
         <CodeSheet dialog={dialog} code={code} />
       </div>
     </div>

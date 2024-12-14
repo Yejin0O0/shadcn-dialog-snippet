@@ -66,6 +66,7 @@ export function InnerScrollForm({ type }: InnerScrollFormProps) {
   });
 
   const [isOpen, setIsOpen] = useState(true);
+  const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 
   const onSubmit = (data: FormData) => {
     alert(`Submitted Data:
@@ -80,10 +81,13 @@ export function InnerScrollForm({ type }: InnerScrollFormProps) {
   };
   if (type === "fullScreen") {
     return (
-      <Dialog>
+      <Dialog onOpenChange={() => setIsTooltipAllowed(false)}>
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
+            <TooltipTrigger
+              asChild
+              onMouseEnter={() => setIsTooltipAllowed(true)}
+            >
               <DialogTrigger asChild>
                 <Button
                   size="sm"
@@ -94,9 +98,11 @@ export function InnerScrollForm({ type }: InnerScrollFormProps) {
                 </Button>
               </DialogTrigger>
             </TooltipTrigger>
-            <TooltipContent className="bg-black text-white">
-              full screen dialog
-            </TooltipContent>
+            {isTooltipAllowed && (
+              <TooltipContent className="bg-black text-white">
+                full screen dialog
+              </TooltipContent>
+            )}
           </Tooltip>
         </TooltipProvider>
         <DialogContent className="sm:max-w-[425px] overflow-y-auto max-h-[400px]">

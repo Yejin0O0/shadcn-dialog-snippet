@@ -72,6 +72,7 @@ export function PaymentStepForm({ type }: PaymentStepFromProps) {
   } = form;
 
   const [isOpen, setIsOpen] = useState(true);
+  const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 
   const selectedPlan = watch("plan");
 
@@ -113,10 +114,13 @@ export function PaymentStepForm({ type }: PaymentStepFromProps) {
   };
   if (type === "fullScreen") {
     return (
-      <Dialog>
+      <Dialog onOpenChange={() => setIsTooltipAllowed(false)}>
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
+            <TooltipTrigger
+              asChild
+              onMouseEnter={() => setIsTooltipAllowed(true)}
+            >
               <DialogTrigger asChild>
                 <Button
                   size="sm"
@@ -127,9 +131,11 @@ export function PaymentStepForm({ type }: PaymentStepFromProps) {
                 </Button>
               </DialogTrigger>
             </TooltipTrigger>
-            <TooltipContent className="bg-black text-white">
-              full screen dialog
-            </TooltipContent>
+            {isTooltipAllowed && (
+              <TooltipContent className="bg-black text-white">
+                full screen dialog
+              </TooltipContent>
+            )}
           </Tooltip>
         </TooltipProvider>
         <DialogContent className="sm:max-w-[500px] rounded-md shadow-lg p-6">

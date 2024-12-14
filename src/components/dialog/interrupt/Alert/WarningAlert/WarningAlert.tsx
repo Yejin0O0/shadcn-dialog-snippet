@@ -28,13 +28,17 @@ const SCALE = 0.8;
 
 export function WarningAlert({ type }: WarningAlertProps) {
   const [isOpen, setIsOpen] = useState(true);
+  const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 
   if (type === "fullScreen") {
     return (
-      <AlertDialog>
+      <AlertDialog onOpenChange={() => setIsTooltipAllowed(false)}>
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
+            <TooltipTrigger
+              asChild
+              onMouseEnter={() => setIsTooltipAllowed(true)}
+            >
               <AlertDialogTrigger asChild>
                 <Button
                   size="sm"
@@ -45,9 +49,11 @@ export function WarningAlert({ type }: WarningAlertProps) {
                 </Button>
               </AlertDialogTrigger>
             </TooltipTrigger>
-            <TooltipContent className="bg-black text-white">
-              full screen dialog
-            </TooltipContent>
+            {isTooltipAllowed && (
+              <TooltipContent className="bg-black text-white">
+                full screen dialog
+              </TooltipContent>
+            )}
           </Tooltip>
         </TooltipProvider>
         <AlertDialogContent className="ltr">
@@ -89,10 +95,7 @@ export function WarningAlert({ type }: WarningAlertProps) {
 
       {isOpen && (
         <div
-          style={{
-            transform: `translate(-50%, -50%) scale(${SCALE})`,
-          }}
-          className="flex flex-col gap-4 w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 absolute top-1/2 left-1/2"
+          className={`scale-[${SCALE}] absolute w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
         >
           <div className="border-l-4 border-amber-500 pl-6">
             <h2 className="text-lg font-semibold">Warning Message</h2>

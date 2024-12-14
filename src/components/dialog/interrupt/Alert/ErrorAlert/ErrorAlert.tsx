@@ -28,13 +28,17 @@ const SCALE = 0.8;
 
 export function ErrorAlert({ type }: ErrorAlertProps) {
   const [isOpen, setIsOpen] = useState(true);
+  const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 
   if (type === "fullScreen") {
     return (
-      <AlertDialog>
+      <AlertDialog onOpenChange={() => setIsTooltipAllowed(false)}>
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
+            <TooltipTrigger
+              asChild
+              onMouseEnter={() => setIsTooltipAllowed(true)}
+            >
               <AlertDialogTrigger asChild>
                 <Button
                   size="sm"
@@ -45,9 +49,11 @@ export function ErrorAlert({ type }: ErrorAlertProps) {
                 </Button>
               </AlertDialogTrigger>
             </TooltipTrigger>
-            <TooltipContent className="bg-black text-white">
-              full screen dialog
-            </TooltipContent>
+            {isTooltipAllowed && (
+              <TooltipContent className="bg-black text-white">
+                full screen dialog
+              </TooltipContent>
+            )}
           </Tooltip>
         </TooltipProvider>
         <AlertDialogContent className="ltr">

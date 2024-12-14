@@ -44,16 +44,20 @@ export function RadioBoxColumnForm({ type }: RadioBoxColumnFormProps) {
   });
 
   const [isOpen, setIsOpen] = useState(true);
+  const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 
   const onSubmit = (data: z.infer<typeof FormSchema>) => {
     alert(data.type);
   };
   if (type === "fullScreen") {
     return (
-      <Dialog>
+      <Dialog onOpenChange={() => setIsTooltipAllowed(false)}>
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
+            <TooltipTrigger
+              asChild
+              onMouseEnter={() => setIsTooltipAllowed(true)}
+            >
               <DialogTrigger asChild>
                 <Button
                   size="sm"
@@ -64,9 +68,11 @@ export function RadioBoxColumnForm({ type }: RadioBoxColumnFormProps) {
                 </Button>
               </DialogTrigger>
             </TooltipTrigger>
-            <TooltipContent className="bg-black text-white">
-              full screen dialog
-            </TooltipContent>
+            {isTooltipAllowed && (
+              <TooltipContent className="bg-black text-white">
+                full screen dialog
+              </TooltipContent>
+            )}
           </Tooltip>
         </TooltipProvider>
         <DialogContent>

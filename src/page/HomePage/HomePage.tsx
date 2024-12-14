@@ -20,7 +20,7 @@ function HomePage() {
       </section>
       <section id="dialog" className="container py-6 scroll-mt-20">
         <div className="grid gap-4">
-          <DialogNav className="[&>a:first-child]:bg-muted [&>a:first-child]:font-medium [&>a:first-child]:text-primary" />
+          <DialogNav />
           <div className="gap-6 md:flex md:flex-row-reverse md:items-start">
             <div className="grid flex-1 gap-12">
               <div

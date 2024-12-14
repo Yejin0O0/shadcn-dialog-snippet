@@ -59,16 +59,20 @@ export function SignInForm({ type }: SignInFormProps) {
   });
 
   const [isOpen, setIsOpen] = useState(true);
+  const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 
   const onSubmit = () => {
     alert("Login Success");
   };
   if (type === "fullScreen") {
     return (
-      <Dialog>
+      <Dialog onOpenChange={() => setIsTooltipAllowed(false)}>
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
+            <TooltipTrigger
+              asChild
+              onMouseEnter={() => setIsTooltipAllowed(true)}
+            >
               <DialogTrigger asChild>
                 <Button
                   size="sm"
@@ -79,9 +83,11 @@ export function SignInForm({ type }: SignInFormProps) {
                 </Button>
               </DialogTrigger>
             </TooltipTrigger>
-            <TooltipContent className="bg-black text-white">
-              full screen dialog
-            </TooltipContent>
+            {isTooltipAllowed && (
+              <TooltipContent className="bg-black text-white">
+                full screen dialog
+              </TooltipContent>
+            )}
           </Tooltip>
         </TooltipProvider>
         <DialogContent className="sm:max-w-[425px] rounded-md shadow-lg p-6">

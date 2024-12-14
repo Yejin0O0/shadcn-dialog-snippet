@@ -63,6 +63,7 @@ export function OpenSatisfactionSurveyForm({
     },
   });
   const [isOpen, setIsOpen] = useState(true);
+  const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 
   const satisfactionValue = form.watch("satisfaction");
 
@@ -77,10 +78,13 @@ export function OpenSatisfactionSurveyForm({
 
   if (type === "fullScreen") {
     return (
-      <Dialog>
+      <Dialog onOpenChange={() => setIsTooltipAllowed(false)}>
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
+            <TooltipTrigger
+              asChild
+              onMouseEnter={() => setIsTooltipAllowed(true)}
+            >
               <DialogTrigger asChild>
                 <Button
                   size="sm"
@@ -91,9 +95,11 @@ export function OpenSatisfactionSurveyForm({
                 </Button>
               </DialogTrigger>
             </TooltipTrigger>
-            <TooltipContent className="bg-black text-white">
-              full screen dialog
-            </TooltipContent>
+            {isTooltipAllowed && (
+              <TooltipContent className="bg-black text-white">
+                full screen dialog
+              </TooltipContent>
+            )}
           </Tooltip>
         </TooltipProvider>
         <DialogContent className="sm:max-w-[600px] rounded-md shadow-lg p-6 bg-white">

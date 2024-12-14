@@ -18,8 +18,8 @@ const DIALOG_LINK = [
   },
 ];
 
-function DialogNav({ className, ...props }: React.ComponentProps<"div">) {
-  const { pathname, hash } = useLocation();
+function DialogNav() {
+  const { hash } = useLocation();
 
   useEffect(() => {
     if (hash) {
@@ -32,15 +32,14 @@ function DialogNav({ className, ...props }: React.ComponentProps<"div">) {
 
   return (
     <ScrollArea className="max-w-[600px] lg:max-w-none">
-      <div className={cn("flex items-center", className)} {...props}>
-        {DIALOG_LINK.map((link, index) => (
+      <div className="flex items-center">
+        {DIALOG_LINK.map((link) => (
           <Link
             to={link.href}
             key={link.name}
             className={cn(
               "flex h-7 shrink-0 items-center justify-center rounded-full px-4 text-center text-sm transition-colors hover:text-primary",
-              pathname?.startsWith(link.href) ||
-                (index === 0 && pathname === "/")
+              hash === link.href
                 ? "bg-muted font-medium text-primary"
                 : "text-muted-foreground",
             )}

@@ -20,7 +20,7 @@ function HomePage() {
       </section>
       <section id="dialog" className="container py-6 scroll-mt-20">
         <div className="grid gap-4">
-          <DialogNav className="[&>a:first-child]:bg-muted [&>a:first-child]:font-medium [&>a:first-child]:text-primary" />
+          <DialogNav />
           <div className="gap-6 md:flex md:flex-row-reverse md:items-start">
             <div className="grid flex-1 gap-12">
               <div
@@ -31,18 +31,20 @@ function HomePage() {
                   category="interrupt"
                   code={Dialog.warningAlertString}
                   title="Warning"
+                  fullScreenButton={<Dialog.WarningAlert type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.WarningAlert />
+                    <Dialog.WarningAlert type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="interrupt"
                   code={Dialog.errorAlertString}
                   title="Error"
+                  fullScreenButton={<Dialog.ErrorAlert type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.ErrorAlert />
+                    <Dialog.ErrorAlert type="card" />
                   </DialogCard>
                 </DialogDisplay>
               </div>
@@ -55,27 +57,32 @@ function HomePage() {
                   category="information"
                   code={Dialog.infoDialogString}
                   title="Information"
+                  fullScreenButton={<Dialog.InfoDialog type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.InfoDialog />
+                    <Dialog.InfoDialog type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="information"
                   code={Dialog.successDialogString}
                   title="Success"
+                  fullScreenButton={<Dialog.SuccessDialog type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.SuccessDialog />
+                    <Dialog.SuccessDialog type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="information"
                   code={Dialog.userProfileDialogString}
                   title="User Profile"
+                  fullScreenButton={
+                    <Dialog.UserProfileDialog type="fullScreen" />
+                  }
                 >
                   <DialogCard>
-                    <Dialog.UserProfileDialog />
+                    <Dialog.UserProfileDialog type="card" />
                   </DialogCard>
                 </DialogDisplay>
               </div>
@@ -88,81 +95,80 @@ function HomePage() {
                   category="form"
                   code={Dialog.checkBoxColumnFormString}
                   title="Checkbox Column Form"
+                  fullScreenButton={
+                    <Dialog.CheckBoxColumnForm type="fullScreen" />
+                  }
                 >
                   <DialogCard>
-                    <Dialog.CheckBoxColumnForm />
-                  </DialogCard>
-                </DialogDisplay>
-                <DialogDisplay
-                  category="form"
-                  code={Dialog.checkBoxRowFormString}
-                  title="Checkbox Row Form"
-                >
-                  <DialogCard>
-                    <Dialog.CheckBoxRowForm />
+                    <Dialog.CheckBoxColumnForm type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
                   code={Dialog.innerScrollFormString}
                   title="Inner Scroll Form"
+                  fullScreenButton={
+                    <Dialog.InnerScrollForm type="fullScreen" />
+                  }
                 >
                   <DialogCard>
-                    <Dialog.InnerScrollForm />
+                    <Dialog.InnerScrollForm type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
                   code={Dialog.openSatisfactionSurveyFormString}
-                  title="Statisfaction Survey Form"
+                  title="Satisfaction Survey Form"
+                  fullScreenButton={
+                    <Dialog.OpenSatisfactionSurveyForm type="fullScreen" />
+                  }
                 >
                   <DialogCard>
-                    <Dialog.OpenSatisfactionSurveyForm />
+                    <Dialog.OpenSatisfactionSurveyForm type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
                   code={Dialog.paymentStepFormString}
                   title="Payment Step Form"
+                  fullScreenButton={
+                    <Dialog.PaymentStepForm type="fullScreen" />
+                  }
                 >
                   <DialogCard>
-                    <Dialog.PaymentStepForm />
+                    <Dialog.PaymentStepForm type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
                   code={Dialog.radioBoxColumnFormString}
                   title="Radiobox Column Form"
+                  fullScreenButton={
+                    <Dialog.RadioBoxColumnForm type="fullScreen" />
+                  }
                 >
                   <DialogCard>
-                    <Dialog.RadioBoxColumnForm />
-                  </DialogCard>
-                </DialogDisplay>
-                <DialogDisplay
-                  category="form"
-                  code={Dialog.radioBoxRowFormString}
-                  title="Radiobox Row Form"
-                >
-                  <DialogCard>
-                    <Dialog.RadioBoxRowForm />
+                    <Dialog.RadioBoxColumnForm type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
                   code={Dialog.signInFormString}
                   title="Sign In Form"
+                  fullScreenButton={<Dialog.SignInForm type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.SignInForm />
+                    <Dialog.SignInForm type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
                   code={Dialog.signUpFormString}
                   title="Sign Up Form"
+                  fullScreenButton={<Dialog.SignUpForm type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.SignUpForm />
+                    <Dialog.SignUpForm type="card" />
                   </DialogCard>
                 </DialogDisplay>
               </div>

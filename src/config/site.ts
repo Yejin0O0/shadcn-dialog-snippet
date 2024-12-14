@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "shadcn-dialog-snippet",
   url: "/",
-  ogImage: "https://ui.shadcn.com/og.jpg",
+  ogImage: "/ogImage.svg",
   description:
     "A collection of various usage examples of the Dialog component from shadcn/ui.",
   links: {

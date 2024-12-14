@@ -127,7 +127,10 @@ export function UserProfileDialog({ type }: UserProfileDialogProps) {
       </Button>
       {isOpen && (
         <div
-          className={`scale-[${SCALE}] absolute w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+          style={{
+            transform: `translate(-50%, -50%) scale(${SCALE})`,
+          }}
+          className="flex flex-col gap-4 w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 absolute top-1/2 left-1/2"
         >
           <div className="flex justify-end mb-2">
             <XIcon

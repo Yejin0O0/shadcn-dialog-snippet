@@ -24,7 +24,7 @@ export function SuccessDialogBase() {
       </AlertDialogTrigger>
       <AlertDialogContent className="ltr">
         <div className="border-s-4 border-green-500 pl-6">
-          <AlertDialogHeader>
+          <AlertDialogHeader className="mb-1.5">
             <AlertDialogTitle>Success</AlertDialogTitle>
             <AlertDialogDescription>
               Operation completed successfully! Everything went according to
@@ -33,7 +33,7 @@ export function SuccessDialogBase() {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Dismiss</AlertDialogCancel>
-            <AlertDialogAction className="w-fit bg-green-500 text-white hover:bg-green-700 hover:text-white focus:ring-2 focus:ring-green-500">
+            <AlertDialogAction className="bg-green-500 text-white hover:bg-green-700 hover:text-white focus:ring-2 focus:ring-green-500">
               Action
             </AlertDialogAction>
           </AlertDialogFooter>

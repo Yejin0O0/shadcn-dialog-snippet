@@ -1,7 +1,5 @@
 function DialogCard({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="m-auto min-h-[400px] w-full max-h-full">{children}</div>
-  );
+  return <div className="min-h-[330px] h-full relative flex">{children}</div>;
 }
 
 export default DialogCard;

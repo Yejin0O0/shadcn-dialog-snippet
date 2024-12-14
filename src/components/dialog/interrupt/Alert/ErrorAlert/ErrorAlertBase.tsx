@@ -24,7 +24,7 @@ export function ErrorAlertBase() {
       </AlertDialogTrigger>
       <AlertDialogContent className="ltr">
         <div className="border-s-4 border-red-500 pl-6">
-          <AlertDialogHeader>
+          <AlertDialogHeader className="mb-1.5">
             <AlertDialogTitle>Permission Denied</AlertDialogTitle>
             <AlertDialogDescription>
               You do not have permission to view this content. Please contact
@@ -33,7 +33,7 @@ export function ErrorAlertBase() {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Dismiss</AlertDialogCancel>
-            <AlertDialogAction className="w-fit bg-red-500 text-white hover:bg-red-700 hover:text-white focus:ring-2 focus:ring-red-500">
+            <AlertDialogAction className="bg-red-500 text-white hover:bg-red-700 hover:text-white focus:ring-2 focus:ring-red-500">
               Action
             </AlertDialogAction>
           </AlertDialogFooter>

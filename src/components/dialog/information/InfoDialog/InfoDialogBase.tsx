@@ -24,7 +24,7 @@ export function InfoDialogBase() {
       </AlertDialogTrigger>
       <AlertDialogContent className="ltr">
         <div className="border-s-4 border-blue-500 pl-6">
-          <AlertDialogHeader>
+          <AlertDialogHeader className="mb-1.5">
             <AlertDialogTitle>Info</AlertDialogTitle>
             <AlertDialogDescription>
               This is an informative message to notify you of something
@@ -33,7 +33,7 @@ export function InfoDialogBase() {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Dismiss</AlertDialogCancel>
-            <AlertDialogAction className="w-fit bg-blue-500 text-white hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-500">
+            <AlertDialogAction className="bg-blue-500 text-white hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-500">
               Action
             </AlertDialogAction>
           </AlertDialogFooter>

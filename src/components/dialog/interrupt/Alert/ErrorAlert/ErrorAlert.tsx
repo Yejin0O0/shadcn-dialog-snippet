@@ -89,7 +89,10 @@ export function ErrorAlert({ type }: ErrorAlertProps) {
 
       {isOpen && (
         <div
-          className={`scale-[${SCALE}] absolute w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+          style={{
+            transform: `translate(-50%, -50%) scale(${SCALE})`,
+          }}
+          className="flex flex-col gap-4 w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 absolute top-1/2 left-1/2"
         >
           <div className="border-s-4 border-red-500 pl-6">
             <h2 className="text-lg font-semibold">Permission Denied</h2>

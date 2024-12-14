@@ -114,12 +114,11 @@ export function UserProfileDialog({ type }: UserProfileDialogProps) {
     >
       <Button
         variant="outline"
-        className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 "
+        className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-fit"
         onClick={() => setIsOpen(true)}
       >
         User Profile
       </Button>
-
       {isOpen && (
         <div
           className={`scale-[${SCALE}] absolute w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}

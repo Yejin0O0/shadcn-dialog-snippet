@@ -9,11 +9,10 @@ Link to production site: [shadcn-dialog-snippet](https://shadcn-dialog-snippet.v
 
 
 ## Tech Stack
-shadcn/ui
-React
-React Router DOM
-TailwindCSS
-Shiki
+`shadcn/ui`
+`React`
+`TailwindCSS`
+`Shiki`
 
 ## Running the Dev Server
 To run the dev server, run `npm run dev` and navigate to localhost:3000

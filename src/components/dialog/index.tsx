@@ -15,17 +15,17 @@ export { SignUpForm } from "@/components/dialog/form/SignUpForm/SignUpForm";
 
 // ----------------------------------------------
 
-export { errorAlertString } from "@/components/dialog/interrupt/Alert/ErrorAlert/errorAlertString";
-export { warningAlertString } from "@/components/dialog/interrupt/Alert/WarningAlert/warningAlertString";
+export { ErrorAlertBaseString } from "@/__generated__/ErrorAlertBaseString";
+export { WarningAlertBaseString } from "@/__generated__/WarningAlertBaseString";
 
-export { successDialogString } from "@/components/dialog/information/SuccessDialog/successDialogString";
-export { infoDialogString } from "@/components/dialog/information/InfoDialog/infoDialogString";
-export { userProfileDialogString } from "@/components/dialog/information/UserProfileDialog/userProfileDialogString";
+export { SuccessDialogBaseString } from "@/__generated__/SuccessDialogBaseString";
+export { InfoDialogBaseString } from "@/__generated__/InfoDialogBaseString";
+export { UserProfileDialogBaseString } from "@/__generated__/UserProfileDialogBaseString";
 
-export { checkBoxColumnFormString } from "@/components/dialog/form/CheckBoxColumnForm/checkBoxColumnFormString";
-export { innerScrollFormString } from "@/components/dialog/form/InnerScrollForm/innerScrollFormString";
-export { openSatisfactionSurveyFormString } from "@/components/dialog/form/OpenSatisfactionSurveyForm/openSatisfactionSurveyFormString";
-export { paymentStepFormString } from "@/components/dialog/form/PaymentStepForm/paymentStepFormString";
-export { radioBoxColumnFormString } from "@/components/dialog/form/RadioBoxColumnForm/radioBoxColumnFormString";
-export { signInFormString } from "@/components/dialog/form/SignInForm/signInFormString";
-export { signUpFormString } from "@/components/dialog/form/SignUpForm/signUpFormString";
+export { CheckBoxColumnFormBaseString } from "@/__generated__/CheckBoxColumnFormBaseString";
+export { InnerScrollFormBaseString } from "@/__generated__/InnerScrollFormBaseString";
+export { OpenSatisfactionSurveyFormBaseString } from "@/__generated__/OpenSatisfactionSurveyFormBaseString";
+export { PaymentStepFormBaseString } from "@/__generated__/PaymentStepFormBaseString";
+export { RadioBoxColumnFormBaseString } from "@/__generated__/RadioBoxColumnFormBaseString";
+export { SignInFormBaseString } from "@/__generated__/SignInFormBaseString";
+export { SignUpFormBaseString } from "@/__generated__/SignUpFormBaseString";

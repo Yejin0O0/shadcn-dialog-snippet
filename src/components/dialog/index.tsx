@@ -1,8 +1,8 @@
-export { ErrorAlert } from "@/components/dialog/interrupt/Alert/ErrorAlert/ErrorAlert";
-export { WarningAlert } from "@/components/dialog/interrupt/Alert/WarningAlert/WarningAlert";
+export { ErrorAlert } from "@/components/dialog/interrupt/ErrorAlert/ErrorAlert";
+export { WarningAlert } from "@/components/dialog/interrupt/WarningAlert/WarningAlert";
 
-export { InfoDialog } from "@/components/dialog/information/InfoDialog/InfoDialog";
-export { SuccessDialog } from "@/components/dialog/information/SuccessDialog/SuccessDialog";
+export { InfoDialog } from "@/components/dialog/interrupt/InfoAlert/InfoAlert";
+export { SuccessDialog } from "@/components/dialog/interrupt/SuccessAlert/SuccessAlert";
 export { UserProfileDialog } from "@/components/dialog/information/UserProfileDialog/UserProfileDialog";
 
 export { CheckBoxColumnForm } from "@/components/dialog/form/CheckBoxColumnForm/CheckBoxColumnForm";
@@ -18,8 +18,8 @@ export { SignUpForm } from "@/components/dialog/form/SignUpForm/SignUpForm";
 export { ErrorAlertBaseString } from "@/__generated__/ErrorAlertBaseString";
 export { WarningAlertBaseString } from "@/__generated__/WarningAlertBaseString";
 
-export { SuccessDialogBaseString } from "@/__generated__/SuccessDialogBaseString";
-export { InfoDialogBaseString } from "@/__generated__/InfoDialogBaseString";
+export { SuccessAlertBaseString } from "@/__generated__/SuccessAlertBaseString";
+export { InfoAlertBaseString } from "@/__generated__/InfoAlertBaseString";
 export { UserProfileDialogBaseString } from "@/__generated__/UserProfileDialogBaseString";
 
 export { CheckBoxColumnFormBaseString } from "@/__generated__/CheckBoxColumnFormBaseString";

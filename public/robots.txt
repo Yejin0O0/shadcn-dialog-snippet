@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+# https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt
+
+User-Agent: *
+Allow: /
+Disallow:
+
+Sitemap: https://shadcn-dialog-snippet.vercel.app/sitemap.xml

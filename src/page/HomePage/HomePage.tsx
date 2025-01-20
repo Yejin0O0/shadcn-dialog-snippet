@@ -85,6 +85,18 @@ function HomePage() {
                     <Dialog.UserProfileDialog type="card" />
                   </DialogCard>
                 </DialogDisplay>
+                <DialogDisplay
+                  category="information"
+                  code={Dialog.PricePlanDialogBaseString}
+                  title="Price Plan"
+                  fullScreenButton={
+                    <Dialog.PricePlanDialog type="fullScreen" />
+                  }
+                >
+                  <DialogCard>
+                    <Dialog.PricePlanDialog type="card" />
+                  </DialogCard>
+                </DialogDisplay>
               </div>
               <Separator />
               <div

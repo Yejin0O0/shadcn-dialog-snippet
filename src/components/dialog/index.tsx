@@ -4,6 +4,7 @@ export { WarningAlert } from "@/components/dialog/interrupt/WarningAlert/Warning
 export { InfoDialog } from "@/components/dialog/interrupt/InfoAlert/InfoAlert";
 export { SuccessDialog } from "@/components/dialog/interrupt/SuccessAlert/SuccessAlert";
 export { UserProfileDialog } from "@/components/dialog/information/UserProfileDialog/UserProfileDialog";
+export { PricePlanDialog } from "@/components/dialog/information/PricePlanDialog/PricePlanDialog";
 
 export { CheckBoxColumnForm } from "@/components/dialog/form/CheckBoxColumnForm/CheckBoxColumnForm";
 export { InnerScrollForm } from "@/components/dialog/form/InnerScrollForm/InnerScrollForm";
@@ -21,6 +22,7 @@ export { WarningAlertBaseString } from "@/__generated__/WarningAlertBaseString";
 export { SuccessAlertBaseString } from "@/__generated__/SuccessAlertBaseString";
 export { InfoAlertBaseString } from "@/__generated__/InfoAlertBaseString";
 export { UserProfileDialogBaseString } from "@/__generated__/UserProfileDialogBaseString";
+export { PricePlanDialogBaseString } from "@/__generated__/PricePlanDialogBaseString";
 
 export { CheckBoxColumnFormBaseString } from "@/__generated__/CheckBoxColumnFormBaseString";
 export { InnerScrollFormBaseString } from "@/__generated__/InnerScrollFormBaseString";

@@ -67,6 +67,16 @@ function HomePage() {
                     <Dialog.SuccessAlert type="card" />
                   </DialogCard>
                 </DialogDisplay>
+                <DialogDisplay
+                  category="interrupt"
+                  code={Dialog.UpdateAlertBaseString}
+                  title="Update"
+                  fullScreenButton={<Dialog.UpdateAlert type="fullScreen" />}
+                >
+                  <DialogCard>
+                    <Dialog.UpdateAlert type="card" />
+                  </DialogCard>
+                </DialogDisplay>
               </div>
               <Separator />
               <div

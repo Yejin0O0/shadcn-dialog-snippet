@@ -2,6 +2,7 @@ export { ErrorAlert } from "@/components/dialog/interrupt/ErrorAlert/ErrorAlert"
 export { WarningAlert } from "@/components/dialog/interrupt/WarningAlert/WarningAlert";
 export { InfoAlert } from "@/components/dialog/interrupt/InfoAlert/InfoAlert";
 export { SuccessAlert } from "@/components/dialog/interrupt/SuccessAlert/SuccessAlert";
+export { UpdateAlert } from "@/components/dialog/interrupt/UpdateAlert/UpdateAlert";
 
 export { UserProfileDialog } from "@/components/dialog/information/UserProfileDialog/UserProfileDialog";
 export { PricePlanDialog } from "@/components/dialog/information/PricePlanDialog/PricePlanDialog";
@@ -18,8 +19,9 @@ export { SignUpForm } from "@/components/dialog/form/SignUpForm/SignUpForm";
 
 export { ErrorAlertBaseString } from "@/__generated__/ErrorAlertBaseString";
 export { WarningAlertBaseString } from "@/__generated__/WarningAlertBaseString";
-
 export { SuccessAlertBaseString } from "@/__generated__/SuccessAlertBaseString";
+export { UpdateAlertBaseString } from "@/__generated__/UpdateAlertBaseString";
+
 export { InfoAlertBaseString } from "@/__generated__/InfoAlertBaseString";
 export { UserProfileDialogBaseString } from "@/__generated__/UserProfileDialogBaseString";
 export { PricePlanDialogBaseString } from "@/__generated__/PricePlanDialogBaseString";

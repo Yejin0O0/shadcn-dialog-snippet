@@ -20,13 +20,13 @@ import { ExpandIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-interface SuccessDialogProps {
+interface SuccessAlertProps {
   type: "fullScreen" | "card";
 }
 
 const SCALE = 0.8;
 
-export function SuccessDialog({ type }: SuccessDialogProps) {
+export function SuccessAlert({ type }: SuccessAlertProps) {
   const [isOpen, setIsOpen] = useState(true);
   const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 

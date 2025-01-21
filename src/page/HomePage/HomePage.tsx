@@ -51,20 +51,20 @@ function HomePage() {
                   category="interrupt"
                   code={Dialog.InfoAlertBaseString}
                   title="Info"
-                  fullScreenButton={<Dialog.InfoDialog type="fullScreen" />}
+                  fullScreenButton={<Dialog.InfoAlert type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.InfoDialog type="card" />
+                    <Dialog.InfoAlert type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="interrupt"
                   code={Dialog.SuccessAlertBaseString}
                   title="Success"
-                  fullScreenButton={<Dialog.SuccessDialog type="fullScreen" />}
+                  fullScreenButton={<Dialog.SuccessAlert type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.SuccessDialog type="card" />
+                    <Dialog.SuccessAlert type="card" />
                   </DialogCard>
                 </DialogDisplay>
               </div>

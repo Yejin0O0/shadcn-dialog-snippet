@@ -1,8 +1,8 @@
 export { ErrorAlert } from "@/components/dialog/interrupt/ErrorAlert/ErrorAlert";
 export { WarningAlert } from "@/components/dialog/interrupt/WarningAlert/WarningAlert";
+export { InfoAlert } from "@/components/dialog/interrupt/InfoAlert/InfoAlert";
+export { SuccessAlert } from "@/components/dialog/interrupt/SuccessAlert/SuccessAlert";
 
-export { InfoDialog } from "@/components/dialog/interrupt/InfoAlert/InfoAlert";
-export { SuccessDialog } from "@/components/dialog/interrupt/SuccessAlert/SuccessAlert";
 export { UserProfileDialog } from "@/components/dialog/information/UserProfileDialog/UserProfileDialog";
 export { PricePlanDialog } from "@/components/dialog/information/PricePlanDialog/PricePlanDialog";
 

@@ -47,16 +47,10 @@ function HomePage() {
                     <Dialog.ErrorAlert type="card" />
                   </DialogCard>
                 </DialogDisplay>
-              </div>
-              <Separator />
-              <div
-                id="information"
-                className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
-              >
                 <DialogDisplay
-                  category="information"
-                  code={Dialog.InfoDialogBaseString}
-                  title="Information"
+                  category="interrupt"
+                  code={Dialog.InfoAlertBaseString}
+                  title="Info"
                   fullScreenButton={<Dialog.InfoDialog type="fullScreen" />}
                 >
                   <DialogCard>
@@ -64,8 +58,8 @@ function HomePage() {
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
-                  category="information"
-                  code={Dialog.SuccessDialogBaseString}
+                  category="interrupt"
+                  code={Dialog.SuccessAlertBaseString}
                   title="Success"
                   fullScreenButton={<Dialog.SuccessDialog type="fullScreen" />}
                 >
@@ -73,6 +67,12 @@ function HomePage() {
                     <Dialog.SuccessDialog type="card" />
                   </DialogCard>
                 </DialogDisplay>
+              </div>
+              <Separator />
+              <div
+                id="information"
+                className="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
+              >
                 <DialogDisplay
                   category="information"
                   code={Dialog.UserProfileDialogBaseString}
@@ -83,6 +83,18 @@ function HomePage() {
                 >
                   <DialogCard>
                     <Dialog.UserProfileDialog type="card" />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay
+                  category="information"
+                  code={Dialog.PricePlanDialogBaseString}
+                  title="Price Plan"
+                  fullScreenButton={
+                    <Dialog.PricePlanDialog type="fullScreen" />
+                  }
+                >
+                  <DialogCard>
+                    <Dialog.PricePlanDialog type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay

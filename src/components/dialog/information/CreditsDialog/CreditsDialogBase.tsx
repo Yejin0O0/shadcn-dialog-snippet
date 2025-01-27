@@ -32,7 +32,9 @@ export default function CreditsDialogBase() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="w-fit">Credits information</Button>
+        <Button variant="outline" className="w-fit">
+          Credits information
+        </Button>
       </DialogTrigger>
       <DialogContent className="max-w-md rounded-lg bg-white p-6 shadow-lg">
         <DialogHeader>

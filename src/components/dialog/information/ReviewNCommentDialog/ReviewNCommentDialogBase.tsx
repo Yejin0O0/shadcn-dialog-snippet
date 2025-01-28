@@ -11,26 +11,26 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Star } from "lucide-react";
 
-export default function ReviewNCommentDialogBase() {
-  const comments = [
-    {
-      id: "comment1",
-      userName: "User Name Here",
-      date: "18 APR 2023",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie, ipsum at tristique consequat, turpis tellus ullamcorper turpis, at ullamcorper justo neque sed quam.",
-      rating: 4,
-      likes: 298,
-    },
-    {
-      id: "comment2",
-      userName: "User Name Here",
-      date: "15 APR 2023",
-      text: "Proin nibh augue, pellentesque sed lorem et, mattis facilisis lorem. Integer eu eros in justo porta luctus id in nulla. Morbi auctor magna sit amet elit tempor blandit.",
-      rating: 3,
-      likes: 178,
-    },
-  ];
+const comments = [
+  {
+    id: "comment1",
+    userName: "User Name Here",
+    date: "18 APR 2023",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie, ipsum at tristique consequat, turpis tellus ullamcorper turpis, at ullamcorper justo neque sed quam.",
+    rating: 4,
+    likes: 298,
+  },
+  {
+    id: "comment2",
+    userName: "User Name Here",
+    date: "15 APR 2023",
+    text: "Proin nibh augue, pellentesque sed lorem et, mattis facilisis lorem. Integer eu eros in justo porta luctus id in nulla. Morbi auctor magna sit amet elit tempor blandit.",
+    rating: 3,
+    likes: 178,
+  },
+];
 
+export default function ReviewNCommentDialogBase() {
   return (
     <Dialog>
       <DialogTrigger asChild>

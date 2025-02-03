@@ -36,7 +36,7 @@
     "lucide-react": "^0.453.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.53.1",
     "react-router-dom": "^6.28.0",
     "tailwind-merge": "^2.5.3",

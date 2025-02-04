@@ -110,7 +110,7 @@ function HomePage() {
                 <DialogDisplay
                   category="information"
                   code={Dialog.ReviewNCommentDialogBaseString}
-                  title="Review and Comment"
+                  title="Review & Comment"
                   fullScreenButton={
                     <Dialog.ReviewNCommentDialog type="fullScreen" />
                   }

@@ -107,6 +107,18 @@ function HomePage() {
                     <Dialog.CreditsDialog type="card" />
                   </DialogCard>
                 </DialogDisplay>
+                <DialogDisplay
+                  category="information"
+                  code={Dialog.ReviewNCommentDialogBaseString}
+                  title="Review and Comment"
+                  fullScreenButton={
+                    <Dialog.ReviewNCommentDialog type="fullScreen" />
+                  }
+                >
+                  <DialogCard>
+                    <Dialog.ReviewNCommentDialog type="card" />
+                  </DialogCard>
+                </DialogDisplay>
               </div>
               <Separator />
               <div

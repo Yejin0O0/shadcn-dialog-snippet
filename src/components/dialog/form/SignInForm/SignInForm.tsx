@@ -250,7 +250,7 @@ export function SignInForm({ type }: SignInFormProps) {
                       <Label>Email</Label>
                       <FormControl>
                         <Input
-                          id="email"
+                          id="sign-in-email"
                           placeholder="Enter your email"
                           className="w-full p-3 border rounded-lg"
                           {...field}

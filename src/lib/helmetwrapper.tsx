@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 interface HelmetWrapperProps {
   title?: string;
@@ -8,7 +8,7 @@ interface HelmetWrapperProps {
 
 function HelmetWrapper({ title, element }: HelmetWrapperProps) {
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>{title || siteConfig.title}</title>
         <meta name="description" content={siteConfig.description} />
@@ -20,7 +20,7 @@ function HelmetWrapper({ title, element }: HelmetWrapperProps) {
         <meta name="og:image" content={siteConfig.ogImage} />
       </Helmet>
       {element}
-    </>
+    </HelmetProvider>
   );
 }
 

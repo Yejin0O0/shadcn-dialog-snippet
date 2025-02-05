@@ -20,13 +20,13 @@ import { ExpandIcon } from "lucide-react";
 
 import { useState } from "react";
 
-interface InfoDialogProps {
+interface InfoAlertProps {
   type: "fullScreen" | "card";
 }
 
 const SCALE = 0.8;
 
-export function InfoDialog({ type }: InfoDialogProps) {
+export function InfoAlert({ type }: InfoAlertProps) {
   const [isOpen, setIsOpen] = useState(true);
   const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 

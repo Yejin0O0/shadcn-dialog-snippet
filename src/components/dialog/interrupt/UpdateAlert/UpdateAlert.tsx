@@ -15,18 +15,18 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { ExpandIcon } from "lucide-react";
+import { DownloadCloudIcon, ExpandIcon } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { useState } from "react";
 
-interface SuccessAlertProps {
+interface UpdateAlertProps {
   type: "fullScreen" | "card";
 }
 
 const SCALE = 0.8;
 
-export function SuccessAlert({ type }: SuccessAlertProps) {
+export function UpdateAlert({ type }: UpdateAlertProps) {
   const [isOpen, setIsOpen] = useState(true);
   const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 
@@ -57,21 +57,37 @@ export function SuccessAlert({ type }: SuccessAlertProps) {
           </Tooltip>
         </TooltipProvider>
         <AlertDialogContent className="ltr">
-          <div className="border-s-4 border-green-500 pl-6">
-            <AlertDialogHeader className="mb-1.5">
-              <AlertDialogTitle>Success</AlertDialogTitle>
-              <AlertDialogDescription>
-                Operation completed successfully! Everything went according to
-                plan.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Dismiss</AlertDialogCancel>
-              <AlertDialogAction className="bg-green-500 text-white hover:bg-green-700 hover:text-white focus:ring-2 focus:ring-green-500">
-                Action
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </div>
+          <AlertDialogHeader className="sm:text-center">
+            <div className="flex justify-center mb-2">
+              <DownloadCloudIcon className="text-primary h-8 w-8" />
+            </div>
+            <AlertDialogTitle className="text-xl font-bold text-gray-800">
+              Update Required
+            </AlertDialogTitle>
+            <AlertDialogDescription className="text-sm text-gray-600">
+              A new version of the app is available. <br />
+              Update now to get the latest features and improvements.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter className="flex sm:justify-center items-center gap-3 mt-4">
+            <AlertDialogAction
+              className={buttonVariants({
+                variant: "destructive",
+                className: "text-sm font-semibold text-center",
+              })}
+            >
+              Update Now
+            </AlertDialogAction>
+            <AlertDialogCancel
+              className={buttonVariants({
+                variant: "ghost",
+                className:
+                  "text-xs font-medium text-gray-600 text-center border-none",
+              })}
+            >
+              Remind Me Later
+            </AlertDialogCancel>
+          </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
     );
@@ -88,10 +104,10 @@ export function SuccessAlert({ type }: SuccessAlertProps) {
       <Button
         disabled={isOpen}
         variant="outline"
-        className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-fit border-green-500 text-green-500 hover:bg-green-100 hover:text-green-500"
+        className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-fit"
         onClick={() => setIsOpen(true)}
       >
-        Success
+        Update Required
       </Button>
 
       {isOpen && (
@@ -101,22 +117,33 @@ export function SuccessAlert({ type }: SuccessAlertProps) {
           }}
           className="flex flex-col gap-4 w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 absolute top-1/2 left-1/2"
         >
-          <div className="border-s-4 border-green-500 pl-6">
-            <h2 className="text-lg font-semibold">Success</h2>
-            <p className="text-sm text-muted-foreground">
-              Operation completed successfully! Everything went according to
-              plan.
-            </p>
-            <div className="mt-4 flex justify-end space-x-2">
-              <Button variant="outline" onClick={() => setIsOpen(false)}>
-                Dismiss
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col items-center">
+              <div className="flex justify-center mb-2">
+                <DownloadCloudIcon className="text-primary h-8 w-8" />
+              </div>
+              <h2 className="text-xl font-bold text-gray-800 mb-2">
+                Update Required
+              </h2>
+              <p className="text-sm text-gray-600 text-center">
+                A new version of the app is available. <br />
+                Update now to get the latest features and improvements.
+              </p>
+            </div>
+            <div className="flex sm:justify-center items-center gap-3 mt-4">
+              <Button
+                variant="destructive"
+                onClick={() => setIsOpen(false)}
+                className="text-sm font-semibold text-center"
+              >
+                Update Now
               </Button>
               <Button
-                variant="outline"
-                className="w-fit bg-green-500 text-white hover:bg-green-700 hover:text-white focus:ring-2 focus:ring-green-500"
+                variant="ghost"
+                className="text-xs font-medium text-gray-600 text-center"
                 onClick={() => setIsOpen(false)}
               >
-                Action
+                Remind Me Later
               </Button>
             </div>
           </div>

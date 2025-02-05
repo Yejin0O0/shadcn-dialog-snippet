@@ -76,7 +76,7 @@ export function ReviewNCommentDialog({ type }: ReviewNCommentDialogProps) {
           </DialogHeader>
 
           <div className="text-center mt-4">
-            <span className="text-4xl font-bold text-gray-800">3.75</span>
+            <span className="text-4xl font-bold text-gray-800">4</span>
             <div className="flex justify-center items-center mt-2">
               {[1, 2, 3, 4, 5].map((key, index) => (
                 <Star
@@ -179,7 +179,7 @@ export function ReviewNCommentDialog({ type }: ReviewNCommentDialogProps) {
             </div>
 
             <div className="text-center mt-4">
-              <span className="text-4xl font-bold text-gray-800">3.75</span>
+              <span className="text-4xl font-bold text-gray-800">4</span>
               <div className="flex justify-center items-center mt-2">
                 {[1, 2, 3, 4, 5].map((key, index) => (
                   <Star

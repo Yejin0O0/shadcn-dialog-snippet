@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/layout/Header/Header";
 import { Outlet } from "react-router-dom";
 
@@ -7,6 +8,7 @@ export default function Layout() {
       <Header />
       <main className="flex-1">
         <Outlet />
+        <Toaster />
       </main>
     </div>
   );

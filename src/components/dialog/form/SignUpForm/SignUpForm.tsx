@@ -309,7 +309,7 @@ export function SignUpForm({ type }: SignUpFormProps) {
                       <Label>Email</Label>
                       <FormControl>
                         <Input
-                          id="email"
+                          id="sign-up-email"
                           placeholder="Enter your email"
                           className="w-full p-3 border rounded-lg"
                           {...field}

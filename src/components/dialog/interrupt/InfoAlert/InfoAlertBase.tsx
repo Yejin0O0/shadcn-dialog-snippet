@@ -1,4 +1,3 @@
-export const errorAlertString = `
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,29 +11,29 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
-export function ErrorAlert() {
+export function InfoAlertBase() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <Button
           variant="outline"
-          className="w-fit border-red-500 text-red-500 hover:bg-red-100 hover:text-red-500"
+          className="w-fit border-blue-500 text-blue-500 hover:bg-blue-100 hover:text-blue-500"
         >
-          Error
+          Information
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="ltr">
-        <div className="border-s-4 border-red-500 pl-6">
-          <AlertDialogHeader>
-            <AlertDialogTitle>Permission Denied</AlertDialogTitle>
+        <div className="border-s-4 border-blue-500 pl-6">
+          <AlertDialogHeader className="mb-1.5">
+            <AlertDialogTitle>Info</AlertDialogTitle>
             <AlertDialogDescription>
-              You do not have permission to view this content. Please contact
-              your administrator if you believe this is a mistake.
+              This is an informative message to notify you of something
+              important. Please review the information carefully.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Dismiss</AlertDialogCancel>
-            <AlertDialogAction className="w-fit bg-red-500 text-white hover:bg-red-700 hover:text-white focus:ring-2 focus:ring-red-500">
+            <AlertDialogAction className="bg-blue-500 text-white hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-500">
               Action
             </AlertDialogAction>
           </AlertDialogFooter>
@@ -43,7 +42,3 @@ export function ErrorAlert() {
     </AlertDialog>
   );
 }
-
-export default ErrorAlert;
-
-`;

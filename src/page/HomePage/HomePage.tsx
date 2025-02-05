@@ -29,7 +29,7 @@ function HomePage() {
               >
                 <DialogDisplay
                   category="interrupt"
-                  code={Dialog.warningAlertString}
+                  code={Dialog.WarningAlertBaseString}
                   title="Warning"
                   fullScreenButton={<Dialog.WarningAlert type="fullScreen" />}
                 >
@@ -39,12 +39,42 @@ function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="interrupt"
-                  code={Dialog.errorAlertString}
+                  code={Dialog.ErrorAlertBaseString}
                   title="Error"
                   fullScreenButton={<Dialog.ErrorAlert type="fullScreen" />}
                 >
                   <DialogCard>
                     <Dialog.ErrorAlert type="card" />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay
+                  category="interrupt"
+                  code={Dialog.InfoAlertBaseString}
+                  title="Info"
+                  fullScreenButton={<Dialog.InfoAlert type="fullScreen" />}
+                >
+                  <DialogCard>
+                    <Dialog.InfoAlert type="card" />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay
+                  category="interrupt"
+                  code={Dialog.SuccessAlertBaseString}
+                  title="Success"
+                  fullScreenButton={<Dialog.SuccessAlert type="fullScreen" />}
+                >
+                  <DialogCard>
+                    <Dialog.SuccessAlert type="card" />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay
+                  category="interrupt"
+                  code={Dialog.UpdateAlertBaseString}
+                  title="Update"
+                  fullScreenButton={<Dialog.UpdateAlert type="fullScreen" />}
+                >
+                  <DialogCard>
+                    <Dialog.UpdateAlert type="card" />
                   </DialogCard>
                 </DialogDisplay>
               </div>
@@ -55,27 +85,7 @@ function HomePage() {
               >
                 <DialogDisplay
                   category="information"
-                  code={Dialog.infoDialogString}
-                  title="Information"
-                  fullScreenButton={<Dialog.InfoDialog type="fullScreen" />}
-                >
-                  <DialogCard>
-                    <Dialog.InfoDialog type="card" />
-                  </DialogCard>
-                </DialogDisplay>
-                <DialogDisplay
-                  category="information"
-                  code={Dialog.successDialogString}
-                  title="Success"
-                  fullScreenButton={<Dialog.SuccessDialog type="fullScreen" />}
-                >
-                  <DialogCard>
-                    <Dialog.SuccessDialog type="card" />
-                  </DialogCard>
-                </DialogDisplay>
-                <DialogDisplay
-                  category="information"
-                  code={Dialog.userProfileDialogString}
+                  code={Dialog.UserProfileDialogBaseString}
                   title="User Profile"
                   fullScreenButton={
                     <Dialog.UserProfileDialog type="fullScreen" />
@@ -83,6 +93,40 @@ function HomePage() {
                 >
                   <DialogCard>
                     <Dialog.UserProfileDialog type="card" />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay
+                  category="information"
+                  code={Dialog.PricePlanDialogBaseString}
+                  title="Price Plan"
+                  fullScreenButton={
+                    <Dialog.PricePlanDialog type="fullScreen" />
+                  }
+                >
+                  <DialogCard>
+                    <Dialog.PricePlanDialog type="card" />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay
+                  category="information"
+                  code={Dialog.CreditsDialogBaseString}
+                  title="Credits information"
+                  fullScreenButton={<Dialog.CreditsDialog type="fullScreen" />}
+                >
+                  <DialogCard>
+                    <Dialog.CreditsDialog type="card" />
+                  </DialogCard>
+                </DialogDisplay>
+                <DialogDisplay
+                  category="information"
+                  code={Dialog.ReviewNCommentDialogBaseString}
+                  title="Review & Comment"
+                  fullScreenButton={
+                    <Dialog.ReviewNCommentDialog type="fullScreen" />
+                  }
+                >
+                  <DialogCard>
+                    <Dialog.ReviewNCommentDialog type="card" />
                   </DialogCard>
                 </DialogDisplay>
               </div>
@@ -93,7 +137,7 @@ function HomePage() {
               >
                 <DialogDisplay
                   category="form"
-                  code={Dialog.checkBoxColumnFormString}
+                  code={Dialog.CheckBoxColumnFormBaseString}
                   title="Checkbox Column Form"
                   fullScreenButton={
                     <Dialog.CheckBoxColumnForm type="fullScreen" />
@@ -105,7 +149,7 @@ function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.innerScrollFormString}
+                  code={Dialog.InnerScrollFormBaseString}
                   title="Inner Scroll Form"
                   fullScreenButton={
                     <Dialog.InnerScrollForm type="fullScreen" />
@@ -117,7 +161,7 @@ function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.openSatisfactionSurveyFormString}
+                  code={Dialog.OpenSatisfactionSurveyFormBaseString}
                   title="Satisfaction Survey Form"
                   fullScreenButton={
                     <Dialog.OpenSatisfactionSurveyForm type="fullScreen" />
@@ -129,7 +173,7 @@ function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.paymentStepFormString}
+                  code={Dialog.PaymentStepFormBaseString}
                   title="Payment Step Form"
                   fullScreenButton={
                     <Dialog.PaymentStepForm type="fullScreen" />
@@ -141,7 +185,7 @@ function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.radioBoxColumnFormString}
+                  code={Dialog.RadioBoxColumnFormBaseString}
                   title="Radiobox Column Form"
                   fullScreenButton={
                     <Dialog.RadioBoxColumnForm type="fullScreen" />
@@ -153,7 +197,7 @@ function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.signInFormString}
+                  code={Dialog.SignInFormBaseString}
                   title="Sign In Form"
                   fullScreenButton={<Dialog.SignInForm type="fullScreen" />}
                 >
@@ -163,7 +207,7 @@ function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.signUpFormString}
+                  code={Dialog.SignUpFormBaseString}
                   title="Sign Up Form"
                   fullScreenButton={<Dialog.SignUpForm type="fullScreen" />}
                 >

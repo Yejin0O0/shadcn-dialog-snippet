@@ -318,7 +318,7 @@ export function InnerScrollForm({ type }: InnerScrollFormProps) {
                         <Label htmlFor="email">Email</Label>
                         <FormControl>
                           <Input
-                            id="email"
+                            id="inner-scroll-email"
                             type="email"
                             className="col-span-3"
                             {...field}

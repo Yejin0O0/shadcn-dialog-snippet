@@ -9,10 +9,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import {
-  TestDialog,
-  TestDialogContent,
-  TestDialogTrigger,
-} from "@/components/ui/test";
+  InlineDialog,
+  InlineDialogContent,
+  InlineDialogTrigger,
+} from "@/components/ui/inline-dialog";
 import {
   Tooltip,
   TooltipContent,
@@ -73,14 +73,14 @@ export default function CommonDialog({ children, dialogType = 'dialog', type, ti
 
   if(type === "card") {
     return (
-      <TestDialog>
-        <TestDialogTrigger>
+      <InlineDialog>
+        <InlineDialogTrigger>
           {title}
-        </TestDialogTrigger>
-          <TestDialogContent dialogType={dialogType} style={{transform: `translate(-50%, -50%) scale(${scale})`}}>
+        </InlineDialogTrigger>
+          <InlineDialogContent dialogType={dialogType} style={{transform: `translate(-50%, -50%) scale(${scale})`}}>
             {children}
-          </TestDialogContent>
-      </TestDialog>
+          </InlineDialogContent>
+      </InlineDialog>
     );
   }
 }

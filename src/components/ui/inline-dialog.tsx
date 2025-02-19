@@ -10,25 +10,25 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from "@/lib/utils";
 import { XIcon } from 'lucide-react';
 
-interface TestProps {
+interface InlineDialogProps {
   children?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
   dialogType?: 'alert' | 'dialog';
 }
 
-interface TestDialogType {
+interface InlineDialogType {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const DialogContext = createContext<TestDialogType>({ isOpen: true, setIsOpen: () => {} });
+const InlineDialogContext = createContext<InlineDialogType>({ isOpen: true, setIsOpen: () => {} });
 
-const TestDialog = ({ children }: TestProps) => {
+const InlineDialog = ({ children }: InlineDialogProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <DialogContext.Provider value={{ isOpen, setIsOpen }}>
+    <InlineDialogContext.Provider value={{ isOpen, setIsOpen }}>
       <div
         className={`flex-1 ${
           isOpen
@@ -38,12 +38,12 @@ const TestDialog = ({ children }: TestProps) => {
       >
         {children}
       </div>
-    </DialogContext.Provider>
+    </InlineDialogContext.Provider>
   );
 };
 
-const TestDialogTrigger = ({ children, className }: TestProps) => {
-  const { setIsOpen } = useContext(DialogContext);
+const InlineDialogTrigger = ({ children, className }: InlineDialogProps) => {
+  const { setIsOpen } = useContext(InlineDialogContext);
 
   return (
     <Button
@@ -56,8 +56,8 @@ const TestDialogTrigger = ({ children, className }: TestProps) => {
   );
 }
 
-const TestDialogContent = ({ children, className, dialogType = 'dialog', style }: TestProps) => {
-  const { isOpen } = useContext(DialogContext);
+const InlineDialogContent = ({ children, className, dialogType = 'dialog', style }: InlineDialogProps) => {
+  const { isOpen } = useContext(InlineDialogContext);
 
   if(!isOpen) return null;
 
@@ -67,12 +67,12 @@ const TestDialogContent = ({ children, className, dialogType = 'dialog', style }
       className={cn("flex flex-col gap-4 w-full max-w-md bg-white p-6 rounded-lg shadow-lg absolute top-1/2 left-1/2", className)}
     >
       {children}
-      {dialogType === "dialog" && <TestDialogClose />}
+      {dialogType === "dialog" && <InlineDialogClose />}
     </div>
   )
 };
 
-const TestDialogHeader = ({ children, className }: TestProps) => {
+const InlineDialogHeader = ({ children, className }: InlineDialogProps) => {
   return (
     <div className={cn("flex flex-col space-y-1.5 text-center sm:text-left", className)}>
       {children}
@@ -80,7 +80,7 @@ const TestDialogHeader = ({ children, className }: TestProps) => {
   )
 }
 
-const TestDialogTitle = ({ children, className }: TestProps) => {
+const InlineDialogTitle = ({ children, className }: InlineDialogProps) => {
   return (
     <h2 className={cn("text-lg font-semibold leading-none tracking-tight", className)}>
       {children}
@@ -88,7 +88,7 @@ const TestDialogTitle = ({ children, className }: TestProps) => {
   )
 }
 
-const TestDialogDescription = ({ children, className }: TestProps) => {
+const InlineDialogDescription = ({ children, className }: InlineDialogProps) => {
   return (
     <div className={cn("text-sm text-muted-foreground", className)}>
       {children}
@@ -96,7 +96,7 @@ const TestDialogDescription = ({ children, className }: TestProps) => {
   );
 }
 
-const TestDialogFooter = ({ children, className }: TestProps) => {
+const InlineDialogFooter = ({ children, className }: InlineDialogProps) => {
   return (
     <div className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)}>
       {children}
@@ -104,8 +104,8 @@ const TestDialogFooter = ({ children, className }: TestProps) => {
   )
 }
 
-const TestDialogClose = ({ className }: TestProps) => {
-  const { setIsOpen } = useContext(DialogContext);
+const InlineDialogClose = ({ className }: InlineDialogProps) => {
+  const { setIsOpen } = useContext(InlineDialogContext);
 
   return (
     <button
@@ -122,8 +122,8 @@ const TestDialogClose = ({ className }: TestProps) => {
   )
 }
 
-const TestDialogCancel = ({children, className}: TestProps) => {
-  const { setIsOpen } = useContext(DialogContext);
+const InlineDialogCancel = ({children, className}: InlineDialogProps) => {
+  const { setIsOpen } = useContext(InlineDialogContext);
   return (
     <Button
       className={cn(
@@ -138,8 +138,8 @@ const TestDialogCancel = ({children, className}: TestProps) => {
   )
 }
 
-const TestDialogAction = ({children, className}: TestProps) => {
-  const { setIsOpen } = useContext(DialogContext);
+const InlineDialogAction = ({children, className}: InlineDialogProps) => {
+  const { setIsOpen } = useContext(InlineDialogContext);
   return (
     <Button
       className={cn(buttonVariants(), className)}
@@ -151,14 +151,14 @@ const TestDialogAction = ({children, className}: TestProps) => {
 }
 
 export {
-  TestDialog,
-  TestDialogTrigger,
-  TestDialogContent,
-  TestDialogHeader,
-  TestDialogTitle,
-  TestDialogDescription,
-  TestDialogFooter,
-  TestDialogClose,
-  TestDialogCancel,
-  TestDialogAction
+  InlineDialog,
+  InlineDialogTrigger,
+  InlineDialogContent,
+  InlineDialogHeader,
+  InlineDialogTitle,
+  InlineDialogDescription,
+  InlineDialogFooter,
+  InlineDialogClose,
+  InlineDialogCancel,
+  InlineDialogAction
 }

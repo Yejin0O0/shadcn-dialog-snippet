@@ -1,10 +1,7 @@
 import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
   Form,
   FormControl,

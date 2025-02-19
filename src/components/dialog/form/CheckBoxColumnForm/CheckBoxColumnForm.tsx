@@ -11,7 +11,10 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { InlineDialogHeader, InlineDialogTitle } from "@/components/ui/inline-dialog";
+import {
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/ui/inline-dialog";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -56,15 +59,13 @@ export function CheckBoxColumnForm({ type }: CheckBoxColumnFormProps) {
     alert(data.items);
   };
 
-  const DialogHeaderComponent = type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent = type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+  const DialogHeaderComponent =
+    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
 
-  return(
-    <CommonDialog
-      type={type}
-      title="Checkbox Column Form"
-      scale={SCALE}
-    >
+  return (
+    <CommonDialog type={type} title="Checkbox Column Form" scale={SCALE}>
       <DialogHeaderComponent>
         <DialogTitleComponent>Checkbox Column Form</DialogTitleComponent>
       </DialogHeaderComponent>
@@ -96,10 +97,7 @@ export function CheckBoxColumnForm({ type }: CheckBoxColumnFormProps) {
                                 checked={field.value?.includes(item.id)}
                                 onCheckedChange={(checked) => {
                                   return checked
-                                    ? field.onChange([
-                                        ...field.value,
-                                        item.id,
-                                      ])
+                                    ? field.onChange([...field.value, item.id])
                                     : field.onChange(
                                         field.value?.filter(
                                           (value) => value !== item.id,

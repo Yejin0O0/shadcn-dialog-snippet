@@ -1,3 +1,4 @@
+import CommonDialog from "@/components/common/CommonDialog";
 import {
   AlertDialogAction,
   AlertDialogCancel,
@@ -6,17 +7,16 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { buttonVariants } from "@/components/ui/button";
 import {
   InlineDialogAction,
   InlineDialogCancel,
   InlineDialogDescription,
-  InlineDialogHeader,
   InlineDialogFooter,
+  InlineDialogHeader,
   InlineDialogTitle,
 } from "@/components/ui/inline-dialog";
 import { DownloadCloudIcon } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import CommonDialog from "@/components/common/CommonDialog";
 
 interface UpdateAlertProps {
   type: "fullScreen" | "card";
@@ -25,14 +25,20 @@ interface UpdateAlertProps {
 const SCALE = 0.8;
 
 export function UpdateAlert({ type }: UpdateAlertProps) {
-    const DialogHeaderComponent = type === "fullScreen" ? AlertDialogHeader : InlineDialogHeader;
-    const DialogTitleComponent = type === "fullScreen" ? AlertDialogTitle : InlineDialogTitle;
-    const DialogDescriptionComponent = type === "fullScreen" ? AlertDialogDescription : InlineDialogDescription;
-    const DialogFooterComponent = type === "fullScreen" ? AlertDialogFooter : InlineDialogFooter;
-    const DialogActionComponent = type === "fullScreen" ? AlertDialogAction : InlineDialogAction;
-    const DialogCancelComponent = type === "fullScreen" ? AlertDialogCancel : InlineDialogCancel;
+  const DialogHeaderComponent =
+    type === "fullScreen" ? AlertDialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? AlertDialogTitle : InlineDialogTitle;
+  const DialogDescriptionComponent =
+    type === "fullScreen" ? AlertDialogDescription : InlineDialogDescription;
+  const DialogFooterComponent =
+    type === "fullScreen" ? AlertDialogFooter : InlineDialogFooter;
+  const DialogActionComponent =
+    type === "fullScreen" ? AlertDialogAction : InlineDialogAction;
+  const DialogCancelComponent =
+    type === "fullScreen" ? AlertDialogCancel : InlineDialogCancel;
 
-  return(
+  return (
     <CommonDialog
       dialogType="alert"
       type={type}
@@ -70,8 +76,8 @@ export function UpdateAlert({ type }: UpdateAlertProps) {
           >
             Remind Me Later
           </DialogCancelComponent>
-        </DialogFooterComponent>   
+        </DialogFooterComponent>
       </>
     </CommonDialog>
-  )
+  );
 }

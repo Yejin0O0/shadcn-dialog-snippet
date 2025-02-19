@@ -1,8 +1,11 @@
 import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
 import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { InlineDialogHeader, InlineDialogTitle } from "@/components/ui/inline-dialog";
-import { CheckIcon} from "lucide-react";
+import {
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/ui/inline-dialog";
+import { CheckIcon } from "lucide-react";
 import { useState } from "react";
 
 interface PricePlanDialogProps {
@@ -50,14 +53,17 @@ const PRICING_PLANS = [
 export function PricePlanDialog({ type }: PricePlanDialogProps) {
   const [selected, setSelected] = useState("Free");
 
-  const DialogHeaderComponent = type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent = type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+  const DialogHeaderComponent =
+    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
 
   return (
     <CommonDialog
       type={type}
       title="Price Plan"
       scale={SCALE}
+      contentStyleClass="sm:max-w-[450px] rounded-lg shadow-lg p-8 bg-white"
     >
       <>
         <DialogHeaderComponent>
@@ -110,5 +116,5 @@ export function PricePlanDialog({ type }: PricePlanDialogProps) {
         </div>
       </>
     </CommonDialog>
-  )
+  );
 }

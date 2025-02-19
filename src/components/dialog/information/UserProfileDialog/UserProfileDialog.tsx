@@ -1,9 +1,12 @@
-import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import CommonDialog from "@/components/common/CommonDialog";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/ui/inline-dialog";
 import { MessageCircle, MoreHorizontal, User } from "lucide-react";
-import { InlineDialogHeader, InlineDialogTitle } from "@/components/ui/inline-dialog";
-import CommonDialog from "@/components/common/CommonDialog";
 
 const profileImageUrl = "https://avatar.iran.liara.run/public/15";
 const backgroundImageUrl = "https://picsum.photos/500/200";
@@ -15,15 +18,13 @@ interface UserProfileDialogProps {
 const SCALE = 0.65;
 
 export function UserProfileDialog({ type }: UserProfileDialogProps) {
-  const DialogHeaderComponent = type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent = type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+  const DialogHeaderComponent =
+    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
 
-  return(
-    <CommonDialog
-      type={type}
-      title="User Profile"
-      scale={SCALE}
-    >
+  return (
+    <CommonDialog type={type} title="User Profile" scale={SCALE}>
       <>
         <DialogHeaderComponent>
           <div

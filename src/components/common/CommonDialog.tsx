@@ -3,11 +3,8 @@ import {
   AlertDialogContent,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import {
   InlineDialog,
   InlineDialogContent,
@@ -19,25 +16,34 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Button } from "@/components/ui/button";
 import { ExpandIcon } from "lucide-react";
 import { useState } from "react";
 
 interface CommonDialogProps {
-  dialogType?: 'alert' | 'dialog';
+  dialogType?: "alert" | "dialog";
   type: "fullScreen" | "card";
   title?: string;
   children: React.ReactNode;
   scale: number;
+  contentStyleClass?: string;
 }
 
-export default function CommonDialog({ children, dialogType = 'dialog', type, title, scale }: CommonDialogProps) {
-  const DialogComponent = dialogType === 'alert' ? AlertDialog : Dialog;
-  const DialogTriggerComponent = dialogType === 'alert' ? AlertDialogTrigger : DialogTrigger;
-  const DialogContentComponent = dialogType === 'alert' ? AlertDialogContent : DialogContent;
+export default function CommonDialog({
+  children,
+  dialogType = "dialog",
+  type,
+  title,
+  scale,
+  contentStyleClass,
+}: CommonDialogProps) {
+  const DialogComponent = dialogType === "alert" ? AlertDialog : Dialog;
+  const DialogTriggerComponent =
+    dialogType === "alert" ? AlertDialogTrigger : DialogTrigger;
+  const DialogContentComponent =
+    dialogType === "alert" ? AlertDialogContent : DialogContent;
 
   const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
-    
+
   if (type === "fullScreen") {
     return (
       <DialogComponent onOpenChange={() => setIsTooltipAllowed(false)}>
@@ -64,22 +70,24 @@ export default function CommonDialog({ children, dialogType = 'dialog', type, ti
             )}
           </Tooltip>
         </TooltipProvider>
-        <DialogContentComponent className="ltr">
+        <DialogContentComponent className={contentStyleClass}>
           {children}
         </DialogContentComponent>
       </DialogComponent>
     );
   }
 
-  if(type === "card") {
+  if (type === "card") {
     return (
       <InlineDialog>
-        <InlineDialogTrigger>
-          {title}
-        </InlineDialogTrigger>
-          <InlineDialogContent dialogType={dialogType} style={{transform: `translate(-50%, -50%) scale(${scale})`}}>
-            {children}
-          </InlineDialogContent>
+        <InlineDialogTrigger>{title}</InlineDialogTrigger>
+        <InlineDialogContent
+          dialogType={dialogType}
+          style={{ transform: `translate(-50%, -50%) scale(${scale})` }}
+          className={contentStyleClass}
+        >
+          {children}
+        </InlineDialogContent>
       </InlineDialog>
     );
   }

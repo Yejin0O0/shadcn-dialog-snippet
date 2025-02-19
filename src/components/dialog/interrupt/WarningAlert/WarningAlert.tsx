@@ -1,3 +1,4 @@
+import CommonDialog from "@/components/common/CommonDialog";
 import {
   AlertDialogAction,
   AlertDialogCancel,
@@ -10,11 +11,10 @@ import {
   InlineDialogAction,
   InlineDialogCancel,
   InlineDialogDescription,
-  InlineDialogHeader,
   InlineDialogFooter,
+  InlineDialogHeader,
   InlineDialogTitle,
 } from "@/components/ui/inline-dialog";
-import CommonDialog from "@/components/common/CommonDialog";
 
 interface WarningAlertProps {
   type: "fullScreen" | "card";
@@ -23,21 +23,21 @@ interface WarningAlertProps {
 const SCALE = 0.8;
 
 export function WarningAlert({ type }: WarningAlertProps) {
-    const DialogHeaderComponent = type === "fullScreen" ? AlertDialogHeader : InlineDialogHeader;
-    const DialogTitleComponent = type === "fullScreen" ? AlertDialogTitle : InlineDialogTitle;
-    const DialogDescriptionComponent = type === "fullScreen" ? AlertDialogDescription : InlineDialogDescription;
-    const DialogFooterComponent = type === "fullScreen" ? AlertDialogFooter : InlineDialogFooter;
-    const DialogActionComponent = type === "fullScreen" ? AlertDialogAction : InlineDialogAction;
-    const DialogCancelComponent = type === "fullScreen" ? AlertDialogCancel : InlineDialogCancel;
+  const DialogHeaderComponent =
+    type === "fullScreen" ? AlertDialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? AlertDialogTitle : InlineDialogTitle;
+  const DialogDescriptionComponent =
+    type === "fullScreen" ? AlertDialogDescription : InlineDialogDescription;
+  const DialogFooterComponent =
+    type === "fullScreen" ? AlertDialogFooter : InlineDialogFooter;
+  const DialogActionComponent =
+    type === "fullScreen" ? AlertDialogAction : InlineDialogAction;
+  const DialogCancelComponent =
+    type === "fullScreen" ? AlertDialogCancel : InlineDialogCancel;
 
-
-  return(
-    <CommonDialog
-      dialogType="alert"
-      type={type}
-      title="Warning"
-      scale={SCALE}
-    >
+  return (
+    <CommonDialog dialogType="alert" type={type} title="Warning" scale={SCALE}>
       <div className="border-s-4 border-amber-500 pl-6">
         <DialogHeaderComponent className="mb-1.5">
           <DialogTitleComponent>Warning</DialogTitleComponent>
@@ -54,5 +54,5 @@ export function WarningAlert({ type }: WarningAlertProps) {
         </DialogFooterComponent>
       </div>
     </CommonDialog>
-  )
+  );
 }

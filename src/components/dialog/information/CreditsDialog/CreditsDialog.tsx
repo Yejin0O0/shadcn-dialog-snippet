@@ -6,8 +6,16 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { InlineDialogDescription, InlineDialogHeader, InlineDialogTitle } from "@/components/ui/inline-dialog";
+import {
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  InlineDialogDescription,
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/ui/inline-dialog";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
@@ -111,16 +119,15 @@ function RenderReferralSection() {
 }
 
 export function CreditsDialog({ type }: CreditsDialogProps) {
-  const DialogHeaderComponent = type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent = type === "fullScreen" ? DialogTitle : InlineDialogTitle;
-  const DialogDescriptionComponent = type === "fullScreen" ? DialogDescription : InlineDialogDescription;
-  
-  return(
-    <CommonDialog
-      type={type}
-      title="Credits Information"
-      scale={SCALE}
-    >
+  const DialogHeaderComponent =
+    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+  const DialogDescriptionComponent =
+    type === "fullScreen" ? DialogDescription : InlineDialogDescription;
+
+  return (
+    <CommonDialog type={type} title="Credits Information" scale={SCALE}>
       <>
         <DialogHeaderComponent>
           <DialogTitleComponent className="text-lg font-semibold text-center">

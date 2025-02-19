@@ -78,7 +78,12 @@ export function OpenSatisfactionSurveyForm({
   };
 
   return (
-    <CommonDialog type={type} title="Satisfaction Survey Form" scale={SCALE}>
+    <CommonDialog
+      type={type}
+      title="Satisfaction Survey Form"
+      scale={SCALE}
+      contentStyleClass="sm:max-w-[425px] overflow-y-auto max-h-[470px]"
+    >
       <>
         <DialogHeaderComponent>
           <DialogTitleComponent className="text-xl font-semibold">
@@ -117,7 +122,7 @@ export function OpenSatisfactionSurveyForm({
                         <button
                           tabIndex={0}
                           type="button"
-                          className={`cursor-pointer w-20 h-20 p-1 rounded-lg border text-center transition ${
+                          className={`cursor-pointer w-full h-20 p-1 rounded-lg border text-center transition ${
                             field.value === "very_dissatisfied"
                               ? "bg-blue-100 border-blue-500"
                               : "border-gray-300 hover:bg-gray-50"
@@ -137,7 +142,7 @@ export function OpenSatisfactionSurveyForm({
                         <button
                           tabIndex={0}
                           type="button"
-                          className={`cursor-pointer w-20 h-20 p-1 rounded-lg border text-center transition ${
+                          className={`cursor-pointer w-full h-20 p-1 rounded-lg border text-center transition ${
                             field.value === "dissatisfied"
                               ? "bg-blue-100 border-blue-500"
                               : "border-gray-300 hover:bg-gray-50"
@@ -157,7 +162,7 @@ export function OpenSatisfactionSurveyForm({
                         <button
                           tabIndex={0}
                           type="button"
-                          className={`cursor-pointer w-20 h-20 p-1 rounded-lg border text-center transition ${
+                          className={`cursor-pointer w-full h-20 p-1 rounded-lg border text-center transition ${
                             field.value === "neutral"
                               ? "bg-blue-100 border-blue-500"
                               : "border-gray-300 hover:bg-gray-50"
@@ -177,7 +182,7 @@ export function OpenSatisfactionSurveyForm({
                         <button
                           tabIndex={0}
                           type="button"
-                          className={`cursor-pointer w-20 h-20 p-1 rounded-lg border text-center transition ${
+                          className={`cursor-pointer w-full h-20 p-1 rounded-lg border text-center transition ${
                             field.value === "satisfied"
                               ? "bg-blue-100 border-blue-500"
                               : "border-gray-300 hover:bg-gray-50"
@@ -197,7 +202,7 @@ export function OpenSatisfactionSurveyForm({
                         <button
                           tabIndex={0}
                           type="button"
-                          className={`cursor-pointer w-20 h-20 p-1 rounded-lg border text-center transition ${
+                          className={`cursor-pointer w-full h-20 p-1 rounded-lg border text-center transition ${
                             field.value === "very_satisfied"
                               ? "bg-blue-100 border-blue-500"
                               : "border-gray-300 hover:bg-gray-50"

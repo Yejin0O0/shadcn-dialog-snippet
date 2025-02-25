@@ -10,7 +10,7 @@ import {
   useState,
 } from "react";
 
-interface InlineDialogProps {
+export interface InlineDialogProps {
   children?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;

@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import mixpanel from "@/lib/mixpanel";
+import { EVENT_ID } from "@/static/mixpanelEventId";
 
 const DIALOG_LINK = [
   {

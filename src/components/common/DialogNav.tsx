@@ -2,31 +2,45 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import mixpanel from "@/lib/mixpanel";
 
 const DIALOG_LINK = [
   {
     name: "interrupt",
     href: "#interrupt",
+    mixpanelTracking: EVENT_ID.CLICKED_INTERRUPT,
   },
   {
     name: "information",
     href: "#information",
+    mixpanelTracking: EVENT_ID.CLICKED_INFORMATION,
   },
   {
     name: "form",
     href: "#form",
+    mixpanelTracking: EVENT_ID.CLICKED_FORM,
   },
 ];
+
+const getTrackingEvent = (hash: string) => {
+  return DIALOG_LINK.find((link) => link.href === hash)?.mixpanelTracking;
+};
 
 function DialogNav() {
   const { hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+    if (!hash) return;
+    const element = document.querySelector(hash);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+
+    const trackingEvent = getTrackingEvent(hash);
+
+    if (trackingEvent) {
+      mixpanel.track(trackingEvent);
     }
   }, [hash]);
 

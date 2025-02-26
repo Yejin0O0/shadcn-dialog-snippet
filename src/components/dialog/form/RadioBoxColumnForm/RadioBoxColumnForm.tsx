@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/inline-dialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -39,9 +38,6 @@ export function RadioBoxColumnForm({ type }: RadioBoxColumnFormProps) {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
-
-  const [isOpen, setIsOpen] = useState(true);
-  const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 
   const onSubmit = (data: z.infer<typeof FormSchema>) => {
     alert(data.type);

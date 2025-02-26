@@ -117,9 +117,7 @@ const InlineDialogDescription = ({
   className,
 }: InlineDialogProps) => {
   return (
-    <div className={cn("text-sm text-muted-foreground", className)}>
-      {children}
-    </div>
+    <p className={cn("text-sm text-muted-foreground", className)}>{children}</p>
   );
 };
 

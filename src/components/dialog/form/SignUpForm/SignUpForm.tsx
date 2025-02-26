@@ -2,13 +2,10 @@ import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
-  Dialog,
-  DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import {
   Form,
@@ -26,14 +23,8 @@ import {
 } from "@/components/ui/inline-dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ExpandIcon, Eye, EyeClosed, XIcon } from "lucide-react";
+import { Eye, EyeClosed } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -86,9 +77,6 @@ export function SignUpForm({ type }: SignUpFormProps) {
       confirmPassword: "",
     },
   });
-
-  const [isOpen, setIsOpen] = useState(true);
-  const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 
   const onSubmit = () => {
     alert("Sign Up Successful");

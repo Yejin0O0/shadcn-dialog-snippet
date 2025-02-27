@@ -9,10 +9,9 @@ if (import.meta.env.NODE_ENV === "production") {
 }
 
 if (typeof window !== "undefined" && MIXPANEL_TOKEN) {
-  // 카테고리별로 이벤트 분기할 수 있으니 찾아볼 것
   mixpanel.init(MIXPANEL_TOKEN, {
     debug: import.meta.env.NODE_ENV !== "production",
-    track_pageview: false,
+    track_pageview: "full-url", // default: false
     persistence: "localStorage",
     // TODO: Apply Autocapture
   });

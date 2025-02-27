@@ -1,5 +1,5 @@
 export const EVENT_ID = {
-  CLICKED_INTERRUPT: "clicked_interrupt",
-  CLICKED_INFORMATION: "clicked_information",
-  CLICKED_FORM: "clicked_form",
+  CLICKED_INTERRUPT: "interrupt_clicked",
+  CLICKED_INFORMATION: "information_clicked",
+  CLICKED_FORM: "form_clicked",
 };

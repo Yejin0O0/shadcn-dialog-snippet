@@ -41,6 +41,8 @@ function DialogNav() {
     const trackingEvent = getTrackingEvent(hash);
 
     if (trackingEvent) {
+      // TODO: if we have more tracking events, change the code to the comment
+      // mixpanel.track("Category Clicked", { category: trackingEvent });
       mixpanel.track(trackingEvent);
     }
   }, [hash]);

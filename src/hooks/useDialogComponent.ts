@@ -107,21 +107,17 @@ export default function useDialogComponent({
     };
   }
 
-  if (dialogType === "dialog") {
-    return {
-      DialogComponent: Dialog,
-      DialogTriggerComponent: DialogTrigger,
-      DialogContentComponent: DialogContent,
-      DialogHeaderComponent: isFullScreen ? DialogHeader : InlineDialogHeader,
-      DialogTitleComponent: isFullScreen ? DialogTitle : InlineDialogTitle,
-      DialogDescriptionComponent: isFullScreen
-        ? DialogDescription
-        : InlineDialogDescription,
-      DialogFooterComponent: isFullScreen ? DialogFooter : InlineDialogFooter,
-      DialogActionComponent: InlineDialogAction,
-      DialogCancelComponent: InlineDialogCancel,
-    };
-  }
-
-  return {} as DialogComponents;
+  return {
+    DialogComponent: Dialog,
+    DialogTriggerComponent: DialogTrigger,
+    DialogContentComponent: DialogContent,
+    DialogHeaderComponent: isFullScreen ? DialogHeader : InlineDialogHeader,
+    DialogTitleComponent: isFullScreen ? DialogTitle : InlineDialogTitle,
+    DialogDescriptionComponent: isFullScreen
+      ? DialogDescription
+      : InlineDialogDescription,
+    DialogFooterComponent: isFullScreen ? DialogFooter : InlineDialogFooter,
+    DialogActionComponent: InlineDialogAction,
+    DialogCancelComponent: InlineDialogCancel,
+  };
 }

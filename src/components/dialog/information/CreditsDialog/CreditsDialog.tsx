@@ -1,3 +1,4 @@
+import CommonDialog from "@/components/common/CommonDialog";
 import {
   Accordion,
   AccordionContent,
@@ -5,51 +6,26 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  InlineDialogDescription,
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/ui/inline-dialog";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { useToast } from "@/hooks/use-toast";
-import { ExpandIcon, UserPlus, Users, XIcon } from "lucide-react";
-import { useState } from "react";
+import { UserPlus, Users } from "lucide-react";
 
 interface CreditsDialogProps {
   type: "fullScreen" | "card";
 }
 
-interface RenderCreditsSectionProps extends CreditsDialogProps {
-  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
 const SCALE = 0.45;
-
-function RenderCreditsSection(props: RenderCreditsSectionProps) {
-  const { type, setIsOpen } = props;
-  return (
-    <div className="w-full flex">
-      {type === "card" && setIsOpen && (
-        <div className="absolute right-4 top-4 cursor-pointer z-10">
-          <XIcon className="cursor-pointer" onClick={() => setIsOpen(false)} />
-        </div>
-      )}
-      <div className="text-center relative">
-        <h2 className="text-xl font-semibold">Your account balance</h2>
-        <p className="text-sm text-gray-500 mt-1">
-          Credits let you create decks using AI and use AI editing features.
-          They're tied to your account email.
-        </p>
-        <div className="text-3xl font-bold text-gray-800 mt-4">
-          💰 400 credits
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function RenderAccordion() {
   return (
@@ -143,75 +119,31 @@ function RenderReferralSection() {
 }
 
 export function CreditsDialog({ type }: CreditsDialogProps) {
-  const [isOpen, setIsOpen] = useState(true);
-  const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
+  const DialogHeaderComponent =
+    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+  const DialogDescriptionComponent =
+    type === "fullScreen" ? DialogDescription : InlineDialogDescription;
 
-  if (type === "fullScreen") {
-    return (
-      <Dialog onOpenChange={() => setIsTooltipAllowed(false)}>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger
-              asChild
-              onMouseEnter={() => setIsTooltipAllowed(true)}
-            >
-              <DialogTrigger asChild>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:text-accent-foreground [&_svg]-h-3.5 [&_svg]-h-3 h-6 w-6 rounded-[6px] bg-transparent text-foreground shadow-none hover:bg-muted dark:text-foreground [&_svg]:w-3"
-                >
-                  <ExpandIcon />
-                </Button>
-              </DialogTrigger>
-            </TooltipTrigger>
-            {isTooltipAllowed && (
-              <TooltipContent className="bg-black text-white">
-                full screen dialog
-              </TooltipContent>
-            )}
-          </Tooltip>
-        </TooltipProvider>
-        <DialogContent className="max-w-lg mx-auto rounded-lg bg-white p-6 shadow-lg">
-          <RenderCreditsSection type="fullScreen" />
-          <RenderReferralSection />
-          <RenderAccordion />
-        </DialogContent>
-      </Dialog>
-    );
-  }
-
-  if (type === "card") {
-    return (
-      <div
-        className={`flex-1 ${
-          isOpen
-            ? "bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
-            : ""
-        }`}
-      >
-        <Button
-          variant="outline"
-          className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-fit"
-          onClick={() => setIsOpen(true)}
-        >
-          Credits information
-        </Button>
-        {isOpen && (
-          <div
-            style={{
-              transform: `translate(-50%, -50%) scale(${SCALE})`,
-            }}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-lg w-full bg-white p-6 rounded-lg shadow-lg"
-          >
-            <RenderCreditsSection type="card" setIsOpen={setIsOpen} />
-            <RenderReferralSection />
-            <RenderAccordion />
-          </div>
-        )}
-      </div>
-    );
-  }
-
-  return null;
+  return (
+    <CommonDialog type={type} title="Credits Information" scale={SCALE}>
+      <>
+        <DialogHeaderComponent>
+          <DialogTitleComponent className="text-lg font-semibold text-center">
+            Your account balance
+          </DialogTitleComponent>
+          <DialogDescriptionComponent className="text-center text-sm text-gray-500">
+            Credits let you create decks using AI and use AI editing features.
+            They're tied to your account email.
+          </DialogDescriptionComponent>
+        </DialogHeaderComponent>
+        <div className="text-3xl font-bold text-gray-800 mt-4 text-center">
+          💰 400 credits
+        </div>
+        <RenderReferralSection />
+        <RenderAccordion />
+      </>
+    </CommonDialog>
+  );
 }

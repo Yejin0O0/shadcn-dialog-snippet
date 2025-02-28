@@ -1,16 +1,7 @@
 import CommonDialog from "@/components/common/CommonDialog";
 import { Avatar } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import {
-  InlineDialogDescription,
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/ui/inline-dialog";
+import useDialogComponent from "@/hooks/useDialogComponent";
 import { CircleUserIcon, Heart, Star } from "lucide-react";
 
 const comments = [
@@ -31,12 +22,11 @@ interface ReviewNCommentDialogProps {
 const SCALE = 0.5;
 
 export function ReviewNCommentDialog({ type }: ReviewNCommentDialogProps) {
-  const DialogHeaderComponent =
-    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
-  const DialogDescriptionComponent =
-    type === "fullScreen" ? DialogDescription : InlineDialogDescription;
+  const {
+    DialogHeaderComponent,
+    DialogTitleComponent,
+    DialogDescriptionComponent,
+  } = useDialogComponent({ dialogType: "dialog", type });
 
   return (
     <CommonDialog type={type} title="Review & Comments" scale={SCALE}>

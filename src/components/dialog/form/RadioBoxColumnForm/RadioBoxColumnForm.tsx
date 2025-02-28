@@ -1,6 +1,5 @@
 import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
-import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -9,11 +8,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import {
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/ui/inline-dialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import useDialogComponent from "@/hooks/useDialogComponent";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -30,10 +26,10 @@ interface RadioBoxColumnFormProps {
 }
 
 export function RadioBoxColumnForm({ type }: RadioBoxColumnFormProps) {
-  const DialogHeaderComponent =
-    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+  const { DialogHeaderComponent, DialogTitleComponent } = useDialogComponent({
+    dialogType: "dialog",
+    type,
+  });
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),

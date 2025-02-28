@@ -1,26 +1,17 @@
 import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
 import {
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import {
-  InlineDialogFooter,
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/ui/inline-dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import useDialogComponent from "@/hooks/useDialogComponent";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -48,12 +39,8 @@ interface PaymentStepFromProps {
 }
 
 export function PaymentStepForm({ type }: PaymentStepFromProps) {
-  const DialogHeaderComponent =
-    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
-  const DialogFooterComponent =
-    type === "fullScreen" ? DialogFooter : InlineDialogFooter;
+  const { DialogHeaderComponent, DialogTitleComponent, DialogFooterComponent } =
+    useDialogComponent({ dialogType: "dialog", type });
 
   const [step, setStep] = useState<number>(1);
   const [progressValue, setProgressValue] = useState<number>(33);

@@ -10,7 +10,8 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "skipLibCheck": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

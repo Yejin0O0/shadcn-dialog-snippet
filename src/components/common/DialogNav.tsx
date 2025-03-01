@@ -1,9 +1,9 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import mixpanel from "@/lib/mixpanel";
 import { cn } from "@/lib/utils";
+import { EVENT_ID } from "@/static/mixpanelEventId";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import mixpanel from "@/lib/mixpanel";
-import { EVENT_ID } from "@/static/mixpanelEventId";
 
 const DIALOG_LINK = [
   {

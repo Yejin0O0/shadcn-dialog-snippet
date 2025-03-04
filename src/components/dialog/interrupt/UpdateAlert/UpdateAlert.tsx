@@ -24,7 +24,7 @@ interface UpdateAlertProps {
 
 const SCALE = 0.8;
 
-export function UpdateAlert({ type }: UpdateAlertProps) {
+export default function UpdateAlert({ type }: UpdateAlertProps) {
   const DialogHeaderComponent =
     type === "fullScreen" ? AlertDialogHeader : InlineDialogHeader;
   const DialogTitleComponent =

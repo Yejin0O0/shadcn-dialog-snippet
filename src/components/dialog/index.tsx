@@ -1,8 +1,8 @@
-export { ErrorAlert } from "@/components/dialog/interrupt/ErrorAlert/ErrorAlert";
-export { WarningAlert } from "@/components/dialog/interrupt/WarningAlert/WarningAlert";
-export { InfoAlert } from "@/components/dialog/interrupt/InfoAlert/InfoAlert";
-export { SuccessAlert } from "@/components/dialog/interrupt/SuccessAlert/SuccessAlert";
-export { UpdateAlert } from "@/components/dialog/interrupt/UpdateAlert/UpdateAlert";
+export { default as ErrorAlert } from "@/components/dialog/interrupt/ErrorAlert/ErrorAlert";
+export { default as WarningAlert } from "@/components/dialog/interrupt/WarningAlert/WarningAlert";
+export { default as InfoAlert } from "@/components/dialog/interrupt/InfoAlert/InfoAlert";
+export { default as SuccessAlert } from "@/components/dialog/interrupt/SuccessAlert/SuccessAlert";
+export { default as UpdateAlert } from "@/components/dialog/interrupt/UpdateAlert/UpdateAlert";
 
 export { default as UserProfile } from "@/components/dialog/information/UserProfile/UserProfile";
 export { default as PricePlan } from "@/components/dialog/information/PricePlan/PricePlan";

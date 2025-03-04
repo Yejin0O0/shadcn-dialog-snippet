@@ -22,7 +22,7 @@ interface ErrorAlertProps {
 
 const SCALE = 0.8;
 
-export function ErrorAlert({ type }: ErrorAlertProps) {
+export default function ErrorAlert({ type }: ErrorAlertProps) {
   const DialogHeaderComponent =
     type === "fullScreen" ? AlertDialogHeader : InlineDialogHeader;
   const DialogTitleComponent =

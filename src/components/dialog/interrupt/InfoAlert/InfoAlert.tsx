@@ -21,7 +21,7 @@ interface InfoAlertProps {
 
 const SCALE = 0.8;
 
-export function InfoAlert({ type }: InfoAlertProps) {
+export default function InfoAlert({ type }: InfoAlertProps) {
   const DialogHeaderComponent =
     type === "fullScreen" ? AlertDialogHeader : InlineDialogHeader;
   const DialogTitleComponent =

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { META_THEME_COLORS } from "@/config/site";
 import { useMetaColor } from "@/hooks/useMetaColor";
 import { useTheme } from "@/providers/ThemeProvider";
+import { META_THEME_COLORS } from "@/statics/site";
 import { MoonIcon, SunIcon } from "lucide-react";
 
 export function ModeToggle() {

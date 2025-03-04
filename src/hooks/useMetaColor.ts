@@ -1,5 +1,5 @@
-import { META_THEME_COLORS } from "@/config/site";
 import { useTheme } from "@/providers/ThemeProvider";
+import { META_THEME_COLORS } from "@/statics/site";
 import { useCallback, useEffect, useState } from "react";
 
 export function useMetaColor() {

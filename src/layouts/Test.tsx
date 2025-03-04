@@ -1,5 +1,5 @@
 import { Toaster } from "@/components/ui/toaster";
-import { Header } from "@/layout/Header/Header";
+import { Header } from "@/layouts/Header/Header";
 import { Outlet } from "react-router-dom";
 
 export default function Layout() {

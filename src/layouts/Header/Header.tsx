@@ -1,6 +1,6 @@
 import { Icons } from "@/components/common/Icons";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
+import { siteConfig } from "@/statics/site";
 
 export function Header() {
   return (

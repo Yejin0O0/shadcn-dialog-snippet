@@ -1,6 +1,6 @@
 import Layout from "@/layout/layout";
-import HelmetWrapper from "@/lib/helmetwrapper";
-import HomePage from "@/page/HomePage/HomePage";
+import HelmetWrapper from "@/libs/helmetwrapper";
+import HomePage from "@/pages/HomePage/HomePage";
 import { Route, Routes } from "react-router-dom";
 import "@/App.css";
 

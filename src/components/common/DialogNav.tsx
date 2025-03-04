@@ -18,7 +18,7 @@ const DIALOG_LINK = [
   },
 ];
 
-function DialogNav() {
+export default function DialogNav() {
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -52,5 +52,3 @@ function DialogNav() {
     </ScrollArea>
   );
 }
-
-export default DialogNav;

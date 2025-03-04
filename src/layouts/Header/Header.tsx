@@ -1,6 +1,6 @@
-import { Icons } from "@/components/common/Icons";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/statics/site";
+import { ICONS } from "@/statics/Icons";
+import { SITE_CONFIG } from "@/statics/site";
 
 export function Header() {
   return (
@@ -8,16 +8,16 @@ export function Header() {
       <div className="flex h-14 items-center justify-between px-4">
         <div className="mr-4 flex">
           <a className="mr-4 flex items-center space-x-2" href="/">
-            <Icons.logo className="h-6 w-6" />
+            <ICONS.logo className="h-6 w-6" />
             <span className="font-bold lg:inline-block">
-              {siteConfig.title}
+              {SITE_CONFIG.title}
             </span>
           </a>
         </div>
         <nav className="flex items-center">
           <Button variant="ghost" size="icon" className="h-8 w-8 px-0">
-            <a target="_blank" rel="noreferrer" href={siteConfig.links.github}>
-              <Icons.gitHub />
+            <a target="_blank" rel="noreferrer" href={SITE_CONFIG.links.github}>
+              <ICONS.gitHub />
               <span className="sr-only">GitHub</span>
             </a>
           </Button>

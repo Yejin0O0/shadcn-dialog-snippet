@@ -1,4 +1,4 @@
-export const siteConfig = {
+export const SITE_CONFIG = {
   title: "shadcn-dialog-snippet",
   url: "/",
   ogImage: "/ogImage.svg",
@@ -12,7 +12,7 @@ export const siteConfig = {
   },
 };
 
-export type SiteConfig = typeof siteConfig;
+export type SITE_CONFIG = typeof SITE_CONFIG;
 
 export const META_THEME_COLORS = {
   light: "#ffffff",

@@ -9,7 +9,7 @@ interface DialogDisplayProps {
   fullScreenButton: ReactNode;
 }
 
-function DialogDisplay(props: DialogDisplayProps) {
+export default function DialogDisplay(props: DialogDisplayProps) {
   const { category, code, children, title, fullScreenButton } = props;
 
   return (
@@ -27,5 +27,3 @@ function DialogDisplay(props: DialogDisplayProps) {
     </div>
   );
 }
-
-export default DialogDisplay;

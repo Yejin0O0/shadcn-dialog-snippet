@@ -15,7 +15,7 @@ interface CopyButtonProps {
   code: string;
 }
 
-export function CopyButton({ code }: CopyButtonProps) {
+export default function CopyButton({ code }: CopyButtonProps) {
   const [hasCopied, setHasCopied] = useState(false);
 
   useEffect(() => {

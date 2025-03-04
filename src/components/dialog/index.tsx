@@ -9,13 +9,13 @@ export { PricePlanDialog } from "@/components/dialog/information/PricePlanDialog
 export { CreditsDialog } from "@/components/dialog/information/CreditsDialog/CreditsDialog";
 export { ReviewNCommentDialog } from "@/components/dialog/information/ReviewNCommentDialog/ReviewNCommentDialog";
 
-export { CheckBoxColumnForm } from "@/components/dialog/form/CheckBoxColumnForm/CheckBoxColumnForm";
-export { InnerScrollForm } from "@/components/dialog/form/InnerScrollForm/InnerScrollForm";
-export { OpenSatisfactionSurveyForm } from "@/components/dialog/form/OpenSatisfactionSurveyForm/OpenSatisfactionSurveyForm";
-export { PaymentStepForm } from "@/components/dialog/form/PaymentStepForm/PaymentStepForm";
-export { RadioBoxColumnForm } from "@/components/dialog/form/RadioBoxColumnForm/RadioBoxColumnForm";
-export { SignInForm } from "@/components/dialog/form/SignInForm/SignInForm";
-export { SignUpForm } from "@/components/dialog/form/SignUpForm/SignUpForm";
+export { default as CheckBoxColumn } from "@/components/dialog/form/CheckBoxColumn/CheckBoxColumn";
+export { default as InnerScroll } from "@/components/dialog/form/InnerScroll/InnerScroll";
+export { default as SatisfactionSurvey } from "@/components/dialog/form/SatisfactionSurvey/SatisfactionSurvey";
+export { default as PaymentStep } from "@/components/dialog/form/PaymentStep/PaymentStep";
+export { default as RadioBoxColumn } from "@/components/dialog/form/RadioBoxColumn/RadioBoxColumn";
+export { default as SignIn } from "@/components/dialog/form/SignIn/SignIn";
+export { default as SignUp } from "@/components/dialog/form/SignUp/SignUp";
 
 // ----------------------------------------------
 

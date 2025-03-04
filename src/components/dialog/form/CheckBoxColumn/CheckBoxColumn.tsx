@@ -19,7 +19,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-interface CheckBoxColumnFormProps {
+interface CheckBoxColumnProps {
   type: "fullScreen" | "card";
 }
 
@@ -46,7 +46,7 @@ const FormSchema = z.object({
   }),
 });
 
-export function CheckBoxColumnForm({ type }: CheckBoxColumnFormProps) {
+export default function CheckBoxColumn({ type }: CheckBoxColumnProps) {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -65,9 +65,9 @@ export function CheckBoxColumnForm({ type }: CheckBoxColumnFormProps) {
     type === "fullScreen" ? DialogTitle : InlineDialogTitle;
 
   return (
-    <CommonDialog type={type} title="Checkbox Column Form" scale={SCALE}>
+    <CommonDialog type={type} title="CheckBox Column" scale={SCALE}>
       <DialogHeaderComponent>
-        <DialogTitleComponent>Checkbox Column Form</DialogTitleComponent>
+        <DialogTitleComponent>CheckBox Column</DialogTitleComponent>
       </DialogHeaderComponent>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

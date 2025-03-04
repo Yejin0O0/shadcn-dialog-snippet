@@ -1,11 +1,6 @@
+import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -14,6 +9,10 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/custom-ui/InlineDialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -25,7 +24,17 @@ const FormSchema = z.object({
   }),
 });
 
-export function RadioBoxColumnFormBase() {
+const SCALE = 0.8;
+interface RadioBoxColumnProps {
+  type: "fullScreen" | "card";
+}
+
+export default function RadioBoxColumn({ type }: RadioBoxColumnProps) {
+  const DialogHeaderComponent =
+    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
@@ -35,14 +44,11 @@ export function RadioBoxColumnFormBase() {
   };
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Radiobox Column Form</Button>
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Radiobox Column Form</DialogTitle>
-        </DialogHeader>
+    <CommonDialog type={type} title="RadioBox Column" scale={SCALE}>
+      <>
+        <DialogHeaderComponent>
+          <DialogTitleComponent>RadioBox Column</DialogTitleComponent>
+        </DialogHeaderComponent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
@@ -88,7 +94,7 @@ export function RadioBoxColumnFormBase() {
             </div>
           </form>
         </Form>
-      </DialogContent>
-    </Dialog>
+      </>
+    </CommonDialog>
   );
 }

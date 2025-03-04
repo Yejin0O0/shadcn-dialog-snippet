@@ -1,12 +1,10 @@
+import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
 import {
-  Dialog,
-  DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import {
   Form,
@@ -15,11 +13,23 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  InlineDialogDescription,
+  InlineDialogFooter,
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/custom-ui/InlineDialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+
+interface InnerScrollProps {
+  type: "fullScreen" | "card";
+}
+
+const SCALE = 0.7;
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
@@ -37,7 +47,16 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export function InnerScrollFormBase() {
+export default function InnerScroll({ type }: InnerScrollProps) {
+  const DialogHeaderComponent =
+    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+  const DialogDescriptionComponent =
+    type === "fullScreen" ? DialogDescription : InlineDialogDescription;
+  const DialogFooterComponent =
+    type === "fullScreen" ? DialogFooter : InlineDialogFooter;
+
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -64,18 +83,19 @@ export function InnerScrollFormBase() {
   };
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Inner Scroll Form</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] overflow-y-auto max-h-[400px]">
-        <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
+    <CommonDialog
+      type={type}
+      title="Inner Scroll"
+      scale={SCALE}
+      contentStyleClass="sm:max-w-[425px] overflow-y-auto max-h-[400px]"
+    >
+      <>
+        <DialogHeaderComponent>
+          <DialogTitleComponent>Edit profile</DialogTitleComponent>
+          <DialogDescriptionComponent>
             Make changes to your profile here. Click save when you're done.
-          </DialogDescription>
-        </DialogHeader>
-
+          </DialogDescriptionComponent>
+        </DialogHeaderComponent>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -117,7 +137,7 @@ export function InnerScrollFormBase() {
                   <Label htmlFor="email">Email</Label>
                   <FormControl>
                     <Input
-                      id="email"
+                      id="inner-scroll-email"
                       type="email"
                       className="col-span-3"
                       {...field}
@@ -189,12 +209,12 @@ export function InnerScrollFormBase() {
               )}
             />
 
-            <DialogFooter>
+            <DialogFooterComponent>
               <Button type="submit">Save changes</Button>
-            </DialogFooter>
+            </DialogFooterComponent>
           </form>
         </Form>
-      </DialogContent>
-    </Dialog>
+      </>
+    </CommonDialog>
   );
 }

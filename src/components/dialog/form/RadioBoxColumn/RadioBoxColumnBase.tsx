@@ -1,6 +1,11 @@
-import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
-import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -9,10 +14,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import {
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/custom-ui/InlineDialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -24,17 +25,7 @@ const FormSchema = z.object({
   }),
 });
 
-const SCALE = 0.8;
-interface RadioBoxColumnFormProps {
-  type: "fullScreen" | "card";
-}
-
-export function RadioBoxColumnForm({ type }: RadioBoxColumnFormProps) {
-  const DialogHeaderComponent =
-    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
-
+export default function RadioBoxColumnBase() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
@@ -44,11 +35,14 @@ export function RadioBoxColumnForm({ type }: RadioBoxColumnFormProps) {
   };
 
   return (
-    <CommonDialog type={type} title="Radiobox Column Form" scale={SCALE}>
-      <>
-        <DialogHeaderComponent>
-          <DialogTitleComponent>Radiobox Column Form</DialogTitleComponent>
-        </DialogHeaderComponent>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">RadioBox Column</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>RadioBox Column</DialogTitle>
+        </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
@@ -94,7 +88,7 @@ export function RadioBoxColumnForm({ type }: RadioBoxColumnFormProps) {
             </div>
           </form>
         </Form>
-      </>
-    </CommonDialog>
+      </DialogContent>
+    </Dialog>
   );
 }

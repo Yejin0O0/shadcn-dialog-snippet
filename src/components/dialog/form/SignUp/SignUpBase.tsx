@@ -43,7 +43,7 @@ const formSchema = z
 
 type FormData = z.infer<typeof formSchema>;
 
-export function SignUpFormBase() {
+export default function SignUpBase() {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -66,7 +66,7 @@ export function SignUpFormBase() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Sign Up Form</Button>
+        <Button variant="outline">Sign Up</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] rounded-md shadow-lg p-6">
         <DialogHeader>

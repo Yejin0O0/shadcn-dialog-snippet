@@ -1,12 +1,10 @@
+import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
 import {
-  Dialog,
-  DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import {
   Form,
@@ -15,6 +13,12 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  InlineDialogDescription,
+  InlineDialogFooter,
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/custom-ui/InlineDialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup } from "@/components/ui/radio-group";
@@ -35,7 +39,22 @@ interface SurveyFormData {
   newsletter: boolean;
 }
 
-export function SurveyFormBase() {
+interface SatisfactionSurveyProps {
+  type: "fullScreen" | "card";
+}
+
+const SCALE = 0.65;
+
+export default function SatisfactionSurvey({ type }: SatisfactionSurveyProps) {
+  const DialogHeaderComponent =
+    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+  const DialogDescriptionComponent =
+    type === "fullScreen" ? DialogDescription : InlineDialogDescription;
+  const DialogFooterComponent =
+    type === "fullScreen" ? DialogFooter : InlineDialogFooter;
+
   const form = useForm<SurveyFormData>({
     defaultValues: {
       satisfaction: "",
@@ -57,21 +76,21 @@ export function SurveyFormBase() {
   };
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" className="w-fit">
-          Satisfaction Survey Form
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[600px] rounded-md shadow-lg p-6 bg-white">
-        <DialogHeader>
-          <DialogTitle className="text-xl font-semibold">
-            Satisfaction Survey Form
-          </DialogTitle>
-          <DialogDescription className="text-gray-500">
+    <CommonDialog
+      type={type}
+      title="Satisfaction Survey"
+      scale={SCALE}
+      contentStyleClass="sm:max-w-[425px] overflow-y-auto max-h-[470px]"
+    >
+      <>
+        <DialogHeaderComponent>
+          <DialogTitleComponent className="text-xl font-semibold">
+            Satisfaction Survey
+          </DialogTitleComponent>
+          <DialogDescriptionComponent className="text-gray-500">
             Please fill out the following information.
-          </DialogDescription>
-        </DialogHeader>
+          </DialogDescriptionComponent>
+        </DialogHeaderComponent>
 
         <Form {...form}>
           <form
@@ -101,7 +120,7 @@ export function SurveyFormBase() {
                         <button
                           tabIndex={0}
                           type="button"
-                          className={`cursor-pointer w-20 h-20 p-1 rounded-lg border text-center transition ${
+                          className={`cursor-pointer w-full h-20 p-1 rounded-lg border text-center transition ${
                             field.value === "very_dissatisfied"
                               ? "bg-blue-100 border-blue-500"
                               : "border-gray-300 hover:bg-gray-50"
@@ -121,7 +140,7 @@ export function SurveyFormBase() {
                         <button
                           tabIndex={0}
                           type="button"
-                          className={`cursor-pointer w-20 h-20 p-1 rounded-lg border text-center transition ${
+                          className={`cursor-pointer w-full h-20 p-1 rounded-lg border text-center transition ${
                             field.value === "dissatisfied"
                               ? "bg-blue-100 border-blue-500"
                               : "border-gray-300 hover:bg-gray-50"
@@ -141,7 +160,7 @@ export function SurveyFormBase() {
                         <button
                           tabIndex={0}
                           type="button"
-                          className={`cursor-pointer w-20 h-20 p-1 rounded-lg border text-center transition ${
+                          className={`cursor-pointer w-full h-20 p-1 rounded-lg border text-center transition ${
                             field.value === "neutral"
                               ? "bg-blue-100 border-blue-500"
                               : "border-gray-300 hover:bg-gray-50"
@@ -161,7 +180,7 @@ export function SurveyFormBase() {
                         <button
                           tabIndex={0}
                           type="button"
-                          className={`cursor-pointer w-20 h-20 p-1 rounded-lg border text-center transition ${
+                          className={`cursor-pointer w-full h-20 p-1 rounded-lg border text-center transition ${
                             field.value === "satisfied"
                               ? "bg-blue-100 border-blue-500"
                               : "border-gray-300 hover:bg-gray-50"
@@ -181,7 +200,7 @@ export function SurveyFormBase() {
                         <button
                           tabIndex={0}
                           type="button"
-                          className={`cursor-pointer w-20 h-20 p-1 rounded-lg border text-center transition ${
+                          className={`cursor-pointer w-full h-20 p-1 rounded-lg border text-center transition ${
                             field.value === "very_satisfied"
                               ? "bg-blue-100 border-blue-500"
                               : "border-gray-300 hover:bg-gray-50"
@@ -288,17 +307,17 @@ export function SurveyFormBase() {
               )}
             />
 
-            <DialogFooter className="mt-4 ">
+            <DialogFooterComponent className="mt-4 ">
               <Button type="submit" className="w-1/2">
                 Submit
               </Button>
               <Button type="button" variant="outline" className="w-1/2">
                 Cancel
               </Button>
-            </DialogFooter>
+            </DialogFooterComponent>
           </form>
         </Form>
-      </DialogContent>
-    </Dialog>
+      </>
+    </CommonDialog>
   );
 }

@@ -32,7 +32,7 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export function SignInFormBase() {
+export default function SignInBase() {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {

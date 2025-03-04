@@ -1,11 +1,9 @@
+import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
 import {
-  Dialog,
-  DialogContent,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import {
   Form,
@@ -14,6 +12,11 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  InlineDialogFooter,
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/custom-ui/InlineDialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
@@ -39,7 +42,19 @@ const formSchema = z.object({
     .max(3, { message: "CVV must be 3 digits" }),
 });
 
-export function PaymentStepFormBase() {
+const SCALE = 0.66;
+interface PaymentStepProps {
+  type: "fullScreen" | "card";
+}
+
+export default function PaymentStep({ type }: PaymentStepProps) {
+  const DialogHeaderComponent =
+    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+  const DialogFooterComponent =
+    type === "fullScreen" ? DialogFooter : InlineDialogFooter;
+
   const [step, setStep] = useState<number>(1);
   const [progressValue, setProgressValue] = useState<number>(33);
 
@@ -100,19 +115,17 @@ export function PaymentStepFormBase() {
   };
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" className="w-fit">
-          Payment Step Form
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px] rounded-md shadow-lg p-6">
-        <DialogHeader>
-          <DialogTitle>Activate your account</DialogTitle>
-        </DialogHeader>
-
+    <CommonDialog
+      type={type}
+      title="Payment Step"
+      scale={SCALE}
+      contentStyleClass="sm:max-w-[500px] rounded-md shadow-lg p-6"
+    >
+      <>
+        <DialogHeaderComponent>
+          <DialogTitleComponent>Activate your account</DialogTitleComponent>
+        </DialogHeaderComponent>
         <StepProgressBar />
-
         {step === 1 && (
           <Form {...form}>
             <div className="space-y-4">
@@ -152,11 +165,11 @@ export function PaymentStepFormBase() {
               {errors.plan && (
                 <p className="text-red-500 text-sm">{errors.plan.message}</p>
               )}
-              <DialogFooter className="mt-4">
+              <DialogFooterComponent className="mt-4">
                 <Button onClick={handleNext} className="w-full">
                   Next: Billing details
                 </Button>
-              </DialogFooter>
+              </DialogFooterComponent>
             </div>
           </Form>
         )}
@@ -234,12 +247,12 @@ export function PaymentStepFormBase() {
                     />
                   </div>
                 </div>
-                <DialogFooter className="flex justify-between">
+                <DialogFooterComponent className="flex justify-between">
                   <Button variant="outline" onClick={handlePrevious}>
                     Back
                   </Button>
                   <Button type="submit">Activate</Button>
-                </DialogFooter>
+                </DialogFooterComponent>
               </div>
             </form>
           </Form>
@@ -256,7 +269,7 @@ export function PaymentStepFormBase() {
             </Button>
           </div>
         )}
-      </DialogContent>
-    </Dialog>
+      </>
+    </CommonDialog>
   );
 }

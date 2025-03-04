@@ -139,24 +139,20 @@ export default function HomePage() {
                   category="form"
                   code={Dialog.CheckBoxColumnFormBaseString}
                   title="Checkbox Column Form"
-                  fullScreenButton={
-                    <Dialog.CheckBoxColumnForm type="fullScreen" />
-                  }
+                  fullScreenButton={<Dialog.CheckBoxColumn type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.CheckBoxColumnForm type="card" />
+                    <Dialog.CheckBoxColumn type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
                   code={Dialog.InnerScrollFormBaseString}
                   title="Inner Scroll Form"
-                  fullScreenButton={
-                    <Dialog.InnerScrollForm type="fullScreen" />
-                  }
+                  fullScreenButton={<Dialog.InnerScroll type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.InnerScrollForm type="card" />
+                    <Dialog.InnerScroll type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
@@ -164,55 +160,51 @@ export default function HomePage() {
                   code={Dialog.OpenSatisfactionSurveyFormBaseString}
                   title="Satisfaction Survey Form"
                   fullScreenButton={
-                    <Dialog.OpenSatisfactionSurveyForm type="fullScreen" />
+                    <Dialog.SatisfactionSurvey type="fullScreen" />
                   }
                 >
                   <DialogCard>
-                    <Dialog.OpenSatisfactionSurveyForm type="card" />
+                    <Dialog.SatisfactionSurvey type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
                   code={Dialog.PaymentStepFormBaseString}
                   title="Payment Step Form"
-                  fullScreenButton={
-                    <Dialog.PaymentStepForm type="fullScreen" />
-                  }
+                  fullScreenButton={<Dialog.PaymentStep type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.PaymentStepForm type="card" />
+                    <Dialog.PaymentStep type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
                   code={Dialog.RadioBoxColumnFormBaseString}
                   title="Radiobox Column Form"
-                  fullScreenButton={
-                    <Dialog.RadioBoxColumnForm type="fullScreen" />
-                  }
+                  fullScreenButton={<Dialog.RadioBoxColumn type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.RadioBoxColumnForm type="card" />
+                    <Dialog.RadioBoxColumn type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
                   code={Dialog.SignInFormBaseString}
                   title="Sign In Form"
-                  fullScreenButton={<Dialog.SignInForm type="fullScreen" />}
+                  fullScreenButton={<Dialog.SignIn type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.SignInForm type="card" />
+                    <Dialog.SignIn type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
                   code={Dialog.SignUpFormBaseString}
                   title="Sign Up Form"
-                  fullScreenButton={<Dialog.SignUpForm type="fullScreen" />}
+                  fullScreenButton={<Dialog.SignUp type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.SignUpForm type="card" />
+                    <Dialog.SignUp type="card" />
                   </DialogCard>
                 </DialogDisplay>
               </div>

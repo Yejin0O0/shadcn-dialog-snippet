@@ -36,11 +36,11 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 const SCALE = 0.5;
-interface SignInFormProps {
+interface SignInProps {
   type: "fullScreen" | "card";
 }
 
-export function SignInForm({ type }: SignInFormProps) {
+export default function SignIn({ type }: SignInProps) {
   const DialogHeaderComponent =
     type === "fullScreen" ? DialogHeader : InlineDialogHeader;
   const DialogTitleComponent =
@@ -69,7 +69,7 @@ export function SignInForm({ type }: SignInFormProps) {
   return (
     <CommonDialog
       type={type}
-      title="Sign In Form"
+      title="Sign In"
       scale={SCALE}
       contentStyleClass="sm:max-w-[425px] rounded-md shadow-lg p-6"
     >

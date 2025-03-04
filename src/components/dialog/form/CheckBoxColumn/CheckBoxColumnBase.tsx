@@ -41,7 +41,7 @@ const FormSchema = z.object({
   }),
 });
 
-export function CheckBoxColumnFormBase() {
+export default function CheckBoxColumnBase() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -57,11 +57,11 @@ export function CheckBoxColumnFormBase() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Checkbox Column Form</Button>
+        <Button variant="outline">CheckBox Column</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Checkbox Column Form</DialogTitle>
+          <DialogTitle>CheckBox Column</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

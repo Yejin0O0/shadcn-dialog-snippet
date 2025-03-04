@@ -1,4 +1,9 @@
 import CommonDialog from "@/components/common/CommonDialog";
+import {
+  InlineDialogDescription,
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/custom-ui/InlineDialog";
 import { Avatar } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -6,11 +11,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import {
-  InlineDialogDescription,
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/custom-ui/InlineDialog";
 import { CircleUserIcon, Heart, Star } from "lucide-react";
 
 const comments = [

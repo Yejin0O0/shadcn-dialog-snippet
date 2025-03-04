@@ -1,13 +1,5 @@
 import CommonDialog from "@/components/common/CommonDialog";
 import {
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
-import {
   InlineDialogAction,
   InlineDialogCancel,
   InlineDialogDescription,
@@ -15,6 +7,14 @@ import {
   InlineDialogHeader,
   InlineDialogTitle,
 } from "@/components/custom-ui/InlineDialog";
+import {
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 interface ErrorAlertProps {
   type: "fullScreen" | "card";

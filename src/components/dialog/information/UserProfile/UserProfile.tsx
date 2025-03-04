@@ -1,11 +1,11 @@
 import CommonDialog from "@/components/common/CommonDialog";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
   InlineDialogHeader,
   InlineDialogTitle,
 } from "@/components/custom-ui/InlineDialog";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { MessageCircle, MoreHorizontal, User } from "lucide-react";
 
 const profileImageUrl = "https://avatar.iran.liara.run/public/15";

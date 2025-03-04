@@ -1,9 +1,4 @@
 import {
-  AlertDialogFooter,
-  AlertDialogHeader,
-} from "@/components/ui/alert-dialog";
-import { DialogFooter, DialogHeader } from "@/components/ui/dialog";
-import {
   InlineDialogAction,
   InlineDialogCancel,
   InlineDialogDescription,
@@ -12,6 +7,11 @@ import {
   type InlineDialogProps,
   InlineDialogTitle,
 } from "@/components/custom-ui/InlineDialog";
+import {
+  AlertDialogFooter,
+  AlertDialogHeader,
+} from "@/components/ui/alert-dialog";
+import { DialogFooter, DialogHeader } from "@/components/ui/dialog";
 import {
   AlertDialog,
   AlertDialogAction,

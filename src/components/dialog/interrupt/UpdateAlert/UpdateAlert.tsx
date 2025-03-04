@@ -1,5 +1,13 @@
 import CommonDialog from "@/components/common/CommonDialog";
 import {
+  InlineDialogAction,
+  InlineDialogCancel,
+  InlineDialogDescription,
+  InlineDialogFooter,
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/custom-ui/InlineDialog";
+import {
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogDescription,
@@ -8,14 +16,6 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { buttonVariants } from "@/components/ui/button";
-import {
-  InlineDialogAction,
-  InlineDialogCancel,
-  InlineDialogDescription,
-  InlineDialogFooter,
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/custom-ui/InlineDialog";
 import { DownloadCloudIcon } from "lucide-react";
 
 interface UpdateAlertProps {

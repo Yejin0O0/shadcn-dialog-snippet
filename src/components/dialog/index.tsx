@@ -4,10 +4,10 @@ export { InfoAlert } from "@/components/dialog/interrupt/InfoAlert/InfoAlert";
 export { SuccessAlert } from "@/components/dialog/interrupt/SuccessAlert/SuccessAlert";
 export { UpdateAlert } from "@/components/dialog/interrupt/UpdateAlert/UpdateAlert";
 
-export { UserProfileDialog } from "@/components/dialog/information/UserProfileDialog/UserProfileDialog";
-export { PricePlanDialog } from "@/components/dialog/information/PricePlanDialog/PricePlanDialog";
-export { CreditsDialog } from "@/components/dialog/information/CreditsDialog/CreditsDialog";
-export { ReviewNCommentDialog } from "@/components/dialog/information/ReviewNCommentDialog/ReviewNCommentDialog";
+export { default as UserProfile } from "@/components/dialog/information/UserProfile/UserProfile";
+export { default as PricePlan } from "@/components/dialog/information/PricePlan/PricePlan";
+export { default as Credits } from "@/components/dialog/information/Credits/Credits";
+export { default as ReviewNComment } from "@/components/dialog/information/ReviewNComment/ReviewNComment";
 
 export { default as CheckBoxColumn } from "@/components/dialog/form/CheckBoxColumn/CheckBoxColumn";
 export { default as InnerScroll } from "@/components/dialog/form/InnerScroll/InnerScroll";

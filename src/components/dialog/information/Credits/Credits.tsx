@@ -21,7 +21,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import { UserPlus, Users } from "lucide-react";
 
-interface CreditsDialogProps {
+interface CreditsProps {
   type: "fullScreen" | "card";
 }
 
@@ -118,7 +118,7 @@ function RenderReferralSection() {
   );
 }
 
-export function CreditsDialog({ type }: CreditsDialogProps) {
+export default function Credits({ type }: CreditsProps) {
   const DialogHeaderComponent =
     type === "fullScreen" ? DialogHeader : InlineDialogHeader;
   const DialogTitleComponent =
@@ -127,7 +127,7 @@ export function CreditsDialog({ type }: CreditsDialogProps) {
     type === "fullScreen" ? DialogDescription : InlineDialogDescription;
 
   return (
-    <CommonDialog type={type} title="Credits Information" scale={SCALE}>
+    <CommonDialog type={type} title="Credits" scale={SCALE}>
       <>
         <DialogHeaderComponent>
           <DialogTitleComponent className="text-lg font-semibold text-center">

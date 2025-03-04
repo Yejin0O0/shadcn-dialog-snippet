@@ -22,12 +22,12 @@ const comments = [
   },
 ];
 
-export default function ReviewNCommentDialogBase() {
+export default function ReviewNCommentBase() {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" className="w-fit">
-          Open Reviews
+          Review & Comments
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-md rounded-lg bg-white p-6 shadow-lg">

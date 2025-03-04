@@ -1,54 +1,47 @@
-import CommonDialog from "@/components/common/CommonDialog";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/custom-ui/InlineDialog";
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { MessageCircle, MoreHorizontal, User } from "lucide-react";
 
-const profileImageUrl = "https://avatar.iran.liara.run/public/15";
-const backgroundImageUrl = "https://picsum.photos/500/200";
-
-interface UserProfileDialogProps {
-  type: "fullScreen" | "card";
-}
-
-const SCALE = 0.65;
-
-export function UserProfileDialog({ type }: UserProfileDialogProps) {
-  const DialogHeaderComponent =
-    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
-
+export default function UserProfileBase() {
   return (
-    <CommonDialog type={type} title="User Profile" scale={SCALE}>
-      <>
-        <DialogHeaderComponent>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline" className="w-fit">
+          User Profile
+        </Button>
+      </DialogTrigger>
+
+      <DialogContent className="sm:max-w-[450px] rounded-lg shadow-lg p-8 bg-white">
+        <DialogHeader>
           <div
             className="relative w-full h-32 bg-gray-200 rounded-t-lg flex justify-center items-center"
             style={{
-              backgroundImage: `url(${backgroundImageUrl})`,
+              backgroundImage: 'url("https://picsum.photos/500/200")',
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
             <Avatar className="absolute -bottom-12 w-24 h-24 rounded-full border-4 border-white shadow-lg">
               <AvatarImage
-                src={`${profileImageUrl}`}
+                src="https://avatar.iran.liara.run/public/15"
                 alt="User profile image"
               />
               <AvatarFallback>JD</AvatarFallback>
             </Avatar>
           </div>
-        </DialogHeaderComponent>
+        </DialogHeader>
 
         <div className="flex flex-col items-center mt-10">
-          <DialogTitleComponent className="text-center text-2xl font-semibold text-gray-800">
+          <DialogTitle className="text-center text-2xl font-semibold text-gray-800">
             John Doe
-          </DialogTitleComponent>
+          </DialogTitle>
           <p className="text-center text-sm text-gray-500">
             @johndoe • San Francisco • Joined Jan 2022
           </p>
@@ -73,7 +66,7 @@ export function UserProfileDialog({ type }: UserProfileDialogProps) {
             open-source technologies. Let's build something amazing!
           </p>
         </div>
-      </>
-    </CommonDialog>
+      </DialogContent>
+    </Dialog>
   );
 }

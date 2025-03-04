@@ -18,7 +18,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import { UserPlus, Users } from "lucide-react";
 
-export default function CreditsDialogBase() {
+export default function CreditsBase() {
   const { toast } = useToast();
 
   const handleCopy = () => {
@@ -33,7 +33,7 @@ export default function CreditsDialogBase() {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" className="w-fit">
-          Credits information
+          Credits
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-md rounded-lg bg-white p-6 shadow-lg">

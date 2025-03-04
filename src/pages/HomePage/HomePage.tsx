@@ -87,46 +87,40 @@ export default function HomePage() {
                   category="information"
                   code={Dialog.UserProfileDialogBaseString}
                   title="User Profile"
-                  fullScreenButton={
-                    <Dialog.UserProfileDialog type="fullScreen" />
-                  }
+                  fullScreenButton={<Dialog.UserProfile type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.UserProfileDialog type="card" />
+                    <Dialog.UserProfile type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="information"
                   code={Dialog.PricePlanDialogBaseString}
                   title="Price Plan"
-                  fullScreenButton={
-                    <Dialog.PricePlanDialog type="fullScreen" />
-                  }
+                  fullScreenButton={<Dialog.PricePlan type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.PricePlanDialog type="card" />
+                    <Dialog.PricePlan type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="information"
                   code={Dialog.CreditsDialogBaseString}
-                  title="Credits information"
-                  fullScreenButton={<Dialog.CreditsDialog type="fullScreen" />}
+                  title="Credits"
+                  fullScreenButton={<Dialog.Credits type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.CreditsDialog type="card" />
+                    <Dialog.Credits type="card" />
                   </DialogCard>
                 </DialogDisplay>
                 <DialogDisplay
                   category="information"
                   code={Dialog.ReviewNCommentDialogBaseString}
                   title="Review & Comment"
-                  fullScreenButton={
-                    <Dialog.ReviewNCommentDialog type="fullScreen" />
-                  }
+                  fullScreenButton={<Dialog.ReviewNComment type="fullScreen" />}
                 >
                   <DialogCard>
-                    <Dialog.ReviewNCommentDialog type="card" />
+                    <Dialog.ReviewNComment type="card" />
                   </DialogCard>
                 </DialogDisplay>
               </div>

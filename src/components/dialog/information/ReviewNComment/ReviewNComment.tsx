@@ -24,13 +24,13 @@ const comments = [
   },
 ];
 
-interface ReviewNCommentDialogProps {
+interface ReviewNCommentProps {
   type: "fullScreen" | "card";
 }
 
 const SCALE = 0.5;
 
-export function ReviewNCommentDialog({ type }: ReviewNCommentDialogProps) {
+export default function ReviewNComment({ type }: ReviewNCommentProps) {
   const DialogHeaderComponent =
     type === "fullScreen" ? DialogHeader : InlineDialogHeader;
   const DialogTitleComponent =

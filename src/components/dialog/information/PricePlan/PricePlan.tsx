@@ -1,13 +1,18 @@
+import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
+import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+  InlineDialogHeader,
+  InlineDialogTitle,
+} from "@/components/custom-ui/InlineDialog";
 import { CheckIcon } from "lucide-react";
 import { useState } from "react";
+
+interface PricePlanProps {
+  type: "fullScreen" | "card";
+}
+
+const SCALE = 0.8;
 
 const PRICING_PLANS = [
   {
@@ -45,20 +50,25 @@ const PRICING_PLANS = [
   },
 ];
 
-export function PricePlanDialogBase() {
+export default function PricePlan({ type }: PricePlanProps) {
   const [selected, setSelected] = useState("Free");
 
+  const DialogHeaderComponent =
+    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
+  const DialogTitleComponent =
+    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" className="w-fit">
-          Price Plan
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[450px] rounded-lg shadow-lg p-8 bg-white">
-        <DialogHeader>
-          <DialogTitle>Price Plan</DialogTitle>
-        </DialogHeader>
+    <CommonDialog
+      type={type}
+      title="Price Plan"
+      scale={SCALE}
+      contentStyleClass="sm:max-w-[450px] rounded-lg shadow-lg p-8 bg-white"
+    >
+      <>
+        <DialogHeaderComponent>
+          <DialogTitleComponent>Price Plan</DialogTitleComponent>
+        </DialogHeaderComponent>
         <div className="min-h-[80px]">
           {PRICING_PLANS.map(
             (plan) =>
@@ -104,7 +114,7 @@ export function PricePlanDialogBase() {
             </div>
           ))}
         </div>
-      </DialogContent>
-    </Dialog>
+      </>
+    </CommonDialog>
   );
 }

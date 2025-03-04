@@ -23,17 +23,17 @@ export { ErrorAlertBaseString } from "@/__generated__/ErrorAlertBaseString";
 export { WarningAlertBaseString } from "@/__generated__/WarningAlertBaseString";
 export { SuccessAlertBaseString } from "@/__generated__/SuccessAlertBaseString";
 export { UpdateAlertBaseString } from "@/__generated__/UpdateAlertBaseString";
-
 export { InfoAlertBaseString } from "@/__generated__/InfoAlertBaseString";
-export { UserProfileDialogBaseString } from "@/__generated__/UserProfileDialogBaseString";
-export { PricePlanDialogBaseString } from "@/__generated__/PricePlanDialogBaseString";
-export { CreditsDialogBaseString } from "@/__generated__/CreditsDialogBaseString";
-export { ReviewNCommentDialogBaseString } from "@/__generated__/ReviewNCommentDialogBaseString";
 
-export { CheckBoxColumnFormBaseString } from "@/__generated__/CheckBoxColumnFormBaseString";
-export { InnerScrollFormBaseString } from "@/__generated__/InnerScrollFormBaseString";
-export { OpenSatisfactionSurveyFormBaseString } from "@/__generated__/OpenSatisfactionSurveyFormBaseString";
-export { PaymentStepFormBaseString } from "@/__generated__/PaymentStepFormBaseString";
-export { RadioBoxColumnFormBaseString } from "@/__generated__/RadioBoxColumnFormBaseString";
-export { SignInFormBaseString } from "@/__generated__/SignInFormBaseString";
-export { SignUpFormBaseString } from "@/__generated__/SignUpFormBaseString";
+export { UserProfileBaseString } from "@/__generated__/UserProfileBaseString";
+export { PricePlanBaseString } from "@/__generated__/PricePlanBaseString";
+export { CreditsBaseString } from "@/__generated__/CreditsBaseString";
+export { ReviewNCommentBaseString } from "@/__generated__/ReviewNCommentBaseString";
+
+export { CheckBoxColumnBaseString } from "@/__generated__/CheckBoxColumnBaseString";
+export { InnerScrollBaseString } from "@/__generated__/InnerScrollBaseString";
+export { SatisfactionSurveyBaseString } from "@/__generated__/SatisfactionSurveyBaseString";
+export { PaymentStepBaseString } from "@/__generated__/PaymentStepBaseString";
+export { RadioBoxColumnBaseString } from "@/__generated__/RadioBoxColumnBaseString";
+export { SignInBaseString } from "@/__generated__/SignInBaseString";
+export { SignUpBaseString } from "@/__generated__/SignUpBaseString";

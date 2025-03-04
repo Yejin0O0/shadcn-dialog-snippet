@@ -85,7 +85,7 @@ export default function HomePage() {
               >
                 <DialogDisplay
                   category="information"
-                  code={Dialog.UserProfileDialogBaseString}
+                  code={Dialog.UserProfileBaseString}
                   title="User Profile"
                   fullScreenButton={<Dialog.UserProfile type="fullScreen" />}
                 >
@@ -95,7 +95,7 @@ export default function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="information"
-                  code={Dialog.PricePlanDialogBaseString}
+                  code={Dialog.PricePlanBaseString}
                   title="Price Plan"
                   fullScreenButton={<Dialog.PricePlan type="fullScreen" />}
                 >
@@ -105,7 +105,7 @@ export default function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="information"
-                  code={Dialog.CreditsDialogBaseString}
+                  code={Dialog.CreditsBaseString}
                   title="Credits"
                   fullScreenButton={<Dialog.Credits type="fullScreen" />}
                 >
@@ -115,7 +115,7 @@ export default function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="information"
-                  code={Dialog.ReviewNCommentDialogBaseString}
+                  code={Dialog.ReviewNCommentBaseString}
                   title="Review & Comment"
                   fullScreenButton={<Dialog.ReviewNComment type="fullScreen" />}
                 >
@@ -131,8 +131,8 @@ export default function HomePage() {
               >
                 <DialogDisplay
                   category="form"
-                  code={Dialog.CheckBoxColumnFormBaseString}
-                  title="Checkbox Column Form"
+                  code={Dialog.CheckBoxColumnBaseString}
+                  title="Checkbox Column"
                   fullScreenButton={<Dialog.CheckBoxColumn type="fullScreen" />}
                 >
                   <DialogCard>
@@ -141,8 +141,8 @@ export default function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.InnerScrollFormBaseString}
-                  title="Inner Scroll Form"
+                  code={Dialog.InnerScrollBaseString}
+                  title="Inner Scroll"
                   fullScreenButton={<Dialog.InnerScroll type="fullScreen" />}
                 >
                   <DialogCard>
@@ -151,8 +151,8 @@ export default function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.OpenSatisfactionSurveyFormBaseString}
-                  title="Satisfaction Survey Form"
+                  code={Dialog.SatisfactionSurveyBaseString}
+                  title="Satisfaction Survey"
                   fullScreenButton={
                     <Dialog.SatisfactionSurvey type="fullScreen" />
                   }
@@ -163,8 +163,8 @@ export default function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.PaymentStepFormBaseString}
-                  title="Payment Step Form"
+                  code={Dialog.PaymentStepBaseString}
+                  title="Payment Step"
                   fullScreenButton={<Dialog.PaymentStep type="fullScreen" />}
                 >
                   <DialogCard>
@@ -173,8 +173,8 @@ export default function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.RadioBoxColumnFormBaseString}
-                  title="Radiobox Column Form"
+                  code={Dialog.RadioBoxColumnBaseString}
+                  title="Radiobox Column"
                   fullScreenButton={<Dialog.RadioBoxColumn type="fullScreen" />}
                 >
                   <DialogCard>
@@ -183,8 +183,8 @@ export default function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.SignInFormBaseString}
-                  title="Sign In Form"
+                  code={Dialog.SignInBaseString}
+                  title="Sign In"
                   fullScreenButton={<Dialog.SignIn type="fullScreen" />}
                 >
                   <DialogCard>
@@ -193,8 +193,8 @@ export default function HomePage() {
                 </DialogDisplay>
                 <DialogDisplay
                   category="form"
-                  code={Dialog.SignUpFormBaseString}
-                  title="Sign Up Form"
+                  code={Dialog.SignUpBaseString}
+                  title="Sign Up"
                   fullScreenButton={<Dialog.SignUp type="fullScreen" />}
                 >
                   <DialogCard>

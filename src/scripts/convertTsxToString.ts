@@ -53,6 +53,8 @@ const findFilesRecursively = async (dir: string, ext = "Base.tsx") => {
     }
   }
 
+  console.log("files", files);
+
   return files;
 };
 

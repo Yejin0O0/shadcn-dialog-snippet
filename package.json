@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "convert": "NODE_OPTIONS='--loader ts-node/esm' ts-node ./src/scripts/convert-tsx-to-string.ts && npm run format",
+    "convert": "NODE_OPTIONS='--loader ts-node/esm' ts-node ./src/scripts/convertTsxToString.ts && npm run format",
     "build": "npm run convert && vite build",
     "format": "biome check . --fix",
     "preview": "vite preview"

@@ -2,7 +2,7 @@ import { useTheme } from "@/providers/ThemeProvider";
 import { META_THEME_COLORS } from "@/statics/site";
 import { useCallback, useEffect, useState } from "react";
 
-export function useMetaColor() {
+export default function useMetaColor() {
   const { theme } = useTheme();
 
   // Manage metaColor in state to store the required color

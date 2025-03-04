@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { useMetaColor } from "@/hooks/useMetaColor";
+import useMetaColor from "@/hooks/useMetaColor";
 import { useTheme } from "@/providers/ThemeProvider";
 import { META_THEME_COLORS } from "@/statics/site";
 import { MoonIcon, SunIcon } from "lucide-react";
 
-export function ModeToggle() {
+export default function ModeToggle() {
   const { theme, setTheme } = useTheme();
   const { setMetaColor } = useMetaColor();
 

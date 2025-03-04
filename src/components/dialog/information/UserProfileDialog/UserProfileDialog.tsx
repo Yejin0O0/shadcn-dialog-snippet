@@ -5,7 +5,7 @@ import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
   InlineDialogHeader,
   InlineDialogTitle,
-} from "@/components/ui/inline-dialog";
+} from "@/components/custom-ui/InlineDialog";
 import { MessageCircle, MoreHorizontal, User } from "lucide-react";
 
 const profileImageUrl = "https://avatar.iran.liara.run/public/15";

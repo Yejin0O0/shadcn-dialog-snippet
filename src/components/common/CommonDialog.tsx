@@ -9,7 +9,7 @@ import {
   InlineDialog,
   InlineDialogContent,
   InlineDialogTrigger,
-} from "@/components/ui/inline-dialog";
+} from "@/components/custom-ui/InlineDialog";
 import {
   Tooltip,
   TooltipContent,

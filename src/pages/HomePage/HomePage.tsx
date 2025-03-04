@@ -4,7 +4,7 @@ import DialogNav from "@/components/common/DialogNav";
 import * as Dialog from "@/components/dialog/index";
 import { Separator } from "@/components/ui/separator";
 
-function HomePage() {
+export default function HomePage() {
   return (
     <div className="relative">
       <section className="flex flex-col items-start gap-2 border-b border-border/40 py-8 dark:border-border md:py-10 lg:py-12">
@@ -223,5 +223,3 @@ function HomePage() {
     </div>
   );
 }
-
-export default HomePage;

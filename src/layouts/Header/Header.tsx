@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { ICONS } from "@/statics/Icons";
+import { ICONS } from "@/statics/icons";
 import { SITE_CONFIG } from "@/statics/site";
 
-export function Header() {
+export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-border">
       <div className="flex h-14 items-center justify-between px-4">

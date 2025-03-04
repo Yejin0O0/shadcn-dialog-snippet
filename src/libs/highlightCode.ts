@@ -1,6 +1,6 @@
 import { codeToHtml } from "shiki";
 
-export async function highlightCode(
+export default async function highlightCode(
   code: string,
   lang = "typescript",
 ): Promise<string> {

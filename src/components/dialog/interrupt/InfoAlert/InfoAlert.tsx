@@ -14,7 +14,7 @@ import {
   InlineDialogFooter,
   InlineDialogHeader,
   InlineDialogTitle,
-} from "@/components/ui/inline-dialog";
+} from "@/components/custom-ui/InlineDialog";
 interface InfoAlertProps {
   type: "fullScreen" | "card";
 }

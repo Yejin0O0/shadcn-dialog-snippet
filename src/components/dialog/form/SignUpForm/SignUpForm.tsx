@@ -20,7 +20,7 @@ import {
   InlineDialogFooter,
   InlineDialogHeader,
   InlineDialogTitle,
-} from "@/components/ui/inline-dialog";
+} from "@/components/custom-ui/InlineDialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";

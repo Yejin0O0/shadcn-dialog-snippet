@@ -4,7 +4,7 @@ import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
   InlineDialogHeader,
   InlineDialogTitle,
-} from "@/components/ui/inline-dialog";
+} from "@/components/custom-ui/InlineDialog";
 import { CheckIcon } from "lucide-react";
 import { useState } from "react";
 

@@ -10,7 +10,7 @@ import {
   InlineDialogDescription,
   InlineDialogHeader,
   InlineDialogTitle,
-} from "@/components/ui/inline-dialog";
+} from "@/components/custom-ui/InlineDialog";
 import { CircleUserIcon, Heart, Star } from "lucide-react";
 
 const comments = [

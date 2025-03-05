@@ -307,7 +307,7 @@ export default function SatisfactionSurvey({ type }: SatisfactionSurveyProps) {
               )}
             />
 
-            <DialogFooterComponent className="mt-4 ">
+            <DialogFooterComponent className="mt-4 flex-row">
               <Button type="submit" className="w-1/2">
                 Submit
               </Button>

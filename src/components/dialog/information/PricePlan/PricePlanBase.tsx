@@ -55,7 +55,7 @@ export default function PricePlanBase() {
           Price Plan
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[450px] rounded-lg shadow-lg p-8 bg-white">
+      <DialogContent className="sm:max-w-[450px] rounded-lg shadow-lg p-4 bg-white">
         <DialogHeader>
           <DialogTitle>Price Plan</DialogTitle>
         </DialogHeader>

@@ -63,7 +63,7 @@ export default function PricePlan({ type }: PricePlanProps) {
       type={type}
       title="Price Plan"
       scale={SCALE}
-      contentStyleClass="sm:max-w-[450px] rounded-lg shadow-lg p-8 bg-white"
+      contentStyleClass="sm:max-w-[450px] rounded-lg shadow-lg p-4 bg-white"
     >
       <>
         <DialogHeaderComponent>

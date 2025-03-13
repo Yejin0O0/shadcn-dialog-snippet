@@ -9,22 +9,22 @@ const DIALOG_LINK = [
   {
     name: "interrupt",
     href: "#interrupt",
-    mixpanelTracking: EVENT_ID.CLICKED_INTERRUPT,
+    eventId: EVENT_ID.CLICKED_INTERRUPT,
   },
   {
     name: "information",
     href: "#information",
-    mixpanelTracking: EVENT_ID.CLICKED_INFORMATION,
+    eventId: EVENT_ID.CLICKED_INFORMATION,
   },
   {
     name: "form",
     href: "#form",
-    mixpanelTracking: EVENT_ID.CLICKED_FORM,
+    eventId: EVENT_ID.CLICKED_FORM,
   },
 ];
 
 const getTrackingEvent = (hash: string) => {
-  return DIALOG_LINK.find((link) => link.href === hash)?.mixpanelTracking;
+  return DIALOG_LINK.find((link) => link.href === hash)?.eventId;
 };
 
 function DialogNav() {

@@ -1,21 +1,21 @@
-export { ErrorAlert } from "@/components/dialog/interrupt/ErrorAlert/ErrorAlert";
-export { WarningAlert } from "@/components/dialog/interrupt/WarningAlert/WarningAlert";
-export { InfoAlert } from "@/components/dialog/interrupt/InfoAlert/InfoAlert";
-export { SuccessAlert } from "@/components/dialog/interrupt/SuccessAlert/SuccessAlert";
-export { UpdateAlert } from "@/components/dialog/interrupt/UpdateAlert/UpdateAlert";
+export { default as ErrorAlert } from "@/components/dialog/interrupt/ErrorAlert/ErrorAlert";
+export { default as WarningAlert } from "@/components/dialog/interrupt/WarningAlert/WarningAlert";
+export { default as InfoAlert } from "@/components/dialog/interrupt/InfoAlert/InfoAlert";
+export { default as SuccessAlert } from "@/components/dialog/interrupt/SuccessAlert/SuccessAlert";
+export { default as UpdateAlert } from "@/components/dialog/interrupt/UpdateAlert/UpdateAlert";
 
-export { UserProfileDialog } from "@/components/dialog/information/UserProfileDialog/UserProfileDialog";
-export { PricePlanDialog } from "@/components/dialog/information/PricePlanDialog/PricePlanDialog";
-export { CreditsDialog } from "@/components/dialog/information/CreditsDialog/CreditsDialog";
-export { ReviewNCommentDialog } from "@/components/dialog/information/ReviewNCommentDialog/ReviewNCommentDialog";
+export { default as UserProfile } from "@/components/dialog/information/UserProfile/UserProfile";
+export { default as PricePlan } from "@/components/dialog/information/PricePlan/PricePlan";
+export { default as Credits } from "@/components/dialog/information/Credits/Credits";
+export { default as ReviewNComment } from "@/components/dialog/information/ReviewNComment/ReviewNComment";
 
-export { CheckBoxColumnForm } from "@/components/dialog/form/CheckBoxColumnForm/CheckBoxColumnForm";
-export { InnerScrollForm } from "@/components/dialog/form/InnerScrollForm/InnerScrollForm";
-export { OpenSatisfactionSurveyForm } from "@/components/dialog/form/OpenSatisfactionSurveyForm/OpenSatisfactionSurveyForm";
-export { PaymentStepForm } from "@/components/dialog/form/PaymentStepForm/PaymentStepForm";
-export { RadioBoxColumnForm } from "@/components/dialog/form/RadioBoxColumnForm/RadioBoxColumnForm";
-export { SignInForm } from "@/components/dialog/form/SignInForm/SignInForm";
-export { SignUpForm } from "@/components/dialog/form/SignUpForm/SignUpForm";
+export { default as CheckBoxColumn } from "@/components/dialog/form/CheckBoxColumn/CheckBoxColumn";
+export { default as InnerScroll } from "@/components/dialog/form/InnerScroll/InnerScroll";
+export { default as SatisfactionSurvey } from "@/components/dialog/form/SatisfactionSurvey/SatisfactionSurvey";
+export { default as PaymentStep } from "@/components/dialog/form/PaymentStep/PaymentStep";
+export { default as RadioBoxColumn } from "@/components/dialog/form/RadioBoxColumn/RadioBoxColumn";
+export { default as SignIn } from "@/components/dialog/form/SignIn/SignIn";
+export { default as SignUp } from "@/components/dialog/form/SignUp/SignUp";
 
 // ----------------------------------------------
 
@@ -23,17 +23,17 @@ export { ErrorAlertBaseString } from "@/__generated__/ErrorAlertBaseString";
 export { WarningAlertBaseString } from "@/__generated__/WarningAlertBaseString";
 export { SuccessAlertBaseString } from "@/__generated__/SuccessAlertBaseString";
 export { UpdateAlertBaseString } from "@/__generated__/UpdateAlertBaseString";
-
 export { InfoAlertBaseString } from "@/__generated__/InfoAlertBaseString";
-export { UserProfileDialogBaseString } from "@/__generated__/UserProfileDialogBaseString";
-export { PricePlanDialogBaseString } from "@/__generated__/PricePlanDialogBaseString";
-export { CreditsDialogBaseString } from "@/__generated__/CreditsDialogBaseString";
-export { ReviewNCommentDialogBaseString } from "@/__generated__/ReviewNCommentDialogBaseString";
 
-export { CheckBoxColumnFormBaseString } from "@/__generated__/CheckBoxColumnFormBaseString";
-export { InnerScrollFormBaseString } from "@/__generated__/InnerScrollFormBaseString";
-export { OpenSatisfactionSurveyFormBaseString } from "@/__generated__/OpenSatisfactionSurveyFormBaseString";
-export { PaymentStepFormBaseString } from "@/__generated__/PaymentStepFormBaseString";
-export { RadioBoxColumnFormBaseString } from "@/__generated__/RadioBoxColumnFormBaseString";
-export { SignInFormBaseString } from "@/__generated__/SignInFormBaseString";
-export { SignUpFormBaseString } from "@/__generated__/SignUpFormBaseString";
+export { UserProfileBaseString } from "@/__generated__/UserProfileBaseString";
+export { PricePlanBaseString } from "@/__generated__/PricePlanBaseString";
+export { CreditsBaseString } from "@/__generated__/CreditsBaseString";
+export { ReviewNCommentBaseString } from "@/__generated__/ReviewNCommentBaseString";
+
+export { CheckBoxColumnBaseString } from "@/__generated__/CheckBoxColumnBaseString";
+export { InnerScrollBaseString } from "@/__generated__/InnerScrollBaseString";
+export { SatisfactionSurveyBaseString } from "@/__generated__/SatisfactionSurveyBaseString";
+export { PaymentStepBaseString } from "@/__generated__/PaymentStepBaseString";
+export { RadioBoxColumnBaseString } from "@/__generated__/RadioBoxColumnBaseString";
+export { SignInBaseString } from "@/__generated__/SignInBaseString";
+export { SignUpBaseString } from "@/__generated__/SignUpBaseString";

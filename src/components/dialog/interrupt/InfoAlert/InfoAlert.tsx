@@ -1,12 +1,13 @@
 import CommonDialog from "@/components/common/CommonDialog";
 import useDialogComponent from "@/hooks/useDialogComponent";
+
 interface InfoAlertProps {
   type: "fullScreen" | "card";
 }
 
 const SCALE = 0.8;
 
-export function InfoAlert({ type }: InfoAlertProps) {
+export default function InfoAlert({ type }: InfoAlertProps) {
   const {
     DialogHeaderComponent,
     DialogTitleComponent,

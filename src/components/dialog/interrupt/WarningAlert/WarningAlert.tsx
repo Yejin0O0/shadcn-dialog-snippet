@@ -7,7 +7,7 @@ interface WarningAlertProps {
 
 const SCALE = 0.8;
 
-export function WarningAlert({ type }: WarningAlertProps) {
+export default function WarningAlert({ type }: WarningAlertProps) {
   const {
     DialogHeaderComponent,
     DialogTitleComponent,

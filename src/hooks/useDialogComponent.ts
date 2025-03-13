@@ -1,4 +1,13 @@
 import {
+  InlineDialogAction,
+  InlineDialogCancel,
+  InlineDialogDescription,
+  InlineDialogFooter,
+  InlineDialogHeader,
+  type InlineDialogProps,
+  InlineDialogTitle,
+} from "@/components/custom-ui/InlineDialog";
+import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -18,15 +27,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  InlineDialogAction,
-  InlineDialogCancel,
-  InlineDialogDescription,
-  InlineDialogFooter,
-  InlineDialogHeader,
-  type InlineDialogProps,
-  InlineDialogTitle,
-} from "@/components/ui/inline-dialog";
 import type {
   AlertDialogActionProps,
   AlertDialogCancelProps,

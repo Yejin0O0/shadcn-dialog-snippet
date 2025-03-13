@@ -1,7 +1,7 @@
+import CodeSheet from "@/components/common/CodeSheet";
+import CopyButton from "@/components/common/CopyButton";
 import { File, Info, TriangleAlert } from "lucide-react";
 import type { ReactNode } from "react";
-import { CodeSheet } from "./CodeSheet";
-import { CopyButton } from "./CopyButton";
 
 interface DialogToolBarProps {
   category: "information" | "interrupt" | "form";
@@ -11,7 +11,7 @@ interface DialogToolBarProps {
   fullScreenButton: ReactNode;
 }
 
-function DialogToolBar(props: DialogToolBarProps) {
+export default function DialogToolBar(props: DialogToolBarProps) {
   const { category, code, dialog, title, fullScreenButton } = props;
   const renderCategoryIcon = (categoryType: string) => {
     if (categoryType === "interrupt") {
@@ -47,5 +47,3 @@ function DialogToolBar(props: DialogToolBarProps) {
     </div>
   );
 }
-
-export default DialogToolBar;

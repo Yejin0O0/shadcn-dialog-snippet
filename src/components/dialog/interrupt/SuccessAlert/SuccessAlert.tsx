@@ -1,13 +1,12 @@
 import CommonDialog from "@/components/common/CommonDialog";
 import useDialogComponent from "@/hooks/useDialogComponent";
-
 interface SuccessAlertProps {
   type: "fullScreen" | "card";
 }
 
 const SCALE = 0.8;
 
-export function SuccessAlert({ type }: SuccessAlertProps) {
+export default function SuccessAlert({ type }: SuccessAlertProps) {
   const {
     DialogHeaderComponent,
     DialogTitleComponent,

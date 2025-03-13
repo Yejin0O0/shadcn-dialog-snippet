@@ -6,7 +6,10 @@ interface CodeEditorProps {
   language?: string;
 }
 
-function CodeEditor({ code, language = "javascript" }: CodeEditorProps) {
+export default function CodeEditor({
+  code,
+  language = "javascript",
+}: CodeEditorProps) {
   const [value, setValue] = useState<string>(code);
 
   const handleEditorChange: OnChange = (newValue) => {
@@ -25,5 +28,3 @@ function CodeEditor({ code, language = "javascript" }: CodeEditorProps) {
     />
   );
 }
-
-export default CodeEditor;

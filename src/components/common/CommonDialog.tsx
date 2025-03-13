@@ -1,15 +1,15 @@
 import {
+  InlineDialog,
+  InlineDialogContent,
+  InlineDialogTrigger,
+} from "@/components/custom-ui/InlineDialog";
+import {
   AlertDialog,
   AlertDialogContent,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import {
-  InlineDialog,
-  InlineDialogContent,
-  InlineDialogTrigger,
-} from "@/components/ui/inline-dialog";
 import {
   Tooltip,
   TooltipContent,

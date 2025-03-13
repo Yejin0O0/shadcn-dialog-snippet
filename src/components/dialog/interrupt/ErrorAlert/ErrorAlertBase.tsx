@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
-export function ErrorAlertBase() {
+export default function ErrorAlertBase() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>

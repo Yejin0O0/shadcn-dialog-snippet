@@ -1,5 +1,5 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { cn } from "@/lib/utils";
+import { cn } from "@/libs/utils";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -18,7 +18,7 @@ const DIALOG_LINK = [
   },
 ];
 
-function DialogNav() {
+export default function DialogNav() {
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -52,5 +52,3 @@ function DialogNav() {
     </ScrollArea>
   );
 }
-
-export default DialogNav;

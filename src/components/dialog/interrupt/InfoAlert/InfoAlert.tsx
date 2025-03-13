@@ -1,20 +1,5 @@
 import CommonDialog from "@/components/common/CommonDialog";
-import {
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
-import {
-  InlineDialogAction,
-  InlineDialogCancel,
-  InlineDialogDescription,
-  InlineDialogFooter,
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/ui/inline-dialog";
+import useDialogComponent from "@/hooks/useDialogComponent";
 interface InfoAlertProps {
   type: "fullScreen" | "card";
 }
@@ -22,18 +7,14 @@ interface InfoAlertProps {
 const SCALE = 0.8;
 
 export function InfoAlert({ type }: InfoAlertProps) {
-  const DialogHeaderComponent =
-    type === "fullScreen" ? AlertDialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? AlertDialogTitle : InlineDialogTitle;
-  const DialogDescriptionComponent =
-    type === "fullScreen" ? AlertDialogDescription : InlineDialogDescription;
-  const DialogFooterComponent =
-    type === "fullScreen" ? AlertDialogFooter : InlineDialogFooter;
-  const DialogActionComponent =
-    type === "fullScreen" ? AlertDialogAction : InlineDialogAction;
-  const DialogCancelComponent =
-    type === "fullScreen" ? AlertDialogCancel : InlineDialogCancel;
+  const {
+    DialogHeaderComponent,
+    DialogTitleComponent,
+    DialogDescriptionComponent,
+    DialogFooterComponent,
+    DialogActionComponent,
+    DialogCancelComponent,
+  } = useDialogComponent({ dialogType: "alert", type });
 
   return (
     <CommonDialog dialogType="alert" type={type} scale={SCALE} title="Info">

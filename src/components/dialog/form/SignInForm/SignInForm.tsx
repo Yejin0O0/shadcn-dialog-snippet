@@ -2,24 +2,15 @@ import CommonDialog from "@/components/common/CommonDialog";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import {
-  InlineDialogDescription,
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/ui/inline-dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import useDialogComponent from "@/hooks/useDialogComponent";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeClosed } from "lucide-react";
 import { useState } from "react";
@@ -41,12 +32,11 @@ interface SignInFormProps {
 }
 
 export function SignInForm({ type }: SignInFormProps) {
-  const DialogHeaderComponent =
-    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
-  const DialogDescriptionComponent =
-    type === "fullScreen" ? DialogDescription : InlineDialogDescription;
+  const {
+    DialogHeaderComponent,
+    DialogTitleComponent,
+    DialogDescriptionComponent,
+  } = useDialogComponent({ dialogType: "dialog", type });
 
   const [showPassword, setShowPassword] = useState(false);
 

@@ -23,7 +23,7 @@ const DIALOG_LINK = [
   },
 ];
 
-const getTrackingEvent = (hash: string) => {
+const getEventId = (hash: string) => {
   return DIALOG_LINK.find((link) => link.href === hash)?.eventId;
 };
 
@@ -38,7 +38,7 @@ function DialogNav() {
       element.scrollIntoView({ behavior: "smooth" });
     }
 
-    const trackingEvent = getTrackingEvent(hash);
+    const trackingEvent = getEventId(hash);
 
     if (trackingEvent) {
       // TODO: if we have more tracking events, change the code to the comment

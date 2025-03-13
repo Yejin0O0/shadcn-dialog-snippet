@@ -1,21 +1,6 @@
 import CommonDialog from "@/components/common/CommonDialog";
-import {
-  InlineDialogAction,
-  InlineDialogCancel,
-  InlineDialogDescription,
-  InlineDialogFooter,
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/custom-ui/InlineDialog";
-import {
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
 import { buttonVariants } from "@/components/ui/button";
+import useDialogComponent from "@/hooks/useDialogComponent";
 import { DownloadCloudIcon } from "lucide-react";
 
 interface UpdateAlertProps {
@@ -25,18 +10,14 @@ interface UpdateAlertProps {
 const SCALE = 0.8;
 
 export default function UpdateAlert({ type }: UpdateAlertProps) {
-  const DialogHeaderComponent =
-    type === "fullScreen" ? AlertDialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? AlertDialogTitle : InlineDialogTitle;
-  const DialogDescriptionComponent =
-    type === "fullScreen" ? AlertDialogDescription : InlineDialogDescription;
-  const DialogFooterComponent =
-    type === "fullScreen" ? AlertDialogFooter : InlineDialogFooter;
-  const DialogActionComponent =
-    type === "fullScreen" ? AlertDialogAction : InlineDialogAction;
-  const DialogCancelComponent =
-    type === "fullScreen" ? AlertDialogCancel : InlineDialogCancel;
+  const {
+    DialogHeaderComponent,
+    DialogTitleComponent,
+    DialogDescriptionComponent,
+    DialogFooterComponent,
+    DialogActionComponent,
+    DialogCancelComponent,
+  } = useDialogComponent({ dialogType: "alert", type });
 
   return (
     <CommonDialog

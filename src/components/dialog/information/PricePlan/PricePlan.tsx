@@ -1,10 +1,6 @@
 import CommonDialog from "@/components/common/CommonDialog";
-import {
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/custom-ui/InlineDialog";
 import { Button } from "@/components/ui/button";
-import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import useDialogComponent from "@/hooks/useDialogComponent";
 import { CheckIcon } from "lucide-react";
 import { useState } from "react";
 
@@ -53,10 +49,10 @@ const PRICING_PLANS = [
 export default function PricePlan({ type }: PricePlanProps) {
   const [selected, setSelected] = useState("Free");
 
-  const DialogHeaderComponent =
-    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
+  const { DialogHeaderComponent, DialogTitleComponent } = useDialogComponent({
+    dialogType: "dialog",
+    type,
+  });
 
   return (
     <CommonDialog

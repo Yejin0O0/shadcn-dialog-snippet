@@ -1,11 +1,6 @@
 import CommonDialog from "@/components/common/CommonDialog";
-import {
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/custom-ui/InlineDialog";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -15,6 +10,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import useDialogComponent from "@/hooks/useDialogComponent";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -47,6 +43,11 @@ const FormSchema = z.object({
 });
 
 export default function CheckBoxColumn({ type }: CheckBoxColumnProps) {
+  const { DialogHeaderComponent, DialogTitleComponent } = useDialogComponent({
+    dialogType: "dialog",
+    type,
+  });
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -58,11 +59,6 @@ export default function CheckBoxColumn({ type }: CheckBoxColumnProps) {
   const onSubmit = (data: z.infer<typeof FormSchema>) => {
     alert(data.items);
   };
-
-  const DialogHeaderComponent =
-    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
 
   return (
     <CommonDialog type={type} title="CheckBox Column" scale={SCALE}>

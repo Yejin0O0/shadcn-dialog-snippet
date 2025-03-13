@@ -1,18 +1,6 @@
 import CommonDialog from "@/components/common/CommonDialog";
-import {
-  InlineDialogDescription,
-  InlineDialogFooter,
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/custom-ui/InlineDialog";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -23,6 +11,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import useDialogComponent from "@/hooks/useDialogComponent";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeClosed } from "lucide-react";
 import { useState } from "react";
@@ -54,14 +43,12 @@ interface SignUpProps {
 }
 
 export default function SignUp({ type }: SignUpProps) {
-  const DialogHeaderComponent =
-    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
-  const DialogDescriptionComponent =
-    type === "fullScreen" ? DialogDescription : InlineDialogDescription;
-  const DialogFooterComponent =
-    type === "fullScreen" ? DialogFooter : InlineDialogFooter;
+  const {
+    DialogHeaderComponent,
+    DialogTitleComponent,
+    DialogDescriptionComponent,
+    DialogFooterComponent,
+  } = useDialogComponent({ dialogType: "dialog", type });
 
   const [showPassword, setShowPassword] = useState(false);
 

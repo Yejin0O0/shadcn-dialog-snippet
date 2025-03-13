@@ -1,24 +1,15 @@
 import CommonDialog from "@/components/common/CommonDialog";
 import {
-  InlineDialogDescription,
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/custom-ui/InlineDialog";
-import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import {
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
+import useDialogComponent from "@/hooks/useDialogComponent";
 import { UserPlus, Users } from "lucide-react";
 
 interface CreditsProps {
@@ -119,12 +110,11 @@ function RenderReferralSection() {
 }
 
 export default function Credits({ type }: CreditsProps) {
-  const DialogHeaderComponent =
-    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
-  const DialogDescriptionComponent =
-    type === "fullScreen" ? DialogDescription : InlineDialogDescription;
+  const {
+    DialogHeaderComponent,
+    DialogTitleComponent,
+    DialogDescriptionComponent,
+  } = useDialogComponent({ dialogType: "dialog", type });
 
   return (
     <CommonDialog type={type} title="Credits" scale={SCALE}>

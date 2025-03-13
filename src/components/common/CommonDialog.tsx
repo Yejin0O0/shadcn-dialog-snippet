@@ -16,6 +16,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import useDialogComponent from "@/hooks/useDialogComponent";
 import { ExpandIcon } from "lucide-react";
 import { useState } from "react";
 
@@ -36,11 +37,8 @@ export default function CommonDialog({
   scale,
   contentStyleClass,
 }: CommonDialogProps) {
-  const DialogComponent = dialogType === "alert" ? AlertDialog : Dialog;
-  const DialogTriggerComponent =
-    dialogType === "alert" ? AlertDialogTrigger : DialogTrigger;
-  const DialogContentComponent =
-    dialogType === "alert" ? AlertDialogContent : DialogContent;
+  const { DialogComponent, DialogTriggerComponent, DialogContentComponent } =
+    useDialogComponent({ dialogType, type });
 
   const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
 

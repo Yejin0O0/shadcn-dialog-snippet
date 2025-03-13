@@ -1,17 +1,5 @@
 import CommonDialog from "@/components/common/CommonDialog";
-import {
-  InlineDialogDescription,
-  InlineDialogFooter,
-  InlineDialogHeader,
-  InlineDialogTitle,
-} from "@/components/custom-ui/InlineDialog";
 import { Button } from "@/components/ui/button";
-import {
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -30,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
+import useDialogComponent from "@/hooks/useDialogComponent";
 import { useForm } from "react-hook-form";
 
 interface SurveyFormData {
@@ -46,14 +35,12 @@ interface SatisfactionSurveyProps {
 const SCALE = 0.65;
 
 export default function SatisfactionSurvey({ type }: SatisfactionSurveyProps) {
-  const DialogHeaderComponent =
-    type === "fullScreen" ? DialogHeader : InlineDialogHeader;
-  const DialogTitleComponent =
-    type === "fullScreen" ? DialogTitle : InlineDialogTitle;
-  const DialogDescriptionComponent =
-    type === "fullScreen" ? DialogDescription : InlineDialogDescription;
-  const DialogFooterComponent =
-    type === "fullScreen" ? DialogFooter : InlineDialogFooter;
+  const {
+    DialogHeaderComponent,
+    DialogTitleComponent,
+    DialogDescriptionComponent,
+    DialogFooterComponent,
+  } = useDialogComponent({ dialogType: "dialog", type });
 
   const form = useForm<SurveyFormData>({
     defaultValues: {

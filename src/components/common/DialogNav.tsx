@@ -1,7 +1,7 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import mixpanel from "@/lib/mixpanel";
 import { cn } from "@/lib/utils";
-import { EVENT_ID } from "@/static/mixpanelEventId";
+import { EVENT_ID } from "@/static/eventId";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -9,22 +9,24 @@ const DIALOG_LINK = [
   {
     name: "interrupt",
     href: "#interrupt",
-    eventId: EVENT_ID.CLICKED_INTERRUPT,
   },
   {
     name: "information",
     href: "#information",
-    eventId: EVENT_ID.CLICKED_INFORMATION,
   },
   {
     name: "form",
     href: "#form",
-    eventId: EVENT_ID.CLICKED_FORM,
   },
 ];
 
-const getEventId = (hash: string) => {
-  return DIALOG_LINK.find((link) => link.href === hash)?.eventId;
+const EVENTID = EVENT_ID.CATEGORY_CLICKED;
+
+const handleMixpanel = (name: string) => {
+  mixpanel.track(EVENTID, {
+    category: name,
+  });
+  console.log(name);
 };
 
 function DialogNav() {
@@ -37,14 +39,6 @@ function DialogNav() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-
-    const trackingEvent = getEventId(hash);
-
-    if (trackingEvent) {
-      // TODO: if we have more tracking events, change the code to the comment
-      // mixpanel.track("Category Clicked", { category: trackingEvent });
-      mixpanel.track(trackingEvent);
-    }
   }, [hash]);
 
   return (
@@ -54,6 +48,7 @@ function DialogNav() {
           <Link
             to={link.href}
             key={link.name}
+            onClick={() => handleMixpanel(link.name)}
             className={cn(
               "flex h-7 shrink-0 items-center justify-center rounded-full px-4 text-center text-sm transition-colors hover:text-primary",
               hash === link.href

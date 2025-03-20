@@ -1,5 +1,7 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import mixpanel from "@/libs/mixpanel";
 import { cn } from "@/libs/utils";
+import { EVENT_ID } from "@/statics/eventId";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -18,15 +20,23 @@ const DIALOG_LINK = [
   },
 ];
 
+const EVENTID = EVENT_ID.CATEGORY_CLICKED;
+
+const handleMixpanel = (name: string) => {
+  mixpanel.track(EVENTID, {
+    category: name,
+  });
+};
+
 export default function DialogNav() {
   const { hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+    if (!hash) return;
+    const element = document.querySelector(hash);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   }, [hash]);
 
@@ -37,6 +47,7 @@ export default function DialogNav() {
           <Link
             to={link.href}
             key={link.name}
+            onClick={() => handleMixpanel(link.name)}
             className={cn(
               "flex h-7 shrink-0 items-center justify-center rounded-full px-4 text-center text-sm transition-colors hover:text-primary",
               hash === link.href

@@ -1,24 +1,5 @@
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { ExpandIcon } from "lucide-react";
-
-import { useState } from "react";
+import CommonDialog from "@/components/common/CommonDialog";
+import useDialogComponent from "@/hooks/useDialogComponent";
 
 interface InfoAlertProps {
   type: "fullScreen" | "card";
@@ -26,103 +7,33 @@ interface InfoAlertProps {
 
 const SCALE = 0.8;
 
-export function InfoAlert({ type }: InfoAlertProps) {
-  const [isOpen, setIsOpen] = useState(true);
-  const [isTooltipAllowed, setIsTooltipAllowed] = useState(true);
+export default function InfoAlert({ type }: InfoAlertProps) {
+  const {
+    DialogHeaderComponent,
+    DialogTitleComponent,
+    DialogDescriptionComponent,
+    DialogFooterComponent,
+    DialogActionComponent,
+    DialogCancelComponent,
+  } = useDialogComponent({ dialogType: "alert", type });
 
-  if (type === "fullScreen") {
-    return (
-      <AlertDialog onOpenChange={() => setIsTooltipAllowed(false)}>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger
-              asChild
-              onMouseEnter={() => setIsTooltipAllowed(true)}
-            >
-              <AlertDialogTrigger asChild>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:text-accent-foreground [&_svg]-h-3.5 [&_svg]-h-3 h-6 w-6 rounded-[6px] bg-transparent text-foreground shadow-none hover:bg-muted dark:text-foreground [&_svg]:w-3"
-                >
-                  <ExpandIcon />
-                </Button>
-              </AlertDialogTrigger>
-            </TooltipTrigger>
-            {isTooltipAllowed && (
-              <TooltipContent className="bg-black text-white">
-                full screen dialog
-              </TooltipContent>
-            )}
-          </Tooltip>
-        </TooltipProvider>
-        <AlertDialogContent className="ltr">
-          <div className="border-s-4 border-blue-500 pl-6">
-            <AlertDialogHeader className="mb-1.5">
-              <AlertDialogTitle>Info</AlertDialogTitle>
-              <AlertDialogDescription>
-                This is an informative message to notify you of something
-                important. Please review the information carefully.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Dismiss</AlertDialogCancel>
-              <AlertDialogAction className="bg-blue-500 text-white hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-500">
-                Action
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </div>
-        </AlertDialogContent>
-      </AlertDialog>
-    );
-  }
-
-  if (type === "card") {
-    return (
-      <div
-        className={`flex-1 ${
-          isOpen
-            ? "bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
-            : ""
-        }`}
-      >
-        <Button
-          variant="outline"
-          className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-fit border-blue-500 text-blue-500 hover:bg-blue-100 hover:text-blue-500"
-          onClick={() => setIsOpen(true)}
-        >
-          Information
-        </Button>
-        {isOpen && (
-          <div
-            style={{
-              transform: `translate(-50%, -50%) scale(${SCALE})`,
-            }}
-            className="flex flex-col gap-4 w-full max-w-md bg-white p-6 rounded-lg shadow-lg z-20 absolute top-1/2 left-1/2"
-          >
-            <div className="border-s-4 border-blue-500 pl-6">
-              <h2 className="text-lg font-semibold">Info</h2>
-              <p className="text-sm text-muted-foreground">
-                This is an informative message to notify you of something
-                important. Please review the information carefully.
-              </p>
-              <div className="mt-4 flex justify-end space-x-2">
-                <Button variant="outline" onClick={() => setIsOpen(false)}>
-                  Dismiss
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-fit bg-blue-500 text-white hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-500"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Action
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
+  return (
+    <CommonDialog dialogType="alert" type={type} scale={SCALE} title="Info">
+      <div className="border-s-4 border-blue-500 pl-6">
+        <DialogHeaderComponent className="mb-1.5">
+          <DialogTitleComponent>Info</DialogTitleComponent>
+          <DialogDescriptionComponent>
+            This is an informative message to notify you of something important.
+            Please review the information carefully.
+          </DialogDescriptionComponent>
+        </DialogHeaderComponent>
+        <DialogFooterComponent>
+          <DialogCancelComponent>Dismiss</DialogCancelComponent>
+          <DialogActionComponent className="bg-blue-500 text-white hover:bg-blue-700 hover:text-white focus:ring-2 focus:ring-blue-500">
+            Action
+          </DialogActionComponent>
+        </DialogFooterComponent>
       </div>
-    );
-  }
-  return null;
+    </CommonDialog>
+  );
 }

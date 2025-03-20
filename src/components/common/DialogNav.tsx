@@ -1,7 +1,7 @@
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import mixpanel from "@/lib/mixpanel";
-import { cn } from "@/lib/utils";
-import { EVENT_ID } from "@/static/eventId";
+import mixpanel from "@/libs/mixpanel";
+import { cn } from "@/libs/utils";
+import { EVENT_ID } from "@/statics/eventId";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -64,5 +64,3 @@ function DialogNav() {
     </ScrollArea>
   );
 }
-
-export default DialogNav;

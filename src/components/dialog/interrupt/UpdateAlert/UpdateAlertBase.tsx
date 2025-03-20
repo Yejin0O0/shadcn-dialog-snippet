@@ -12,7 +12,7 @@ import {
 import { Button, buttonVariants } from "@/components/ui/button";
 import { DownloadCloudIcon } from "lucide-react";
 
-export function UpdateAlertBase() {
+export default function UpdateAlertBase() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>

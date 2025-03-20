@@ -1,19 +1,17 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { highlightCode } from "@/lib/highlightCode";
+import highlightCode from "@/libs/highlightCode";
 import { type ReactNode, useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import "@/styles/shikiStyles.css";
-import { CopyButton } from "@/components/common/CopyButton";
+import CopyButton from "@/components/common/CopyButton";
 
 interface CodeSheetProps {
   dialog: ReactNode;
   code: string;
 }
 
-export function CodeSheet({ dialog, code }: CodeSheetProps) {
+export default function CodeSheet({ dialog, code }: CodeSheetProps) {
   const [tab, setTab] = useState("code");
   const [html, setHtml] = useState<string>("");
 

@@ -26,10 +26,9 @@ const handleMixpanel = (name: string) => {
   mixpanel.track(EVENTID, {
     category: name,
   });
-  console.log(name);
 };
 
-function DialogNav() {
+export default function DialogNav() {
   const { hash } = useLocation();
 
   useEffect(() => {
